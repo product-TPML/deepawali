@@ -1,0 +1,6 @@
+# Cloudflare Pages response headers.
+# The page is served from the DH CMS (www.deccanherald.com) and loads these files cross-site:
+# module scripts, JSON fetches and canvas artwork need CORS.
+/*
+  Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin

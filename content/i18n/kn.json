@@ -1,0 +1,672 @@
+{
+  "_about": "Kannada (Prajavani) edition of the Deepavali 2026 page. Editors: review the \"kn\" text only; \"en\" is the English original for reference. \"page\" replaces exact text of index.en.html, \"strings\" is text the page scripts show (diyas, countdown, greeting card). Keep {placeholders} such as {name} or {count} exactly as they are, and keep HTML tags. After changes, run: python tools/build-kn.py",
+  "status": "Draft translation, editorial review pending (2026-11-02)",
+  "site": {
+    "lang": "kn",
+    "locale": "kn-IN",
+    "publisher": "ಪ್ರಜಾವಾಣಿ",
+    "publisherUrl": "https://www.prajavani.net/",
+    "publisherLogo": "site/assets/prajavani-white.svg",
+    "sponsor": "ಪ್ರಾಯೋಜಕರು",
+    "sponsorUrl": "#",
+    "sponsorLogo": "",
+    "sponsorOnLight": true,
+    "creativeSets": null,
+    "storiesFile": "content/deepavali-stories.kn.json"
+  },
+  "page": [
+    {
+      "id": 1,
+      "en": "<title>Deepavali 2026 | Prajavani</title>",
+      "kn": "<title>ದೀಪಾವಳಿ 2026 | ಪ್ರಜಾವಾಣಿ</title>"
+    },
+    {
+      "id": 2,
+      "en": "content=\"Celebrate Deepavali 2026 with Prajavani: festive stories, your own greeting card, and find out which cracker you are.\"",
+      "kn": "content=\"ಪ್ರಜಾವಾಣಿಯೊಂದಿಗೆ ದೀಪಾವಳಿ 2026 ಆಚರಿಸಿ: ಹಬ್ಬದ ಬರಹಗಳು, ನಿಮ್ಮದೇ ಶುಭಾಶಯ ಪತ್ರ, ಮತ್ತು ನೀವು ಯಾವ ಪಟಾಕಿ ಎಂದು ತಿಳಿಯಿರಿ.\""
+    },
+    {
+      "id": 3,
+      "en": "<meta property=\"og:site_name\" content=\"Prajavani\">",
+      "kn": "<meta property=\"og:site_name\" content=\"ಪ್ರಜಾವಾಣಿ\">"
+    },
+    {
+      "id": 4,
+      "en": "<meta property=\"og:title\" content=\"Deepavali 2026 | Prajavani\">",
+      "kn": "<meta property=\"og:title\" content=\"ದೀಪಾವಳಿ 2026 | ಪ್ರಜಾವಾಣಿ\">"
+    },
+    {
+      "id": 5,
+      "en": "content=\"Which Deepavali cracker are you? Find out, read festive stories and make your own greeting card.\"",
+      "kn": "content=\"ನೀವು ಯಾವ ದೀಪಾವಳಿ ಪಟಾಕಿ? ತಿಳಿದುಕೊಳ್ಳಿ, ಹಬ್ಬದ ಬರಹಗಳನ್ನು ಓದಿ ಮತ್ತು ನಿಮ್ಮದೇ ಶುಭಾಶಯ ಪತ್ರ ತಯಾರಿಸಿ.\""
+    },
+    {
+      "id": 6,
+      "en": ">Skip to content</a>",
+      "kn": ">ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ</a>"
+    },
+    {
+      "id": 7,
+      "en": "aria-label=\"Prajavani home\"><img src=\"site/assets/prajavani-white.svg\" alt=\"Prajavani\">",
+      "kn": "aria-label=\"ಪ್ರಜಾವಾಣಿ ಮುಖಪುಟ\"><img src=\"site/assets/prajavani-white.svg\" alt=\"ಪ್ರಜಾವಾಣಿ\">"
+    },
+    {
+      "id": 8,
+      "en": "<nav class=\"top-nav\" aria-label=\"Sections\">",
+      "kn": "<nav class=\"top-nav\" aria-label=\"ವಿಭಾಗಗಳು\">"
+    },
+    {
+      "id": 8.5,
+      "en": "aria-label=\"Sections\"",
+      "kn": "aria-label=\"ವಿಭಾಗಗಳು\""
+    },
+    {
+      "id": 9,
+      "en": "<a href=\"#home\" data-nav=\"home\">Home</a><a href=\"#stories\" data-nav=\"stories\">Stories</a><a href=\"#greeting\" data-nav=\"greeting\">Greeting card</a><a href=\"#crackers\" data-nav=\"crackers\">Your cracker</a>",
+      "kn": "<a href=\"#home\" data-nav=\"home\">ಮುಖಪುಟ</a><a href=\"#stories\" data-nav=\"stories\">ಬರಹಗಳು</a><a href=\"#greeting\" data-nav=\"greeting\">ಶುಭಾಶಯ ಪತ್ರ</a><a href=\"#crackers\" data-nav=\"crackers\">ನಿಮ್ಮ ಪಟಾಕಿ</a>"
+    },
+    {
+      "id": 11,
+      "en": "aria-label=\"Title sponsor website\"><span class=\"sponsor-label\">Presented by</span><span class=\"sponsor-logo\" data-sponsor-logo>Sponsor logo</span>",
+      "kn": "aria-label=\"ಪ್ರಾಯೋಜಕರ ಜಾಲತಾಣ\"><span class=\"sponsor-label\">ಪ್ರಾಯೋಜಕರು</span><span class=\"sponsor-logo\" data-sponsor-logo>ಪ್ರಾಯೋಜಕರ ಲೋಗೊ</span>"
+    },
+    {
+      "id": 11.1,
+      "en": "aria-label=\"Deepavali 2026: back to the top\"",
+      "kn": "aria-label=\"ದೀಪಾವಳಿ 2026: ಮೇಲಕ್ಕೆ ಹೋಗಿ\""
+    },
+    {
+      "id": 11.15,
+      "en": "<strong>Deepavali</strong><small><b>2026</b> · Festival of lights</small>",
+      "kn": "<strong>ದೀಪಾವಳಿ</strong><small><b>2026</b> · ಬೆಳಕಿನ ಹಬ್ಬ</small>"
+    },
+    {
+      "id": 11.2,
+      "en": "aria-label=\"Open menu\"",
+      "kn": "aria-label=\"ಮೆನು ತೆರೆಯಿರಿ\""
+    },
+    {
+      "id": 11.25,
+      "en": "aria-label=\"Site menu\"",
+      "kn": "aria-label=\"ಜಾಲತಾಣದ ಮೆನು\""
+    },
+    {
+      "id": 11.3,
+      "en": "aria-label=\"Close menu\"",
+      "kn": "aria-label=\"ಮೆನು ಮುಚ್ಚಿ\""
+    },
+    {
+      "id": 11.35,
+      "en": "<p class=\"site-menu-kicker\">Deepavali 2026</p>",
+      "kn": "<p class=\"site-menu-kicker\">ದೀಪಾವಳಿ 2026</p>"
+    },
+    {
+      "id": 11.4,
+      "en": "<a href=\"#home\" data-nav=\"home\">Home <span>01</span></a><a href=\"#stories\" data-nav=\"stories\">Stories <span>02</span></a><a href=\"#greeting\" data-nav=\"greeting\">Greeting card <span>03</span></a><a href=\"#crackers\" data-nav=\"crackers\">Your cracker <span>04</span></a>",
+      "kn": "<a href=\"#home\" data-nav=\"home\">ಮುಖಪುಟ <span>01</span></a><a href=\"#stories\" data-nav=\"stories\">ಬರಹಗಳು <span>02</span></a><a href=\"#greeting\" data-nav=\"greeting\">ಶುಭಾಶಯ ಪತ್ರ <span>03</span></a><a href=\"#crackers\" data-nav=\"crackers\">ನಿಮ್ಮ ಪಟಾಕಿ <span>04</span></a>"
+    },
+    {
+      "id": 11.45,
+      "en": "class=\"site-menu-publisher\" href=\"https://www.prajavani.net/\">More from Prajavani ↗</a>",
+      "kn": "class=\"site-menu-publisher\" href=\"https://www.prajavani.net/\">ಪ್ರಜಾವಾಣಿಯಲ್ಲಿ ಇನ್ನಷ್ಟು ↗</a>"
+    },
+    {
+      "id": 11.5,
+      "en": "<span>Home</span>",
+      "kn": "<span>ಮುಖಪುಟ</span>"
+    },
+    {
+      "id": 11.55,
+      "en": "<span>Stories</span>",
+      "kn": "<span>ಬರಹಗಳು</span>"
+    },
+    {
+      "id": 11.6,
+      "en": "<span>Card</span>",
+      "kn": "<span>ಪತ್ರ</span>"
+    },
+    {
+      "id": 11.65,
+      "en": "<span>Cracker</span>",
+      "kn": "<span>ಪಟಾಕಿ</span>"
+    },
+    {
+      "id": 11.7,
+      "en": "<span>Menu</span>",
+      "kn": "<span>ಮೆನು</span>"
+    },
+    {
+      "id": 12,
+      "en": "<p class=\"eyebrow\">Deepavali 2026</p>",
+      "kn": "<p class=\"eyebrow\">ದೀಪಾವಳಿ 2026</p>"
+    },
+    {
+      "id": 13,
+      "en": "<h1 id=\"hero-title\">The festival <em>of lights</em></h1>",
+      "kn": "<h1 id=\"hero-title\">ಬೆಳಕಿನ <em>ಹಬ್ಬ</em></h1>"
+    },
+    {
+      "id": 14,
+      "en": "Five days of lamps, from Neeru Tumbuva Habba to Balipadyami: laughter in the lanes and a sky full of colour.",
+      "kn": "ನೀರು ತುಂಬುವ ಹಬ್ಬದಿಂದ ಬಲಿಪಾಡ್ಯಮಿವರೆಗೆ ಐದು ದಿನಗಳ ಹಣತೆಯ ಹಬ್ಬ: ಬೀದಿಬೀದಿಯಲ್ಲಿ ನಗು, ಆಗಸದ ತುಂಬ ಬಣ್ಣ."
+    },
+    {
+      "id": 15,
+      "en": "<span id=\"countdown-text\">days to Deepavali · Sunday, 8 November</span>",
+      "kn": "<span id=\"countdown-text\">ದಿನಗಳಲ್ಲಿ ದೀಪಾವಳಿ · ಭಾನುವಾರ, ನವೆಂಬರ್ 8</span>"
+    },
+    {
+      "id": 16,
+      "en": "data-track=\"cracker_cta\">Which cracker are you? <span",
+      "kn": "data-track=\"cracker_cta\">ನೀವು ಯಾವ ಪಟಾಕಿ? <span"
+    },
+    {
+      "id": 17,
+      "en": "data-track=\"hero_greeting_cta\">Make a greeting card</a>",
+      "kn": "data-track=\"hero_greeting_cta\">ಶುಭಾಶಯ ಪತ್ರ ತಯಾರಿಸಿ</a>"
+    },
+    {
+      "id": 18,
+      "en": "<p class=\"hero-tip\">Tap the sky to send up a rocket.</p>",
+      "kn": "<p class=\"hero-tip\">ಆಗಸದ ಮೇಲೆ ತಟ್ಟಿ, ರಾಕೆಟ್ ಹಾರಿಸಿ.</p>"
+    },
+    {
+      "id": 19,
+      "en": "<p class=\"eyebrow\">Just for fun</p>",
+      "kn": "<p class=\"eyebrow\">ಸುಮ್ಮನೆ ಮೋಜಿಗೆ</p>"
+    },
+    {
+      "id": 20,
+      "en": "<h2 id=\"crackers-title\">Which cracker <em>are you?</em></h2>",
+      "kn": "<h2 id=\"crackers-title\">ನೀವು ಯಾವ <em>ಪಟಾಕಿ?</em></h2>"
+    },
+    {
+      "id": 21,
+      "en": "<p class=\"section-intro\">Pick the cracker you love most and see what it says about you.</p>",
+      "kn": "<p class=\"section-intro\">ನಿಮಗೆ ತುಂಬ ಇಷ್ಟವಾದ ಪಟಾಕಿಯನ್ನು ಆರಿಸಿ, ಅದು ನಿಮ್ಮ ಬಗ್ಗೆ ಏನು ಹೇಳುತ್ತದೆ ನೋಡಿ.</p>"
+    },
+    {
+      "id": 22,
+      "en": "aria-label=\"Pick a cracker\"",
+      "kn": "aria-label=\"ಪಟಾಕಿ ಆರಿಸಿ\""
+    },
+    {
+      "id": 23,
+      "en": "<span>Sparkler</span>",
+      "kn": "<span>ಸುರುಸುರು ಬತ್ತಿ</span>"
+    },
+    {
+      "id": 24,
+      "en": "<span>Flower pot</span>",
+      "kn": "<span>ಹೂವಿನ ಕುಂಡ</span>"
+    },
+    {
+      "id": 25,
+      "en": "href=\"#greeting\">Make your greeting card <span",
+      "kn": "href=\"#greeting\">ನಿಮ್ಮ ಶುಭಾಶಯ ಪತ್ರ ತಯಾರಿಸಿ <span"
+    },
+    {
+      "id": 26,
+      "en": "<span>Ground chakri</span>",
+      "kn": "<span>ನೆಲಚಕ್ರ</span>"
+    },
+    {
+      "id": 27,
+      "en": "<span>Rocket</span>",
+      "kn": "<span>ರಾಕೆಟ್</span>"
+    },
+    {
+      "id": 27.1,
+      "en": "<span>Cracker string</span>",
+      "kn": "<span>ಪಟಾಕಿ ಸರ</span>"
+    },
+    {
+      "id": 27.2,
+      "en": "<span>Snake tablet</span>",
+      "kn": "<span>ಹಾವಿನ ಮಾತ್ರೆ</span>"
+    },
+    {
+      "id": 27.3,
+      "en": "<p class=\"eyebrow\">You are</p>",
+      "kn": "<p class=\"eyebrow\">ನೀವು</p>"
+    },
+    {
+      "id": 28,
+      "en": "aria-label=\"Advertisement\"",
+      "kn": "aria-label=\"ಜಾಹೀರಾತು\""
+    },
+    {
+      "id": 29,
+      "en": "<p class=\"eyebrow\">Festive reads</p>",
+      "kn": "<p class=\"eyebrow\">ಹಬ್ಬದ ಓದು</p>"
+    },
+    {
+      "id": 30,
+      "en": "<h2 id=\"stories-title\">Deepavali <em>stories</em></h2>",
+      "kn": "<h2 id=\"stories-title\">ದೀಪಾವಳಿ <em>ಬರಹಗಳು</em></h2>"
+    },
+    {
+      "id": 31,
+      "en": "<p class=\"story-status\">Loading stories…</p>",
+      "kn": "<p class=\"story-status\">ಬರಹಗಳು ತೆರೆಯುತ್ತಿವೆ…</p>"
+    },
+    {
+      "id": 31.1,
+      "en": "<p class=\"studio-title\">Your Deepavali greeting card</p>",
+      "kn": "<p class=\"studio-title\">ನಿಮ್ಮ ದೀಪಾವಳಿ ಶುಭಾಶಯ ಪತ್ರ</p>"
+    },
+    {
+      "id": 31.2,
+      "en": "<p class=\"field-label\">Your photo</p>",
+      "kn": "<p class=\"field-label\">ನಿಮ್ಮ ಫೋಟೊ</p>"
+    },
+    {
+      "id": 31.3,
+      "en": "<legend class=\"field-label\">Outfit</legend>",
+      "kn": "<legend class=\"field-label\">ಉಡುಗೆ</legend>"
+    },
+    {
+      "id": 31.4,
+      "en": "<legend class=\"field-label\">Pose</legend>",
+      "kn": "<legend class=\"field-label\">ಭಂಗಿ</legend>"
+    },
+    {
+      "id": 31.5,
+      "en": "<legend class=\"field-label\">Background</legend>",
+      "kn": "<legend class=\"field-label\">ಹಿನ್ನೆಲೆ</legend>"
+    },
+    {
+      "id": 31.6,
+      "en": "for=\"greeting-name\">Your name (optional)</label>",
+      "kn": "for=\"greeting-name\">ನಿಮ್ಮ ಹೆಸರು (ಐಚ್ಛಿಕ)</label>"
+    },
+    {
+      "id": 35,
+      "en": "aria-label=\"Close greeting maker\"",
+      "kn": "aria-label=\"ಶುಭಾಶಯ ಪತ್ರ ಮುಚ್ಚಿ\""
+    },
+    {
+      "id": 36,
+      "en": "<p class=\"eyebrow\">Your Deepavali greeting</p>",
+      "kn": "<p class=\"eyebrow\">ನಿಮ್ಮ ದೀಪಾವಳಿ ಶುಭಾಶಯ</p>"
+    },
+    {
+      "id": 37,
+      "en": "<h2 id=\"greeting-title\">Light up <em>your wishes</em></h2>",
+      "kn": "<h2 id=\"greeting-title\">ನಿಮ್ಮ ಶುಭಾಶಯಕ್ಕೆ <em>ಬೆಳಕು ತುಂಬಿ</em></h2>"
+    },
+    {
+      "id": 38,
+      "en": "Add a selfie and we'll make a festive Deepavali card for you to share with family and friends.",
+      "kn": "ಒಂದು ಸೆಲ್ಫಿ ಸೇರಿಸಿ; ಕುಟುಂಬ ಮತ್ತು ಸ್ನೇಹಿತರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಲು ನಿಮಗಾಗಿ ಹಬ್ಬದ ದೀಪಾವಳಿ ಶುಭಾಶಯ ಪತ್ರ ಸಿದ್ಧಪಡಿಸುತ್ತೇವೆ."
+    },
+    {
+      "id": 39,
+      "en": "data-track=\"greeting_camera\">Take a selfie <span",
+      "kn": "data-track=\"greeting_camera\">ಸೆಲ್ಫಿ ತೆಗೆಯಿರಿ <span"
+    },
+    {
+      "id": 40,
+      "en": "data-track=\"greeting_photo\">Choose a photo <span",
+      "kn": "data-track=\"greeting_photo\">ಫೋಟೊ ಆಯ್ಕೆಮಾಡಿ <span"
+    },
+    {
+      "id": 41,
+      "en": "<span><strong>Your photo is never uploaded or stored.</strong> The card is made right here on your device.</span>",
+      "kn": "<span><strong>ನಿಮ್ಮ ಫೋಟೊವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ, ಸಂಗ್ರಹಿಸುವುದೂ ಇಲ್ಲ.</strong> ಶುಭಾಶಯ ಪತ್ರ ನಿಮ್ಮ ಫೋನ್‌ನಲ್ಲೇ ತಯಾರಾಗುತ್ತದೆ.</span>"
+    },
+    {
+      "id": 42,
+      "en": "<p class=\"greeting-tip\">Tip: use a clear, front-facing photo of just you in good light.</p>",
+      "kn": "<p class=\"greeting-tip\">ಸಲಹೆ: ಉತ್ತಮ ಬೆಳಕಿನಲ್ಲಿ, ನೇರವಾಗಿ ನೋಡುತ್ತಿರುವ ನಿಮ್ಮೊಬ್ಬರದೇ ಸ್ಪಷ್ಟ ಫೋಟೊ ಬಳಸಿ.</p>"
+    },
+    {
+      "id": 43,
+      "en": "id=\"camera-dialog\" aria-label=\"Take a selfie\"",
+      "kn": "id=\"camera-dialog\" aria-label=\"ಸೆಲ್ಫಿ ತೆಗೆಯಿರಿ\""
+    },
+    {
+      "id": 44,
+      "en": "id=\"camera-shutter\">Capture <span",
+      "kn": "id=\"camera-shutter\">ಕ್ಲಿಕ್ ಮಾಡಿ <span"
+    },
+    {
+      "id": 45,
+      "en": "id=\"camera-cancel\">Cancel</button>",
+      "kn": "id=\"camera-cancel\">ರದ್ದುಮಾಡಿ</button>"
+    },
+    {
+      "id": 51,
+      "en": "value=\"kurta\" checked> Kurta</label>",
+      "kn": "value=\"kurta\" checked> ಕುರ್ತಾ</label>"
+    },
+    {
+      "id": 52,
+      "en": "value=\"saree\"> Saree</label>",
+      "kn": "value=\"saree\"> ಸೀರೆ</label>"
+    },
+    {
+      "id": 54,
+      "en": "value=\"namaste\" checked> Diya</label>",
+      "kn": "value=\"namaste\" checked> ಹಣತೆ</label>"
+    },
+    {
+      "id": 55,
+      "en": "value=\"wave\"> Sparkler</label>",
+      "kn": "value=\"wave\"> ಸುರುಸುರು ಬತ್ತಿ</label>"
+    },
+    {
+      "id": 56.1,
+      "en": "value=\"panche\"> Panche</label>",
+      "kn": "value=\"panche\"> ಪಂಚೆ</label>"
+    },
+    {
+      "id": 56.2,
+      "en": "value=\"langa\"> Langa davani</label>",
+      "kn": "value=\"langa\"> ಲಂಗ ದಾವಣಿ</label>"
+    },
+    {
+      "id": 56.4,
+      "en": "<span class=\"scene-name\">Doorstep</span>",
+      "kn": "<span class=\"scene-name\">ಹೊಸ್ತಿಲು</span>"
+    },
+    {
+      "id": 56.5,
+      "en": "<span class=\"scene-name\">Lanterns</span>",
+      "kn": "<span class=\"scene-name\">ಆಕಾಶಬುಟ್ಟಿ</span>"
+    },
+    {
+      "id": 56.6,
+      "en": "<span class=\"scene-name\">Fireworks</span>",
+      "kn": "<span class=\"scene-name\">ಬಾಣಬಿರುಸು</span>"
+    },
+    {
+      "id": 56.7,
+      "en": "<span class=\"scene-name\">Lakshmi Puja</span>",
+      "kn": "<span class=\"scene-name\">ಲಕ್ಷ್ಮೀ ಪೂಜೆ</span>"
+    },
+    {
+      "id": 56.8,
+      "en": "<span class=\"scene-name\">Balipadyami</span>",
+      "kn": "<span class=\"scene-name\">ಬಲಿಪಾಡ್ಯಮಿ</span>"
+    },
+    {
+      "id": 57,
+      "en": "placeholder=\"Your name (optional)\"",
+      "kn": "placeholder=\"ನಿಮ್ಮ ಹೆಸರು (ಐಚ್ಛಿಕ)\""
+    },
+    {
+      "id": 59,
+      "en": "disabled>Share card <span",
+      "kn": "disabled>ಪತ್ರ ಹಂಚಿಕೊಳ್ಳಿ <span"
+    },
+    {
+      "id": 60,
+      "en": "disabled>Download <span",
+      "kn": "disabled>ಡೌನ್‌ಲೋಡ್ <span"
+    },
+    {
+      "id": 61,
+      "en": "id=\"greeting-reset\" hidden>Reset position</button>",
+      "kn": "id=\"greeting-reset\" hidden>ಸ್ಥಾನ ಮರುಹೊಂದಿಸಿ</button>"
+    },
+    {
+      "id": 66,
+      "en": "aria-label=\"Preview of your Deepavali greeting card. Tap your photo, or the mallige with the saree or langa davani, to select it, then drag to move. Pinch and twist, or drag the round handle at its corner, to resize and rotate. Keyboard: Enter switches between photo and mallige, arrow keys move, plus and minus resize, square brackets rotate.\"",
+      "kn": "aria-label=\"ನಿಮ್ಮ ದೀಪಾವಳಿ ಶುಭಾಶಯ ಪತ್ರದ ಮುನ್ನೋಟ. ನಿಮ್ಮ ಫೋಟೊ ಅಥವಾ ಸೀರೆ, ಲಂಗ ದಾವಣಿಯೊಂದಿಗಿನ ಮಲ್ಲಿಗೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿ ಆಯ್ಕೆಮಾಡಿ, ನಂತರ ಎಳೆದು ಸರಿಸಿ. ಗಾತ್ರ ಬದಲಿಸಲು ಮತ್ತು ತಿರುಗಿಸಲು ಎರಡು ಬೆರಳುಗಳಿಂದ ಹಿಗ್ಗಿಸಿ, ತಿರುಗಿಸಿ ಅಥವಾ ಮೂಲೆಯಲ್ಲಿರುವ ದುಂಡನೆಯ ಹಿಡಿಕೆಯನ್ನು ಎಳೆಯಿರಿ. ಕೀಬೋರ್ಡ್: Enter ಕೀಲಿ ಫೋಟೊ ಮತ್ತು ಮಲ್ಲಿಗೆಯ ನಡುವೆ ಬದಲಿಸುತ್ತದೆ, ಬಾಣದ ಕೀಲಿಗಳು ಸರಿಸುತ್ತವೆ, ಪ್ಲಸ್ ಮತ್ತು ಮೈನಸ್ ಗಾತ್ರ ಬದಲಿಸುತ್ತವೆ, ಚೌಕ ಆವರಣಗಳು ತಿರುಗಿಸುತ್ತವೆ.\""
+    },
+    {
+      "id": 67,
+      "en": "id=\"greeting-hint\">Add your photo to light up the card.</p>",
+      "kn": "id=\"greeting-hint\">ಪತ್ರಕ್ಕೆ ಬೆಳಕು ತುಂಬಲು ನಿಮ್ಮ ಫೋಟೊ ಸೇರಿಸಿ.</p>"
+    },
+    {
+      "id": 68,
+      "en": "data-track=\"greeting_studio_open\">Make my greeting card <span",
+      "kn": "data-track=\"greeting_studio_open\">ನನ್ನ ಶುಭಾಶಯ ಪತ್ರ ತಯಾರಿಸಿ <span"
+    },
+    {
+      "id": 69,
+      "en": "<h2 id=\"share-title\">Share the light</h2><p class=\"share-copy\">Send this page to family and friends.</p>",
+      "kn": "<h2 id=\"share-title\">ಬೆಳಕನ್ನು ಹಂಚಿ</h2><p class=\"share-copy\">ಈ ಪುಟವನ್ನು ಕುಟುಂಬ ಮತ್ತು ಸ್ನೇಹಿತರಿಗೆ ಕಳುಹಿಸಿ.</p>"
+    },
+    {
+      "id": 70,
+      "en": "data-track=\"share_native\" hidden>Share</button>",
+      "kn": "data-track=\"share_native\" hidden>ಹಂಚಿಕೊಳ್ಳಿ</button>"
+    },
+    {
+      "id": 71,
+      "en": "data-track=\"share_copy\">Copy link</button>",
+      "kn": "data-track=\"share_copy\">ಲಿಂಕ್ ನಕಲಿಸಿ</button>"
+    },
+    {
+      "id": 71.5,
+      "en": "<p class=\"footer-lang\" role=\"group\" aria-label=\"Language\">\n      <a href=\"index.html\" hreflang=\"kn\" lang=\"kn\" data-track=\"footer_lang_kn\">ಕನ್ನಡ</a>\n      <span aria-current=\"true\" lang=\"en\">English</span>\n    </p>",
+      "kn": "<p class=\"footer-lang\" role=\"group\" aria-label=\"ಭಾಷೆ\">\n      <span aria-current=\"true\">ಕನ್ನಡ</span>\n      <a href=\"index.en.html\" hreflang=\"en\" lang=\"en\" data-track=\"footer_lang_en\">English</a>\n    </p>"
+    },
+    {
+      "id": 72,
+      "en": "<a href=\"https://www.prajavani.net/\">More from Prajavani ↗</a>",
+      "kn": "<a href=\"https://www.prajavani.net/\">ಪ್ರಜಾವಾಣಿಯಲ್ಲಿ ಇನ್ನಷ್ಟು ↗</a>"
+    }
+  ],
+  "strings": {
+    "countdown.days": {
+      "en": "days to Deepavali · Sunday, 8 November",
+      "kn": "ದಿನಗಳಲ್ಲಿ ದೀಪಾವಳಿ · ಭಾನುವಾರ, ನವೆಂಬರ್ 8"
+    },
+    "countdown.day": {
+      "en": "day to Deepavali · Sunday, 8 November",
+      "kn": "ದಿನದಲ್ಲಿ ದೀಪಾವಳಿ · ಭಾನುವಾರ, ನವೆಂಬರ್ 8"
+    },
+    "countdown.now": {
+      "en": "Deepavali is here. Happy Deepavali!",
+      "kn": "ದೀಪಾವಳಿ ಬಂದೇಬಿಟ್ಟಿತು. ದೀಪಾವಳಿಯ ಶುಭಾಶಯಗಳು!"
+    },
+    "countdown.after": {
+      "en": "Thank you for celebrating Deepavali with us.",
+      "kn": "ನಮ್ಮೊಂದಿಗೆ ದೀಪಾವಳಿ ಆಚರಿಸಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದಗಳು."
+    },
+    "stories.error": {
+      "en": "Stories could not be loaded.",
+      "kn": "ಬರಹಗಳನ್ನು ತೆರೆಯಲಾಗಲಿಲ್ಲ. ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕ ಪರಿಶೀಲಿಸಿ, ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+    },
+    "ad.label": {
+      "en": "Advertisement",
+      "kn": "ಜಾಹೀರಾತು"
+    },
+    "share.text": {
+      "en": "Which Deepavali cracker are you? Find out and make your own greeting card with {publisher}.",
+      "kn": "ನೀವು ಯಾವ ದೀಪಾವಳಿ ಪಟಾಕಿ? {publisher} ಜೊತೆ ತಿಳಿದುಕೊಳ್ಳಿ, ನಿಮ್ಮದೇ ಶುಭಾಶಯ ಪತ್ರ ತಯಾರಿಸಿ."
+    },
+    "share.copied": {
+      "en": "Link copied ✓",
+      "kn": "ಲಿಂಕ್ ನಕಲಾಗಿದೆ ✓"
+    },
+    "share.copyFailed": {
+      "en": "Copy failed",
+      "kn": "ನಕಲಿಸಲಾಗಲಿಲ್ಲ"
+    },
+    "share.copiedStatus": {
+      "en": "Link copied to clipboard",
+      "kn": "ಲಿಂಕ್ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಾಗಿದೆ"
+    },
+    "share.copyFailedStatus": {
+      "en": "Could not copy the link",
+      "kn": "ಲಿಂಕ್ ನಕಲಿಸಲಾಗಲಿಲ್ಲ"
+    },
+    "share.copy": {
+      "en": "Copy link",
+      "kn": "ಲಿಂಕ್ ನಕಲಿಸಿ"
+    },
+    "greeting.status.badPhoto": {
+      "en": "We couldn’t open that photo. Please try a JPG or PNG.",
+      "kn": "ಈ ಫೋಟೊ ತೆರೆಯಲಾಗಲಿಲ್ಲ. JPG ಅಥವಾ PNG ಫೋಟೊ ಪ್ರಯತ್ನಿಸಿ."
+    },
+    "greeting.status.finding": {
+      "en": "Finding your face…",
+      "kn": "ನಿಮ್ಮ ಮುಖ ಹುಡುಕಲಾಗುತ್ತಿದೆ…"
+    },
+    "greeting.status.manyFaces": {
+      "en": "We found more than one face and used the largest. For a clean cutout, use a photo of just you.",
+      "kn": "ಒಂದಕ್ಕಿಂತ ಹೆಚ್ಚು ಮುಖಗಳಿವೆ; ದೊಡ್ಡ ಮುಖವನ್ನು ಬಳಸಲಾಗಿದೆ. ಸ್ಪಷ್ಟವಾಗಿ ಕತ್ತರಿಸಲು ನಿಮ್ಮೊಬ್ಬರದೇ ಫೋಟೊ ಬಳಸಿ."
+    },
+    "greeting.status.ready": {
+      "en": "Looking good! Pick an outfit and share.",
+      "kn": "ಚೆನ್ನಾಗಿದೆ! ಉಡುಗೆ ಆಯ್ಕೆಮಾಡಿ, ಹಂಚಿಕೊಳ್ಳಿ."
+    },
+    "greeting.status.noFace": {
+      "en": "We couldn’t find a face, so we centred your photo. A clear, front-facing selfie works best.",
+      "kn": "ಮುಖ ಪತ್ತೆಯಾಗಲಿಲ್ಲ, ಹಾಗಾಗಿ ಫೋಟೊವನ್ನು ಮಧ್ಯದಲ್ಲಿ ಇರಿಸಲಾಗಿದೆ. ನೇರವಾಗಿ ನೋಡುವ ಸ್ಪಷ್ಟ ಸೆಲ್ಫಿ ಉತ್ತಮ."
+    },
+    "greeting.status.noDetector": {
+      "en": "Face detection isn’t available right now, so we centred your photo.",
+      "kn": "ಮುಖ ಪತ್ತೆ ಸೌಲಭ್ಯ ಸದ್ಯ ಲಭ್ಯವಿಲ್ಲ, ಹಾಗಾಗಿ ಫೋಟೊವನ್ನು ಮಧ್ಯದಲ್ಲಿ ಇರಿಸಲಾಗಿದೆ."
+    },
+    "greeting.status.cutting": {
+      "en": "Cutting out your photo…",
+      "kn": "ನಿಮ್ಮ ಫೋಟೊ ಕತ್ತರಿಸಲಾಗುತ್ತಿದೆ…"
+    },
+    "greeting.status.noCutout": {
+      "en": "We couldn’t cut out your photo cleanly, so it’s shown in a soft frame. A clear photo of just you works best.",
+      "kn": "ಫೋಟೊವನ್ನು ಸ್ಪಷ್ಟವಾಗಿ ಕತ್ತರಿಸಲಾಗಲಿಲ್ಲ, ಹಾಗಾಗಿ ಮೃದು ಚೌಕಟ್ಟಿನಲ್ಲಿ ತೋರಿಸಲಾಗಿದೆ. ನಿಮ್ಮೊಬ್ಬರದೇ ಸ್ಪಷ್ಟ ಫೋಟೊ ಉತ್ತಮ."
+    },
+    "greeting.status.camera": {
+      "en": "Opening your camera… allow camera access if your browser asks.",
+      "kn": "ಕ್ಯಾಮೆರಾ ತೆರೆಯಲಾಗುತ್ತಿದೆ… ಬ್ರೌಸರ್ ಕೇಳಿದರೆ ಅನುಮತಿ ನೀಡಿ."
+    },
+    "greeting.status.cameraFailed": {
+      "en": "We couldn’t open your camera. Check the camera permission, or choose a photo instead.",
+      "kn": "ಕ್ಯಾಮೆರಾ ತೆರೆಯಲಾಗಲಿಲ್ಲ. ಕ್ಯಾಮೆರಾ ಅನುಮತಿ ಪರಿಶೀಲಿಸಿ, ಅಥವಾ ಫೋಟೊ ಆಯ್ಕೆಮಾಡಿ."
+    },
+    "greeting.card.yourPhoto": {
+      "en": "Your photo",
+      "kn": "ನಿಮ್ಮ ಫೋಟೊ"
+    },
+    "greeting.card.kicker": {
+      "en": "DEEPAVALI 2026",
+      "kn": "ದೀಪಾವಳಿ 2026"
+    },
+    "greeting.card.title": {
+      "en": "Happy Deepavali!",
+      "kn": "ದೀಪಾವಳಿಯ ಶುಭಾಶಯಗಳು!"
+    },
+    "greeting.card.lineNamed": {
+      "en": "{name} wishes you a bright Deepavali",
+      "kn": "{name} ಅವರಿಂದ ದೀಪಾವಳಿಯ ಶುಭಾಶಯಗಳು"
+    },
+    "greeting.card.line": {
+      "en": "Wishing you a bright Deepavali",
+      "kn": "ನಿಮಗೆ ಬೆಳಕಿನ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು"
+    },
+    "greeting.card.bandNoLogo": {
+      "en": "{publisher} · DEEPAVALI 2026",
+      "kn": "{publisher} · ದೀಪಾವಳಿ 2026"
+    },
+    "greeting.card.presentedBy": {
+      "en": "PRESENTED BY",
+      "kn": "ಪ್ರಾಯೋಜಕರು"
+    },
+    "greeting.mallige": {
+      "en": "mallige",
+      "kn": "ಮಲ್ಲಿಗೆ"
+    },
+    "greeting.hint.photoOnly": {
+      "en": "Tap your photo to select it and drag to move. Pinch and twist, or drag the round handle, to resize and rotate.",
+      "kn": "ನಿಮ್ಮ ಫೋಟೊ ಆಯ್ಕೆಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ, ಎಳೆದು ಸರಿಸಿ. ಗಾತ್ರ ಬದಲಿಸಲು ಮತ್ತು ತಿರುಗಿಸಲು ಎರಡು ಬೆರಳುಗಳಿಂದ ಹಿಗ್ಗಿಸಿ, ತಿರುಗಿಸಿ ಅಥವಾ ದುಂಡನೆಯ ಹಿಡಿಕೆಯನ್ನು ಎಳೆಯಿರಿ."
+    },
+    "greeting.hint.noPhoto": {
+      "en": "Add your photo to light up the card.",
+      "kn": "ಪತ್ರಕ್ಕೆ ಬೆಳಕು ತುಂಬಲು ನಿಮ್ಮ ಫೋಟೊ ಸೇರಿಸಿ."
+    },
+    "greeting.hint.withPhoto": {
+      "en": "Tap your photo or the {name} to select it and drag to move. Pinch and twist, or drag the round handle, to resize and rotate.",
+      "kn": "ನಿಮ್ಮ ಫೋಟೊ ಅಥವಾ {name} ಆಯ್ಕೆಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ, ಎಳೆದು ಸರಿಸಿ. ಗಾತ್ರ ಬದಲಿಸಲು ಮತ್ತು ತಿರುಗಿಸಲು ಎರಡು ಬೆರಳುಗಳಿಂದ ಹಿಗ್ಗಿಸಿ, ತಿರುಗಿಸಿ ಅಥವಾ ದುಂಡನೆಯ ಹಿಡಿಕೆಯನ್ನು ಎಳೆಯಿರಿ."
+    },
+    "greeting.hint": {
+      "en": "Tap the {name} to select it and drag to move. Pinch and twist, or drag the round handle, to resize and rotate.",
+      "kn": "{name} ಆಯ್ಕೆಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ, ಎಳೆದು ಸರಿಸಿ. ಗಾತ್ರ ಬದಲಿಸಲು ಮತ್ತು ತಿರುಗಿಸಲು ಎರಡು ಬೆರಳುಗಳಿಂದ ಹಿಗ್ಗಿಸಿ, ತಿರುಗಿಸಿ ಅಥವಾ ದುಂಡನೆಯ ಹಿಡಿಕೆಯನ್ನು ಎಳೆಯಿರಿ."
+    },
+    "greeting.share.title": {
+      "en": "Deepavali greeting",
+      "kn": "ದೀಪಾವಳಿ ಶುಭಾಶಯ"
+    },
+    "greeting.share.text": {
+      "en": "Happy Deepavali! Make your own card: {url}",
+      "kn": "ದೀಪಾವಳಿಯ ಶುಭಾಶಯಗಳು! ನಿಮ್ಮದೇ ಶುಭಾಶಯ ಪತ್ರ ಮಾಡಿ: {url}"
+    },
+    "cracker.sparkler.name": {
+      "en": "The Sparkler",
+      "kn": "ಸುರುಸುರು ಬತ್ತಿ"
+    },
+    "cracker.sparkler.meaning": {
+      "en": "The hand-held wire that showers soft golden sparks: the first cracker almost every child holds.",
+      "kn": "ಮೃದುವಾದ ಚಿನ್ನದ ಕಿಡಿಗಳನ್ನು ಸುರಿಸುವ, ಕೈಯಲ್ಲಿ ಹಿಡಿಯುವ ತಂತಿ: ಬಹುತೇಕ ಎಲ್ಲ ಮಕ್ಕಳು ಮೊದಲು ಹಿಡಿಯುವ ಪಟಾಕಿ."
+    },
+    "cracker.sparkler.personality": {
+      "en": "You're the warm one. You light up whoever stands next to you, quietly and steadily, and everyone wants you close by.",
+      "kn": "ನೀವು ಆತ್ಮೀಯರು. ಪಕ್ಕದಲ್ಲಿರುವವರನ್ನು ಸದ್ದಿಲ್ಲದೆ, ನಿರಂತರವಾಗಿ ಬೆಳಗುತ್ತೀರಿ; ಎಲ್ಲರಿಗೂ ನೀವು ಹತ್ತಿರವಿರಬೇಕು."
+    },
+    "cracker.flowerpot.name": {
+      "en": "The Flower Pot",
+      "kn": "ಹೂವಿನ ಕುಂಡ"
+    },
+    "cracker.flowerpot.meaning": {
+      "en": "The hoovina kunda: a little clay pot that sends up a fountain of sparks like a flower in bloom.",
+      "kn": "ಅರಳುವ ಹೂವಿನಂತೆ ಕಿಡಿಗಳ ಕಾರಂಜಿಯನ್ನು ಚಿಮ್ಮಿಸುವ ಪುಟ್ಟ ಮಣ್ಣಿನ ಕುಂಡ."
+    },
+    "cracker.flowerpot.personality": {
+      "en": "Cheerful and generous. You rise to every occasion and leave people smiling, without ever needing to make a bang.",
+      "kn": "ಹಸನ್ಮುಖಿ, ಉದಾರಿ. ಪ್ರತಿ ಸಂದರ್ಭಕ್ಕೂ ಸ್ಪಂದಿಸುತ್ತೀರಿ, ಸದ್ದು ಮಾಡದೆಯೇ ಎಲ್ಲರ ಮುಖದಲ್ಲಿ ನಗು ಮೂಡಿಸುತ್ತೀರಿ."
+    },
+    "cracker.chakri.name": {
+      "en": "The Ground Chakri",
+      "kn": "ನೆಲಚಕ್ರ"
+    },
+    "cracker.chakri.meaning": {
+      "en": "The spinning wheel that whirls on the floor in a circle of colour and light.",
+      "kn": "ಬಣ್ಣ ಮತ್ತು ಬೆಳಕಿನ ವೃತ್ತದಲ್ಲಿ ನೆಲದ ಮೇಲೆ ಗಿರಗಿರನೆ ತಿರುಗುವ ಚಕ್ರ."
+    },
+    "cracker.chakri.personality": {
+      "en": "Full of energy and always on the move. You turn any gathering into a party and keep everyone on their toes.",
+      "kn": "ಸದಾ ಚುರುಕು, ಸದಾ ಚಲನೆ. ಯಾವುದೇ ಕೂಟವನ್ನು ಸಂಭ್ರಮವಾಗಿಸುತ್ತೀರಿ, ಎಲ್ಲರನ್ನೂ ಲವಲವಿಕೆಯಿಂದ ಇಡುತ್ತೀರಿ."
+    },
+    "cracker.rocket.name": {
+      "en": "The Rocket",
+      "kn": "ರಾಕೆಟ್"
+    },
+    "cracker.rocket.meaning": {
+      "en": "Launched from a bottle, it shoots high into the night and bursts into stars.",
+      "kn": "ಬಾಟಲಿಯಿಂದ ಹಾರಿ, ರಾತ್ರಿಯ ಆಗಸದಲ್ಲಿ ಎತ್ತರಕ್ಕೆ ಚಿಮ್ಮಿ ನಕ್ಷತ್ರಗಳಾಗಿ ಸಿಡಿಯುತ್ತದೆ."
+    },
+    "cracker.rocket.personality": {
+      "en": "A big dreamer who aims high. You take off with confidence and love the view from the top.",
+      "kn": "ದೊಡ್ಡ ಕನಸುಗಾರರು, ಗುರಿ ಎತ್ತರದ್ದು. ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಮೇಲೇರುತ್ತೀರಿ, ಶಿಖರದ ನೋಟ ನಿಮಗಿಷ್ಟ."
+    },
+    "cracker.ladi.name": {
+      "en": "The Cracker String",
+      "kn": "ಪಟಾಕಿ ಸರ"
+    },
+    "cracker.ladi.meaning": {
+      "en": "The ladi: a long string of small crackers that pop one after another, on and on.",
+      "kn": "ಒಂದರ ನಂತರ ಒಂದರಂತೆ ಸಿಡಿಯುತ್ತಲೇ ಹೋಗುವ ಪುಟ್ಟ ಪಟಾಕಿಗಳ ಉದ್ದನೆಯ ಸರ."
+    },
+    "cracker.ladi.personality": {
+      "en": "The life of the party. Once you get going there's no stopping you: lively, loud and impossible to ignore.",
+      "kn": "ಕೂಟದ ಜೀವಾಳ. ಒಮ್ಮೆ ಶುರುವಾದರೆ ನಿಮ್ಮನ್ನು ತಡೆಯುವವರಿಲ್ಲ: ಉತ್ಸಾಹಿ, ಜೋರು, ಕಡೆಗಣಿಸಲಾಗದವರು."
+    },
+    "cracker.snake.name": {
+      "en": "The Snake Tablet",
+      "kn": "ಹಾವಿನ ಮಾತ್ರೆ"
+    },
+    "cracker.snake.meaning": {
+      "en": "A tiny black tablet that, once lit, slowly grows into a long curling snake of ash.",
+      "kn": "ಹಚ್ಚಿದ ಕೂಡಲೇ ನಿಧಾನವಾಗಿ ಸುರುಳಿ ಸುತ್ತುವ ಉದ್ದನೆಯ ಬೂದಿಯ ಹಾವಾಗಿ ಬೆಳೆಯುವ ಪುಟ್ಟ ಕಪ್ಪು ಮಾತ್ರೆ."
+    },
+    "cracker.snake.personality": {
+      "en": "Calm, curious and a little mysterious. You take your time, and you always surprise people in the end.",
+      "kn": "ಶಾಂತ, ಕುತೂಹಲಿ, ಸ್ವಲ್ಪ ನಿಗೂಢ. ನಿಧಾನವಾಗಿ ಸಾಗುತ್ತೀರಿ, ಕೊನೆಗೆ ಎಲ್ಲರನ್ನೂ ಅಚ್ಚರಿಗೊಳಿಸುತ್ತೀರಿ."
+    }
+  }
+}

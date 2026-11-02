@@ -1,0 +1,1052 @@
+{
+  "_about": "Kannada (Prajavani) edition of the Mysuru Dasara page. Editors: review the \"kn\" text only; \"en\" is the English original for reference. \"page\" is the text of index.html, \"strings\" is text the page scripts show (cards, countdown, greeting card). Keep {placeholders} such as {name} or {total} exactly as they are. After changes, run: python tools/build-cms-index.py",
+  "status": "Draft translation, editorial review pending (2026-10-06)",
+  "site": {
+    "lang": "kn",
+    "locale": "kn-IN",
+    "publisher": "ಪ್ರಜಾವಾಣಿ",
+    "publisherUrl": "https://www.prajavani.net/",
+    "publisherLogo": "site/assets/prajavani-white.svg",
+    "sponsor": "ಯೂನಿಯನ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾ",
+    "sponsorUrl": "https://homeloan.unionbankofindia.bank.in/",
+    "sponsorLogo": "https://images.assettype.com/prajavani/2026-10-15/kzt51rx7/Unionbank.svg",
+    "sponsorOnLight": true,
+    "creatives": true,
+    "creativeSets": [
+      {
+        "id": "home-loan",
+        "url": "https://homeloan.unionbankofindia.bank.in/",
+        "images": {
+          "970x250": "https://images.assettype.com/prajavani/2026-10-21/0u3mvat7/Home-970x250.png",
+          "300x250": "https://images.assettype.com/prajavani/2026-10-21/zwx8fz60/Home-300x250.png",
+          "300x600": "https://images.assettype.com/prajavani/2026-10-21/n7hxor1c/Home-300x600.png",
+          "320x50": "https://images.assettype.com/prajavani/2026-10-21/qsff8g3k/Home-320x50.png",
+          "320x480": "https://images.assettype.com/prajavani/2026-10-21/9gicjgpa/Home-320x480.png",
+          "728x90": "https://images.assettype.com/prajavani/2026-10-21/3702p00q/Home-728x90.png"
+        }
+      },
+      {
+        "id": "vehicle-loan",
+        "url": "https://dbp.unionbankofindia.bank.in/assets/vehicle-loan/landing",
+        "images": {
+          "300x250": "https://images.assettype.com/prajavani/2026-10-21/clcq0hyf/Vehicle-300x250.png",
+          "300x600": "https://images.assettype.com/prajavani/2026-10-21/t9zqrsg7/Vehicle-300x600.png",
+          "320x50": "https://images.assettype.com/prajavani/2026-10-21/6i0njzxo/Vehicle-320x50.png",
+          "320x480": "https://images.assettype.com/prajavani/2026-10-21/8eq1o4ok/Vehicle-320x480.png",
+          "728x90": "https://images.assettype.com/prajavani/2026-10-21/clekjxpo/Vehicle-728x90.png",
+          "970x250": "https://images.assettype.com/prajavani/2026-10-21/h88ow0w5/Vehicle-970x250.png"
+        }
+      }
+    ],
+    "gtmId": "GTM-MGBFQ9R",
+    "collection": "dasara-specials",
+    "videosFile": "content/pv-dasara-videos.json",
+    "extraHosts": [
+      "dev.prajavani.net"
+    ]
+  },
+  "page": [
+    {
+      "en": "<title>Mysuru Dasara 2026 | Deccan Herald</title>",
+      "kn": "<title>ಮೈಸೂರು ದಸರಾ 2026 | ಪ್ರಜಾವಾಣಿ</title>"
+    },
+    {
+      "en": "content=\"Deccan Herald's Mysuru Dasara 2026 coverage, stories and live stream information.\"",
+      "kn": "content=\"ಮೈಸೂರು ದಸರಾ 2026: ಪ್ರಜಾವಾಣಿ ವಿಶೇಷ ವರದಿಗಳು, ಸುದ್ದಿಗಳು ಮತ್ತು ನೇರ ಪ್ರಸಾರದ ಮಾಹಿತಿ.\""
+    },
+    {
+      "en": "<meta property=\"og:site_name\" content=\"Deccan Herald\">",
+      "kn": "<meta property=\"og:site_name\" content=\"ಪ್ರಜಾವಾಣಿ\">"
+    },
+    {
+      "en": "<meta property=\"og:title\" content=\"Mysuru Dasara 2026 | Deccan Herald\">",
+      "kn": "<meta property=\"og:title\" content=\"ಮೈಸೂರು ದಸರಾ 2026 | ಪ್ರಜಾವಾಣಿ\">"
+    },
+    {
+      "en": "content=\"Eleven days of heritage, pageantry and devotion. Follow the stories, rituals and celebrations of Mysuru Dasara, 11–21 October 2026.\"",
+      "kn": "content=\"ಹನ್ನೊಂದು ದಿನಗಳ ಪರಂಪರೆ, ವೈಭವ ಮತ್ತು ಭಕ್ತಿ. ಮೈಸೂರು ದಸರಾದ (ಅಕ್ಟೋಬರ್ 11–21, 2026) ಸುದ್ದಿಗಳು, ಆಚರಣೆಗಳು ಮತ್ತು ಸಂಭ್ರಮ ಒಂದೇ ಕಡೆ.\""
+    },
+    {
+      "en": ">Skip to content</a>",
+      "kn": ">ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ</a>"
+    },
+    {
+      "en": "aria-label=\"Deccan Herald home\"",
+      "kn": "aria-label=\"ಪ್ರಜಾವಾಣಿ ಮುಖಪುಟ\""
+    },
+    {
+      "en": "alt=\"Deccan Herald\"",
+      "kn": "alt=\"ಪ್ರಜಾವಾಣಿ\""
+    },
+    {
+      "en": "aria-label=\"Mysuru Dasara 2026 home\"",
+      "kn": "aria-label=\"ಮೈಸೂರು ದಸರಾ 2026 ಮುಖಪುಟ\""
+    },
+    {
+      "en": "<strong>Mysuru Dasara</strong><small><b>2026</b> · THE ROYAL FESTIVAL OF KARNATAKA</small>",
+      "kn": "<strong>ಮೈಸೂರು ದಸರಾ</strong><small><b>2026</b> · ಕರ್ನಾಟಕದ ರಾಜವೈಭವದ ಉತ್ಸವ</small>"
+    },
+    {
+      "en": "aria-label=\"Main navigation\"",
+      "kn": "aria-label=\"ಮುಖ್ಯ ಮೆನು\""
+    },
+    {
+      "en": "data-nav=\"home\">Home</a>",
+      "kn": "data-nav=\"home\">ಮುಖಪುಟ</a>"
+    },
+    {
+      "en": "data-nav=\"stories\">Stories</a>",
+      "kn": "data-nav=\"stories\">ಸುದ್ದಿಗಳು</a>"
+    },
+    {
+      "en": "data-watch-label>Watch</a>",
+      "kn": "data-watch-label>ವೀಕ್ಷಿಸಿ</a>"
+    },
+    {
+      "en": "data-nav=\"greeting\">Greeting card</a>",
+      "kn": "data-nav=\"greeting\">ಶುಭಾಶಯ ಪತ್ರ</a>"
+    },
+    {
+      "en": "aria-label=\"Title sponsor: Bank of Maharashtra website\"",
+      "kn": "aria-label=\"ಶೀರ್ಷಿಕೆ ಪ್ರಾಯೋಜಕರು: ಯೂನಿಯನ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾ ಜಾಲತಾಣ\""
+    },
+    {
+      "en": "alt=\"Bank of Maharashtra\"",
+      "kn": "alt=\"ಯೂನಿಯನ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾ\""
+    },
+    {
+      "en": "aria-label=\"Open menu\"",
+      "kn": "aria-label=\"ಮೆನು ತೆರೆಯಿರಿ\""
+    },
+    {
+      "en": "<span class=\"header-sponsor-label\">PRESENTED BY</span>",
+      "kn": "<span class=\"header-sponsor-label\">ಪ್ರಾಯೋಜಕರು</span>"
+    },
+    {
+      "en": "<span class=\"sponsor-label\">PRESENTED BY</span>",
+      "kn": "<span class=\"sponsor-label\">ಪ್ರಾಯೋಜಕರು</span>"
+    },
+    {
+      "en": "aria-label=\"Bank of Maharashtra website\"",
+      "kn": "aria-label=\"ಯೂನಿಯನ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾ ಜಾಲತಾಣ\""
+    },
+    {
+      "en": "<span class=\"sponsor-note\">Proudly presenting Mysuru Dasara 2026</span>",
+      "kn": "<span class=\"sponsor-note\">ಮೈಸೂರು ದಸರಾ 2026ರ ಹೆಮ್ಮೆಯ ಪ್ರಾಯೋಜಕರು</span>"
+    },
+    {
+      "en": "aria-label=\"Site menu\"",
+      "kn": "aria-label=\"ಜಾಲತಾಣದ ಮೆನು\""
+    },
+    {
+      "en": "aria-label=\"Close menu\"",
+      "kn": "aria-label=\"ಮೆನು ಮುಚ್ಚಿ\""
+    },
+    {
+      "en": "<p class=\"drawer-kicker\">MYSURU DASARA 2026</p>",
+      "kn": "<p class=\"drawer-kicker\">ಮೈಸೂರು ದಸರಾ 2026</p>"
+    },
+    {
+      "en": "<a href=\"#home\">Home <span>01</span></a><a href=\"#stories\">Stories <span>02</span></a><a href=\"#watch\"><b data-watch-label>Watch</b> <span>03</span></a><a href=\"#greeting\">Greeting card <span>04</span></a><a href=\"#\" id=\"account-link\" hidden>Login <span>05</span></a>",
+      "kn": "<a href=\"#home\">ಮುಖಪುಟ <span>01</span></a><a href=\"#stories\">ಸುದ್ದಿಗಳು <span>02</span></a><a href=\"#watch\"><b data-watch-label>ವೀಕ್ಷಿಸಿ</b> <span>03</span></a><a href=\"#greeting\">ಶುಭಾಶಯ ಪತ್ರ <span>04</span></a><a href=\"#\" id=\"account-link\" hidden>ಲಾಗಿನ್ <span>05</span></a>"
+    },
+    {
+      "en": ">Explore Deccan Herald ↗</a>",
+      "kn": ">ಪ್ರಜಾವಾಣಿಯಲ್ಲಿ ಇನ್ನಷ್ಟು ↗</a>"
+    },
+    {
+      "en": "aria-label=\"Mysuru Dasara photos\"",
+      "kn": "aria-label=\"ಮೈಸೂರು ದಸರಾ ಚಿತ್ರಗಳು\""
+    },
+    {
+      "en": "aria-label=\"Previous photo\"",
+      "kn": "aria-label=\"ಹಿಂದಿನ ಚಿತ್ರ\""
+    },
+    {
+      "en": "aria-label=\"Choose a photo\"",
+      "kn": "aria-label=\"ಚಿತ್ರ ಆಯ್ಕೆಮಾಡಿ\""
+    },
+    {
+      "en": "aria-label=\"Next photo\"",
+      "kn": "aria-label=\"ಮುಂದಿನ ಚಿತ್ರ\""
+    },
+    {
+      "en": "aria-label=\"Pause slideshow\"",
+      "kn": "aria-label=\"ಸ್ಲೈಡ್‌ಶೋ ನಿಲ್ಲಿಸಿ\""
+    },
+    {
+      "en": "<p class=\"eyebrow\"><span></span> THE ROYAL FESTIVAL OF KARNATAKA</p>",
+      "kn": "<p class=\"eyebrow\"><span></span> ಕರ್ನಾಟಕದ ದಸರಾ ಹಬ್ಬ</p>"
+    },
+    {
+      "en": "<h1>Mysuru <em>Dasara</em></h1>",
+      "kn": "<h1>ಮೈಸೂರು <em>ದಸರಾ</em></h1>"
+    },
+    {
+      "en": "<p class=\"hero-date\">11 — 21 October 2026</p>",
+      "kn": "<p class=\"hero-date\">ಅಕ್ಟೋಬರ್ 11 — 21, 2026</p>"
+    },
+    {
+      "en": "id=\"countdown-label\">THE CELEBRATION BEGINS IN</p>",
+      "kn": "id=\"countdown-label\">ಸಂಭ್ರಮ ಆರಂಭದ ಕ್ಷಣ</p>"
+    },
+    {
+      "en": "<span class=\"cd-name\">Days</span>",
+      "kn": "<span class=\"cd-name\">ದಿನಗಳು</span>"
+    },
+    {
+      "en": "<span class=\"cd-name\">Hours</span>",
+      "kn": "<span class=\"cd-name\">ಗಂಟೆಗಳು</span>"
+    },
+    {
+      "en": "<span class=\"cd-name\">Minutes</span>",
+      "kn": "<span class=\"cd-name\">ನಿಮಿಷಗಳು</span>"
+    },
+    {
+      "en": "<span class=\"cd-name\">Seconds</span>",
+      "kn": "<span class=\"cd-name\">ಸೆಕೆಂಡ್</span>"
+    },
+    {
+      "en": "id=\"countdown-foot\">Sunday, 11 October 2026 · IST</p>",
+      "kn": "id=\"countdown-foot\">ಭಾನುವಾರ, ಅಕ್ಟೋಬರ್ 11, 2026 · IST</p>"
+    },
+    {
+      "en": ">Add to calendar <span",
+      "kn": ">ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ <span"
+    },
+    {
+      "en": "<span class=\"hero-calendar-note\">Google, Outlook or Apple calendar</span>",
+      "kn": "<span class=\"hero-calendar-note\">Google, Outlook ಅಥವಾ Apple ಕ್ಯಾಲೆಂಡರ್</span>"
+    },
+    {
+      "en": ">Read the stories <span>↗</span>",
+      "kn": ">ವರದಿಗಳನ್ನು ಓದಿ <span>↗</span>"
+    },
+    {
+      "en": "id=\"hero-secondary-cta\">The grand finale <span>↓</span>",
+      "kn": "id=\"hero-secondary-cta\">ದಸರಾ ಫೈನಲ್ ಜಂಬೂಸವಾರಿ <span>↓</span>"
+    },
+    {
+      "en": "aria-label=\"Mysuru weather\"",
+      "kn": "aria-label=\"ಮೈಸೂರು ಹವಾಮಾನ\""
+    },
+    {
+      "en": "<p class=\"weather-kicker\">MYSURU NOW</p>",
+      "kn": "<p class=\"weather-kicker\">ಮೈಸೂರಿನಲ್ಲಿ ಈಗ</p>"
+    },
+    {
+      "en": "<span class=\"weather-status\">Loading weather…</span>",
+      "kn": "<span class=\"weather-status\">ಹವಾಮಾನ ಮಾಹಿತಿಗಾಗಿ</span>"
+    },
+    {
+      "en": "aria-label=\"Five day forecast\"",
+      "kn": "aria-label=\"5 ದಿನಗಳ ಹವಾಮಾನ ಮುನ್ಸೂಚನೆ\""
+    },
+    {
+      "en": ">Weather data by <a",
+      "kn": ">ಹವಾಮಾನ ಮಾಹಿತಿ <a"
+    },
+    {
+      "en": "<p class=\"eyebrow\">THE FESTIVAL, THROUGH DH</p><h2>Stories from<br><em>Mysuru Dasara.</em></h2></div><p class=\"section-intro\">The traditions, people and moments behind the celebration, reported by Deccan Herald.</p>",
+      "kn": "<p class=\"eyebrow\">ಪ್ರಜಾವಾಣಿ ಕಣ್ಣಲ್ಲಿ ದಸರಾ ಹಬ್ಬ</p><h2>ಮೈಸೂರು ದಸರಾ<br><em>ಸುದ್ದಿ ಸಂಭ್ರಮ.</em></h2></div><p class=\"section-intro\">ಹಬ್ಬದ ಹಿಂದಿನ ಪರಂಪರೆ, ಜನರು ಮತ್ತು ಕ್ಷಣಗಳು — ಪ್ರಜಾವಾಣಿ ವರದಿಗಳಲ್ಲಿ.</p>"
+    },
+    {
+      "en": "<p class=\"story-status\">Loading Deccan Herald stories…</p>",
+      "kn": "<p class=\"story-status\">ಡೆಕ್ಕನ್‌ ಹೆರಾಲ್ಡ್‌/ ಪ್ರಜಾವಾಣಿ ವರದಿಗಳಿಗಾಗಿ ಇಲ್ಲಿ ನೋಡಿ</p>"
+    },
+    {
+      "en": ">Read more stories <span",
+      "kn": ">ಇನ್ನಷ್ಟು ದಸರಾ ಸುದ್ದಿಗಳು <span"
+    },
+    {
+      "en": "<span aria-hidden=\"true\">←</span> Home</button>",
+      "kn": "<span aria-hidden=\"true\">←</span> ಮುಖಪುಟ</button>"
+    },
+    {
+      "en": "tabindex=\"-1\">Mysuru Dasara stories</h2>",
+      "kn": "tabindex=\"-1\">ಮೈಸೂರು ದಸರಾ ವರದಿಗಳು</h2>"
+    },
+    {
+      "en": "aria-label=\"Filter stories\"",
+      "kn": "aria-label=\"ಸುದ್ದಿಗಳನ್ನು ವಿಂಗಡಿಸಿ\""
+    },
+    {
+      "en": "aria-pressed=\"true\">All</button>",
+      "kn": "aria-pressed=\"true\">ಎಲ್ಲವೂ</button>"
+    },
+    {
+      "en": "aria-pressed=\"false\">Current coverage</button>",
+      "kn": "aria-pressed=\"false\">ಈ ವರ್ಷದ ಸುದ್ದಿ</button>"
+    },
+    {
+      "en": "aria-pressed=\"false\">History &amp; traditions</button>",
+      "kn": "aria-pressed=\"false\">ಇತಿಹಾಸ ಮತ್ತು ಪರಂಪರೆ</button>"
+    },
+    {
+      "en": "<span id=\"story-count\">20</span> STORIES</p>",
+      "kn": "<span id=\"story-count\">20</span> ಸುದ್ದಿಗಳು</p>"
+    },
+    {
+      "en": ">Load more stories <span",
+      "kn": ">ಇನ್ನಷ್ಟು ತೋರಿಸಿ <span"
+    },
+    {
+      "en": "<p class=\"eyebrow\" id=\"watch-eyebrow\">DASARA VIDEO PREVIEW</p><h2><span id=\"watch-title-a\">A look back at</span><br><em id=\"watch-title-b\">Mysuru Dasara.</em></h2></div><p class=\"section-intro\" id=\"watch-intro\">Watch this archive video while the 2026 live-stream source is being prepared. The live broadcast will take this place on October 21.</p>",
+      "kn": "<p class=\"eyebrow\" id=\"watch-eyebrow\">ದಸರಾ ವಿಡಿಯೊಗಳು</p><h2><span id=\"watch-title-a\">ಮೈಸೂರು ದಸರಾ</span><br><em id=\"watch-title-b\">ವಿಡಿಯೊಗಳಲ್ಲಿ.</em></h2></div><p class=\"section-intro\" id=\"watch-intro\">ದಸರಾ ವಿಡಿಯೊಗಳನ್ನು ವೀಕ್ಷಿಸಿ. ಅಕ್ಟೋಬರ್ 21ರಂದು ಜಂಬೂಸವಾರಿಯ ನೇರ ಪ್ರಸಾರ ಇಲ್ಲೇ ಇರಲಿದೆ.</p>"
+    },
+    {
+      "en": "aria-label=\"Deccan Herald Mysuru Dasara archive video preview\"",
+      "kn": "aria-label=\"ಮೈಸೂರು ದಸರಾ ಹಳೆಯ ವಿಡಿಯೊ\""
+    },
+    {
+      "en": "title=\"Mysuru Dasara archive video\"",
+      "kn": "title=\"ಮೈಸೂರು ದಸರಾ ಹಳೆಯ ವಿಡಿಯೊ\""
+    },
+    {
+      "en": "<span id=\"watch-badge\"><i></i> YOUTUBE · ARCHIVE PREVIEW</span>",
+      "kn": "<span id=\"watch-badge\"><i></i> ದಸರಾ ವಿಡಿಯೊಗಳು · YOUTUBE</span>"
+    },
+    {
+      "en": ">Watch on YouTube <b>",
+      "kn": ">YouTubeನಲ್ಲೂ ನೋಡಿ <b>"
+    },
+    {
+      "en": "aria-label=\"Previous videos\"",
+      "kn": "aria-label=\"ಹಿಂದಿನ ವಿಡಿಯೊಗಳು\""
+    },
+    {
+      "en": "aria-label=\"More Dasara videos\"",
+      "kn": "aria-label=\"ಇನ್ನಷ್ಟು ದಸರಾ ವಿಡಿಯೊಗಳು\""
+    },
+    {
+      "en": "aria-label=\"More videos\"",
+      "kn": "aria-label=\"ಇನ್ನಷ್ಟು ವಿಡಿಯೊಗಳು\""
+    },
+    {
+      "en": "id=\"studio-back\" aria-label=\"Back\"",
+      "kn": "id=\"studio-back\" aria-label=\"ಹಿಂದೆ\""
+    },
+    {
+      "en": "<span class=\"studio-count\" id=\"studio-count\">1 of 3</span> <span id=\"studio-title\">Add your photo</span>",
+      "kn": "<span class=\"studio-count\" id=\"studio-count\">3ರಲ್ಲಿ 1</span> <span id=\"studio-title\">ನಿಮ್ಮ ಫೋಟೊ ಸೇರಿಸಿ</span>"
+    },
+    {
+      "en": "aria-label=\"Download card\"",
+      "kn": "aria-label=\"ಪತ್ರ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ\""
+    },
+    {
+      "en": "aria-label=\"Close greeting maker\"",
+      "kn": "aria-label=\"ಶುಭಾಶಯ ಪತ್ರ ಮುಚ್ಚಿ\""
+    },
+    {
+      "en": "<p class=\"eyebrow\">YOUR DASARA GREETING</p>",
+      "kn": "<p class=\"eyebrow\">ನಿಮ್ಮ ದಸರಾ ಶುಭಾಶಯ</p>"
+    },
+    {
+      "en": "id=\"greeting-title\">Put yourself in<br><em>the celebration.</em></h2>",
+      "kn": "id=\"greeting-title\">ಸಂಭ್ರಮದಲ್ಲಿ<br><em>ನೀವೂ ಭಾಗಿಯಾಗಿ.</em></h2>"
+    },
+    {
+      "en": "<p class=\"section-intro\">Add a selfie and we will make a festive Mysuru Dasara card for you to share.</p>",
+      "kn": "<p class=\"section-intro\">ಸೆಲ್ಫಿ ಸೇರಿಸಿ; ಹಂಚಿಕೊಳ್ಳಲು ನಿಮ್ಮದೇ ಮೈಸೂರು ದಸರಾ ಶುಭಾಶಯ ಪತ್ರ ಸಿದ್ಧ.</p>"
+    },
+    {
+      "en": ">Take a selfie <span",
+      "kn": ">ಸೆಲ್ಫಿ ತೆಗೆಯಿರಿ <span"
+    },
+    {
+      "en": ">Choose a photo <span",
+      "kn": ">ಫೋಟೊ ಆಯ್ಕೆಮಾಡಿ <span"
+    },
+    {
+      "en": "<p class=\"greeting-tip greeting-privacy\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"11\" width=\"16\" height=\"10\" rx=\"2\"/><path d=\"M8 11V7a4 4 0 0 1 8 0v4\"/></svg><span><strong>Your photo is never uploaded or stored.</strong> The card is made right here on your device, and nothing is sent to our servers.</span></p>",
+      "kn": "<p class=\"greeting-tip greeting-privacy\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"11\" width=\"16\" height=\"10\" rx=\"2\"/><path d=\"M8 11V7a4 4 0 0 1 8 0v4\"/></svg><span><strong>ನಿಮ್ಮ ಫೋಟೊವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ, ಸಂಗ್ರಹಿಸುವುದೂ ಇಲ್ಲ.</strong> ಶುಭಾಶಯ ಪತ್ರ ನಿಮ್ಮ ಫೋನ್‌ನಲ್ಲೇ ತಯಾರಾಗುತ್ತದೆ; ನಮ್ಮ ಸರ್ವರ್‌ಗೆ ಏನನ್ನೂ ಕಳುಹಿಸುವುದಿಲ್ಲ.</span></p>"
+    },
+    {
+      "en": "<p class=\"greeting-tip\">Tip: use a clear, front-facing photo of just you in good light. Group photos may not cut out cleanly.</p>",
+      "kn": "<p class=\"greeting-tip\">ಸಲಹೆ: ಉತ್ತಮ ಬೆಳಕಿನಲ್ಲಿ, ನೇರವಾಗಿ ನೋಡುತ್ತಿರುವ ನಿಮ್ಮೊಬ್ಬರದೇ ಸ್ಪಷ್ಟ ಫೋಟೊ ಬಳಸಿ. ಗುಂಪು ಫೋಟೊಗಳು ಸರಿಯಾಗಿ ಕತ್ತರಿಸಲ್ಪಡದಿರಬಹುದು.</p>"
+    },
+    {
+      "en": "aria-label=\"Take a selfie\"",
+      "kn": "aria-label=\"ಸೆಲ್ಫಿ ತೆಗೆಯಿರಿ\""
+    },
+    {
+      "en": ">Capture <span",
+      "kn": ">ಕ್ಲಿಕ್ ಮಾಡಿ <span"
+    },
+    {
+      "en": "id=\"camera-cancel\">Cancel</button>",
+      "kn": "id=\"camera-cancel\">ರದ್ದುಮಾಡಿ</button>"
+    },
+    {
+      "en": "aria-label=\"Customise your card\"",
+      "kn": "aria-label=\"ನಿಮ್ಮ ಪತ್ರ ವಿನ್ಯಾಸಗೊಳಿಸಿ\""
+    },
+    {
+      "en": "data-tab=\"outfit\" aria-selected=\"true\">Outfit</button>",
+      "kn": "data-tab=\"outfit\" aria-selected=\"true\">ಉಡುಗೆ</button>"
+    },
+    {
+      "en": "data-tab=\"pose\" aria-selected=\"false\">Pose</button>",
+      "kn": "data-tab=\"pose\" aria-selected=\"false\">ಭಂಗಿ</button>"
+    },
+    {
+      "en": "data-tab=\"name\" aria-selected=\"false\">Name</button>",
+      "kn": "data-tab=\"name\" aria-selected=\"false\">ಹೆಸರು</button>"
+    },
+    {
+      "en": ">Choose an outfit</legend>",
+      "kn": ">ಉಡುಗೆ ಆಯ್ಕೆಮಾಡಿ</legend>"
+    },
+    {
+      "en": "value=\"peta\" checked> Peta<span class=\"chip-extra\"> &amp; kurta</span>",
+      "kn": "value=\"peta\" checked> ಪೇಟ<span class=\"chip-extra\"> ಮತ್ತು ಕುರ್ತಾ</span>"
+    },
+    {
+      "en": "value=\"saree\"> Saree<span class=\"chip-extra\"> &amp; mallige</span>",
+      "kn": "value=\"saree\"> ಸೀರೆ<span class=\"chip-extra\"> ಮತ್ತು ಮಲ್ಲಿಗೆ</span>"
+    },
+    {
+      "en": ">Choose a pose</legend>",
+      "kn": ">ಭಂಗಿ ಆಯ್ಕೆಮಾಡಿ</legend>"
+    },
+    {
+      "en": "value=\"namaste\" checked> Namaste</label>",
+      "kn": "value=\"namaste\" checked> ನಮಸ್ತೆ</label>"
+    },
+    {
+      "en": "value=\"wave\"> Wave</label>",
+      "kn": "value=\"wave\"> ಕೈಬೀಸಿ</label>"
+    },
+    {
+      "en": "<span class=\"visually-hidden\">Your name (optional)</span>",
+      "kn": "<span class=\"visually-hidden\">ನಿಮ್ಮ ಹೆಸರು (ಐಚ್ಛಿಕ)</span>"
+    },
+    {
+      "en": "placeholder=\"Your name (optional)\"",
+      "kn": "placeholder=\"ನಿಮ್ಮ ಹೆಸರು (ಐಚ್ಛಿಕ)\""
+    },
+    {
+      "en": ">Preview &amp; share <span",
+      "kn": ">ನೋಡಿ, ಹಂಚಿಕೊಳ್ಳಿ <span"
+    },
+    {
+      "en": ">Share card <span",
+      "kn": ">ಪತ್ರ ಹಂಚಿಕೊಳ್ಳಿ <span"
+    },
+    {
+      "en": ">Download <span aria-hidden=\"true\">↓</span>",
+      "kn": ">ಡೌನ್‌ಲೋಡ್ <span aria-hidden=\"true\">↓</span>"
+    },
+    {
+      "en": ">Reset position</button>",
+      "kn": ">ಸ್ಥಾನ ಮರುಹೊಂದಿಸಿ</button>"
+    },
+    {
+      "en": "<span aria-hidden=\"true\">←</span> Back</button>",
+      "kn": "<span aria-hidden=\"true\">←</span> ಹಿಂದೆ</button>"
+    },
+    {
+      "en": "id=\"studio-forward\">Next <span",
+      "kn": "id=\"studio-forward\">ಮುಂದೆ <span"
+    },
+    {
+      "en": ">← Edit card</button>",
+      "kn": ">← ಪತ್ರ ತಿದ್ದಿ</button>"
+    },
+    {
+      "en": ">Use a different photo</button>",
+      "kn": ">ಬೇರೆ ಫೋಟೊ ಬಳಸಿ</button>"
+    },
+    {
+      "en": "aria-label=\"Preview of your Mysuru Dasara greeting card. Tap your photo or the peta or mallige to select it, then drag to move. Pinch and twist, or drag the round handle at its corner, to resize and rotate. Keyboard: Enter switches between photo and peta or mallige, arrow keys move, plus and minus resize, square brackets rotate.\"",
+      "kn": "aria-label=\"ನಿಮ್ಮ ಮೈಸೂರು ದಸರಾ ಶುಭಾಶಯ ಪತ್ರದ ಮುನ್ನೋಟ. ನಿಮ್ಮ ಫೋಟೊ, ಪೇಟ ಅಥವಾ ಮಲ್ಲಿಗೆಯನ್ನು ಆಯ್ಕೆಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ, ಎಳೆದು ಸರಿಸಿ. ಗಾತ್ರ ಬದಲಿಸಲು ಮತ್ತು ತಿರುಗಿಸಲು ಎರಡು ಬೆರಳುಗಳಿಂದ ಹಿಗ್ಗಿಸಿ, ತಿರುಗಿಸಿ ಅಥವಾ ಮೂಲೆಯ ದುಂಡನೆಯ ಹಿಡಿಕೆಯನ್ನು ಎಳೆಯಿರಿ. ಕೀಬೋರ್ಡ್: Enter ಫೋಟೊ ಮತ್ತು ಪೇಟ/ಮಲ್ಲಿಗೆ ನಡುವೆ ಬದಲಿಸುತ್ತದೆ, ಬಾಣದ ಗುರುತುಗಳು ಸರಿಸುತ್ತವೆ, ಪ್ಲಸ್ ಮತ್ತು ಮೈನಸ್ ಗಾತ್ರ ಬದಲಿಸುತ್ತವೆ, ಚೌಕ ಆವರಣಗಳು ತಿರುಗಿಸುತ್ತವೆ.\""
+    },
+    {
+      "en": "id=\"greeting-hint\">Drag the peta to fit your head.</p>",
+      "kn": "id=\"greeting-hint\">ಪೇಟವನ್ನು ಎಳೆದು ನಿಮ್ಮ ತಲೆಗೆ ಹೊಂದಿಸಿ.</p>"
+    },
+    {
+      "en": ">Make my greeting card <span",
+      "kn": ">ನನ್ನ ಶುಭಾಶಯ ಪತ್ರ ಮಾಡಿ <span"
+    },
+    {
+      "en": "<p class=\"eyebrow\">SPREAD THE FESTIVITY</p><h2 id=\"share-title\">Share Mysuru Dasara</h2><p class=\"share-copy\">Share the celebration with family and friends.</p>",
+      "kn": "<p class=\"eyebrow\">ಸಂಭ್ರಮ ಹಂಚಿಕೊಳ್ಳಿ</p><h2 id=\"share-title\">ಮೈಸೂರು ದಸರಾ ಹಂಚಿಕೊಳ್ಳಿ</h2><p class=\"share-copy\">ಕುಟುಂಬ, ಸ್ನೇಹಿತರೊಂದಿಗೆ ಹಬ್ಬದ ಸಂಭ್ರಮ ಹಂಚಿಕೊಳ್ಳಿ.</p>"
+    },
+    {
+      "en": "data-track=\"share_native\" hidden><svg class=\"share-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"18\" cy=\"5\" r=\"3\"/><circle cx=\"6\" cy=\"12\" r=\"3\"/><circle cx=\"18\" cy=\"19\" r=\"3\"/><path d=\"M8.6 13.5l6.8 4M15.4 6.5l-6.8 4\"/></svg><span class=\"share-label\">Share</span></button>",
+      "kn": "data-track=\"share_native\" hidden><svg class=\"share-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"18\" cy=\"5\" r=\"3\"/><circle cx=\"6\" cy=\"12\" r=\"3\"/><circle cx=\"18\" cy=\"19\" r=\"3\"/><path d=\"M8.6 13.5l6.8 4M15.4 6.5l-6.8 4\"/></svg><span class=\"share-label\">ಹಂಚಿಕೊಳ್ಳಿ</span></button>"
+    },
+    {
+      "en": "data-track=\"share_copy\"><svg class=\"share-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5\"/><path d=\"M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5\"/></svg><span class=\"share-label\">Copy link</span></button>",
+      "kn": "data-track=\"share_copy\"><svg class=\"share-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5\"/><path d=\"M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5\"/></svg><span class=\"share-label\">ಲಿಂಕ್ ನಕಲಿಸಿ</span></button>"
+    },
+    {
+      "en": ">More from Deccan Herald ↗</a></div>",
+      "kn": ">ಪ್ರಜಾವಾಣಿಯಲ್ಲಿ ಇನ್ನಷ್ಟು ↗</a></div>"
+    },
+    {
+      "en": "aria-label=\"Mobile navigation\"",
+      "kn": "aria-label=\"ಮೆನು\""
+    },
+    {
+      "en": "<span>Home</span>",
+      "kn": "<span>ಮುಖಪುಟ</span>"
+    },
+    {
+      "en": "<span>Stories</span>",
+      "kn": "<span>ವರದಿಗಳು</span>"
+    },
+    {
+      "en": "<span data-watch-label>Watch</span>",
+      "kn": "<span data-watch-label>ವೀಕ್ಷಿಸಿ</span>"
+    },
+    {
+      "en": "<span>Menu</span>",
+      "kn": "<span>ವಿವರ</span>"
+    },
+    {
+      "en": "aria-label=\"Make your Dasara greeting card\"",
+      "kn": "aria-label=\"ನಿಮ್ಮ ದಸರಾ ಶುಭಾಶಯ ಪತ್ರ ಮಾಡಿ\""
+    },
+    {
+      "en": "<span>Make your Dasara card</span>",
+      "kn": "<span>ನಿಮ್ಮ ದಸರಾ ಪತ್ರ ಮಾಡಿ</span>"
+    },
+    {
+      "en": "aria-label=\"Advertisement\"",
+      "kn": "aria-label=\"ಜಾಹೀರಾತು\""
+    },
+    {
+      "en": "<link rel=\"canonical\" href=\"https://www.deccanherald.com/pages/dasara-special\">\n  <link rel=\"alternate\" hreflang=\"en\" href=\"https://www.deccanherald.com/pages/dasara-special\">\n  <link rel=\"alternate\" hreflang=\"kn\" href=\"https://www.prajavani.net/pages/dasara-special\">\n  <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.deccanherald.com/pages/dasara-special\">\n  <meta property=\"og:url\" content=\"https://www.deccanherald.com/pages/dasara-special\">\n  <meta property=\"og:locale\" content=\"en_IN\">\n  <meta property=\"og:image\" content=\"https://cf-images.assettype.com/deccanherald/2026-10-05/6vo28ktg/WhatsApp-Image-2026-10-05-at-10.51.11.jpeg?w=1200&auto=format\">\n  <meta property=\"og:image:width\" content=\"1200\">\n  <meta name=\"twitter:image\" content=\"https://cf-images.assettype.com/deccanherald/2026-10-05/6vo28ktg/WhatsApp-Image-2026-10-05-at-10.51.11.jpeg?w=1200&auto=format\">\n  <script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"url\":\"https://www.deccanherald.com/pages/dasara-special\",\"image\":[\"https://cf-images.assettype.com/deccanherald/2026-10-05/6vo28ktg/WhatsApp-Image-2026-10-05-at-10.51.11.jpeg?w=1200&auto=format\"],\"name\":\"Mysuru Dasara 2026\",\"startDate\":\"2026-10-11\",\"endDate\":\"2026-10-21\",\"eventAttendanceMode\":\"https://schema.org/MixedEventAttendanceMode\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"inLanguage\":\"en\",\"location\":{\"@type\":\"Place\",\"name\":\"Mysuru\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Mysuru\",\"addressRegion\":\"Karnataka\",\"addressCountry\":\"IN\"}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Deccan Herald\"},\"description\":\"Mysuru Dasara, the royal festival of Karnataka, with the Vijayadashami procession on 21 October 2026.\"}</script>",
+      "kn": "<link rel=\"canonical\" href=\"https://www.prajavani.net/pages/dasara-special\">\n  <link rel=\"alternate\" hreflang=\"en\" href=\"https://www.deccanherald.com/pages/dasara-special\">\n  <link rel=\"alternate\" hreflang=\"kn\" href=\"https://www.prajavani.net/pages/dasara-special\">\n  <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.deccanherald.com/pages/dasara-special\">\n  <meta property=\"og:url\" content=\"https://www.prajavani.net/pages/dasara-special\">\n  <meta property=\"og:locale\" content=\"kn_IN\">\n  <meta property=\"og:image\" content=\"https://cf-images.assettype.com/prajavani/2025-09-20/s55p9da4/file82gjbohbn6godsgmawe.jpg?w=1200&auto=format\">\n  <meta property=\"og:image:width\" content=\"1200\">\n  <meta name=\"twitter:image\" content=\"https://cf-images.assettype.com/prajavani/2025-09-20/s55p9da4/file82gjbohbn6godsgmawe.jpg?w=1200&auto=format\">\n  <script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"url\":\"https://www.prajavani.net/pages/dasara-special\",\"image\":[\"https://cf-images.assettype.com/prajavani/2025-09-20/s55p9da4/file82gjbohbn6godsgmawe.jpg?w=1200&auto=format\"],\"name\":\"ಮೈಸೂರು ದಸರಾ 2026\",\"startDate\":\"2026-10-11\",\"endDate\":\"2026-10-21\",\"eventAttendanceMode\":\"https://schema.org/MixedEventAttendanceMode\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"inLanguage\":\"kn\",\"location\":{\"@type\":\"Place\",\"name\":\"ಮೈಸೂರು\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Mysuru\",\"addressRegion\":\"Karnataka\",\"addressCountry\":\"IN\"}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"ಪ್ರಜಾವಾಣಿ\"},\"description\":\"ಕರ್ನಾಟಕದ ರಾಜವೈಭವದ ಉತ್ಸವ ಮೈಸೂರು ದಸರಾ; ಅಕ್ಟೋಬರ್ 21, 2026ರಂದು ವಿಜಯದಶಮಿ ಮೆರವಣಿಗೆ.\"}</script>"
+    }
+  ],
+  "strings": {
+    "story.photo": {
+      "en": "Photo story",
+      "kn": "ಫೋಟೊ ಸುದ್ದಿ"
+    },
+    "story.visual": {
+      "en": "Visual story",
+      "kn": "ದೃಶ್ಯ ಕಥೆ"
+    },
+    "story.video": {
+      "en": "Video",
+      "kn": "ವಿಡಿಯೊ"
+    },
+    "story.current": {
+      "en": "Current coverage",
+      "kn": "ಈ ವರ್ಷದ ಸುದ್ದಿ"
+    },
+    "story.archive": {
+      "en": "Archive",
+      "kn": "ಹಿನ್ನೋಟ"
+    },
+    "story.placeholder": {
+      "en": "Mysuru Dasara",
+      "kn": "ಮೈಸೂರು ದಸರಾ"
+    },
+    "story.share": {
+      "en": "Share: {headline}",
+      "kn": "ಹಂಚಿಕೊಳ್ಳಿ: {headline}"
+    },
+    "stories.empty": {
+      "en": "Stories will appear here soon.",
+      "kn": "ಸುದ್ದಿಗಳು ಶೀಘ್ರದಲ್ಲೇ ಇಲ್ಲಿ ಬರಲಿವೆ."
+    },
+    "stories.showing": {
+      "en": "SHOWING {shown} OF {total} STORIES",
+      "kn": "{total} ಸುದ್ದಿಗಳಲ್ಲಿ {shown}"
+    },
+    "stories.none": {
+      "en": "0 STORIES",
+      "kn": "0 ಸುದ್ದಿಗಳು"
+    },
+    "stories.noMatch": {
+      "en": "No stories match that search.",
+      "kn": "ಈ ವಿಭಾಗದಲ್ಲಿ ಸುದ್ದಿಗಳಿಲ್ಲ."
+    },
+    "stories.error": {
+      "en": "Stories could not be loaded. Please check the connection and try again.",
+      "kn": "ಸುದ್ದಿಗಳನ್ನು ತೆರೆಯಲಾಗಲಿಲ್ಲ. ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕ ಪರಿಶೀಲಿಸಿ, ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+    },
+    "stories.lockTitle": {
+      "en": "Subscriber exclusive",
+      "kn": "ಚಂದಾದಾರರಿಗೆ ಮಾತ್ರ"
+    },
+    "stories.lockNote": {
+      "en": "More Dasara stories are for {publisher} subscribers.",
+      "kn": "ಇನ್ನಷ್ಟು ದಸರಾ ಸುದ್ದಿಗಳು {publisher} ಚಂದಾದಾರರಿಗೆ ಮಾತ್ರ."
+    },
+    "stories.lockSubscribe": {
+      "en": "Subscribe",
+      "kn": "ಚಂದಾದಾರರಾಗಿ"
+    },
+    "stories.lockLogin": {
+      "en": "Already a subscriber? Log in",
+      "kn": "ಈಗಾಗಲೇ ಚಂದಾದಾರರೇ? ಲಾಗಿನ್ ಆಗಿ"
+    },
+    "stories.lockError": {
+      "en": "We couldn’t confirm your subscription just now. Please try again.",
+      "kn": "ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ಈಗ ಖಚಿತಪಡಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+    },
+    "stories.lockRetry": {
+      "en": "Try again",
+      "kn": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ"
+    },
+    "ad.label": {
+      "en": "ADVERTISEMENT",
+      "kn": "ಜಾಹೀರಾತು"
+    },
+    "ad.bannerLabel": {
+      "en": "{sponsor}, title sponsor of Mysuru Dasara 2026",
+      "kn": "ಯೂನಿಯನ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾ, ಮೈಸೂರು ದಸರಾ 2026ರ ಶೀರ್ಷಿಕೆ ಪ್ರಾಯೋಜಕರು"
+    },
+    "ad.title": {
+      "en": "Mysuru Dasara 2026",
+      "kn": "ಮೈಸೂರು ದಸರಾ 2026"
+    },
+    "ad.presented": {
+      "en": "Proudly presented by {sponsor}",
+      "kn": "ಪ್ರಾಯೋಜಕರು: ಯೂನಿಯನ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾ"
+    },
+    "ad.cta": {
+      "en": "Discover more ↗",
+      "kn": "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ ↗"
+    },
+    "countdown.before": {
+      "en": "THE CELEBRATION BEGINS IN",
+      "kn": "ಸಂಭ್ರಮ ಆರಂಭದ ಕ್ಷಣ"
+    },
+    "countdown.beforeFoot": {
+      "en": "Sunday, 11 October 2026 · IST",
+      "kn": "ಭಾನುವಾರ, ಅಕ್ಟೋಬರ್ 11, 2026 · IST"
+    },
+    "countdown.day": {
+      "en": "DAY {day} OF {total} · GRAND FINALE IN",
+      "kn": "{total} ದಿನಗಳಲ್ಲಿ {day}ನೇ ದಿನ · ಜಂಬೂಸವಾರಿಗೆ ಇನ್ನು"
+    },
+    "countdown.dayFoot": {
+      "en": "Vijayadashami procession · Wednesday, 21 October",
+      "kn": "ವಿಜಯದಶಮಿ ಮೆರವಣಿಗೆ · ಬುಧವಾರ, ಅಕ್ಟೋಬರ್ 21"
+    },
+    "countdown.finale": {
+      "en": "It’s Vijayadashami — the grand finale is today.",
+      "kn": "ಇಂದು ವಿಜಯದಶಮಿ — ಜಂಬೂಸವಾರಿಯ ದಿನ."
+    },
+    "countdown.finaleFoot": {
+      "en": "Watch the procession below.",
+      "kn": "ಮೆರವಣಿಗೆಯನ್ನು ಕೆಳಗೆ ವೀಕ್ಷಿಸಿ."
+    },
+    "countdown.ended": {
+      "en": "Mysuru Dasara 2026 has concluded.",
+      "kn": "ಮೈಸೂರು ದಸರಾ 2026 ಸಂಪನ್ನಗೊಂಡಿದೆ."
+    },
+    "countdown.endedFoot": {
+      "en": "Thank you for celebrating with us. See you next year.",
+      "kn": "ನಮ್ಮೊಂದಿಗೆ ಸಂಭ್ರಮಿಸಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದ. ಮುಂದಿನ ವರ್ಷ ಮತ್ತೆ ಸಿಗೋಣ."
+    },
+    "nav.watch": {
+      "en": "Watch",
+      "kn": "ವೀಕ್ಷಿಸಿ"
+    },
+    "nav.login": {
+      "en": "Login",
+      "kn": "ಲಾಗಿನ್"
+    },
+    "nav.profile": {
+      "en": "Profile",
+      "kn": "ಪ್ರೊಫೈಲ್"
+    },
+    "watch.pre.cta": {
+      "en": "The grand finale <span>↓</span>",
+      "kn": "ದಸರಾ ಫೈನಲ್ ಜಂಬೂಸವಾರಿ <span>↓</span>"
+    },
+    "watch.pre.eyebrow": {
+      "en": "DASARA VIDEOS",
+      "kn": "ದಸರಾ ವಿಡಿಯೊಗಳು"
+    },
+    "watch.pre.a": {
+      "en": "Mysuru Dasara",
+      "kn": "ಮೈಸೂರು ದಸರಾ"
+    },
+    "watch.pre.b": {
+      "en": "on video.",
+      "kn": "ವಿಡಿಯೊಗಳಲ್ಲಿ."
+    },
+    "watch.pre.intro": {
+      "en": "Watch {publisher}’s Dasara videos. The live broadcast of the grand finale plays here on October 21.",
+      "kn": "ದಸರಾ ವಿಡಿಯೊಗಳನ್ನು ವೀಕ್ಷಿಸಿ. ಅಕ್ಟೋಬರ್ 21ರಂದು ಜಂಬೂಸವಾರಿಯ ನೇರ ಪ್ರಸಾರ ಇಲ್ಲೇ ಇರಲಿದೆ."
+    },
+    "watch.videosBadge": {
+      "en": "DH VIDEOS · YOUTUBE",
+      "kn": "ದಸರಾ ವಿಡಿಯೊಗಳು · YOUTUBE"
+    },
+    "watch.finale.cta": {
+      "en": "Watch the grand finale <span>↓</span>",
+      "kn": "ಜಂಬೂಸವಾರಿ ವೀಕ್ಷಿಸಿ <span>↓</span>"
+    },
+    "watch.finale.label": {
+      "en": "Grand finale",
+      "kn": "ಜಂಬೂಸವಾರಿ ವೈಭವ"
+    },
+    "watch.finale.short": {
+      "en": "Finale",
+      "kn": "ಜಂಬೂಸವಾರಿ"
+    },
+    "watch.finale.eyebrow": {
+      "en": "BROADCAST DAY · 21 OCTOBER",
+      "kn": "ನೇರ ಪ್ರಸಾರದ ದಿನ · ಅಕ್ಟೋಬರ್ 21"
+    },
+    "watch.finale.a": {
+      "en": "The grand finale,",
+      "kn": "ವಿಜಯದಶಮಿ"
+    },
+    "watch.finale.b": {
+      "en": "Vijayadashami.",
+      "kn": "ಜಂಬೂಸವಾರಿ."
+    },
+    "watch.finale.intro": {
+      "en": "Today is Vijayadashami. The Jamboo Savari procession is broadcast from Mysuru; the player below carries the broadcast once the stream is on air.",
+      "kn": "ಇಂದು ವಿಜಯದಶಮಿ. ಮೈಸೂರಿನಿಂದ ಜಂಬೂಸವಾರಿ ಮೆರವಣಿಗೆಯ ನೇರ ಪ್ರಸಾರ; ಪ್ರಸಾರ ಆರಂಭವಾದ ಕೂಡಲೇ ಕೆಳಗಿನ ಪ್ಲೇಯರ್‌ನಲ್ಲಿ ವೀಕ್ಷಿಸಿ."
+    },
+    "watch.finale.badge": {
+      "en": "BROADCAST DAY · ARCHIVE PREVIEW UNTIL THE STREAM STARTS",
+      "kn": "ನೇರ ಪ್ರಸಾರದ ದಿನ · ಪ್ರಸಾರ ಆರಂಭವಾಗುವವರೆಗೆ ಹಳೆಯ ವಿಡಿಯೊ"
+    },
+    "watch.live.cta": {
+      "en": "Watch live <span>↑</span>",
+      "kn": "ನೇರ ಪ್ರಸಾರ ವೀಕ್ಷಿಸಿ <span>↑</span>"
+    },
+    "watch.live.eyebrow": {
+      "en": "LIVE",
+      "kn": "ನೇರ ಪ್ರಸಾರ"
+    },
+    "watch.live.a": {
+      "en": "Mysuru Dasara",
+      "kn": "ಮೈಸೂರು ದಸರಾ"
+    },
+    "watch.liveBadge": {
+      "en": "LIVE BROADCAST",
+      "kn": "ನೇರ ಪ್ರಸಾರ"
+    },
+    "watch.post.cta": {
+      "en": "Relive the festival <span>↓</span>",
+      "kn": "ಹಬ್ಬದ ನೆನಪುಗಳು <span>↓</span>"
+    },
+    "watch.post.eyebrow": {
+      "en": "FESTIVAL ARCHIVE",
+      "kn": "ಹಬ್ಬದ ಹಿನ್ನೋಟ"
+    },
+    "watch.post.a": {
+      "en": "Relive",
+      "kn": "ನೆನಪು"
+    },
+    "watch.post.b": {
+      "en": "Mysuru Dasara.",
+      "kn": "ಮೈಸೂರು ದಸರಾ."
+    },
+    "watch.post.intro": {
+      "en": "The 2026 celebrations have concluded. Revisit the pageantry through {publisher}’s videos and coverage.",
+      "kn": "2026ರ ಸಂಭ್ರಮ ಸಂಪನ್ನಗೊಂಡಿದೆ. ದಸರಾ ವೈಭವವನ್ನು ವಿಡಿಯೊ ಮತ್ತು ವರದಿಗಳಲ್ಲಿ ಮತ್ತೆ ಸವಿಯಿರಿ."
+    },
+    "watch.liveTitle": {
+      "en": "Mysuru Dasara live broadcast",
+      "kn": "ಮೈಸೂರು ದಸರಾ ನೇರ ಪ್ರಸಾರ"
+    },
+    "watch.backToLive": {
+      "en": "Back to live",
+      "kn": "ನೇರ ಪ್ರಸಾರಕ್ಕೆ ಮರಳಿ"
+    },
+    "watch.nowPlaying": {
+      "en": "Now playing: {title}",
+      "kn": "ಈಗ ಪ್ರಸಾರವಾಗುತ್ತಿರುವುದು: {title}"
+    },
+    "watch.liveFrom": {
+      "en": "Live from Mysuru",
+      "kn": "ಮೈಸೂರಿನಿಂದ ನೇರ ಪ್ರಸಾರ"
+    },
+    "watch.play": {
+      "en": "Play: {title}",
+      "kn": "ಪ್ಲೇ ಮಾಡಿ: {title}"
+    },
+    "slides.credit": {
+      "en": "Photo: {credit}",
+      "kn": "ಚಿತ್ರ: {credit}"
+    },
+    "slides.play": {
+      "en": "Play slideshow",
+      "kn": "ಸ್ಲೈಡ್‌ಶೋ ಆರಂಭಿಸಿ"
+    },
+    "slides.pause": {
+      "en": "Pause slideshow",
+      "kn": "ಸ್ಲೈಡ್‌ಶೋ ನಿಲ್ಲಿಸಿ"
+    },
+    "slides.dot": {
+      "en": "Photo {n} of {total}",
+      "kn": "{total} ಚಿತ್ರಗಳಲ್ಲಿ {n}ನೇ ಚಿತ್ರ"
+    },
+    "calendar.festival.label": {
+      "en": "Mysuru Dasara · 11–21 Oct",
+      "kn": "ಮೈಸೂರು ದಸರಾ · ಅ. 11–21"
+    },
+    "calendar.festival.title": {
+      "en": "Mysuru Dasara 2026",
+      "kn": "ಮೈಸೂರು ದಸರಾ 2026"
+    },
+    "calendar.festival.description": {
+      "en": "The royal festival of Karnataka. Follow the coverage on {publisher}.",
+      "kn": "ಕರ್ನಾಟಕದ ದಸರಾ ಹಬ್ಬ. ಸಮಗ್ರ ವರದಿಗಳಿಗೆ ಪ್ರಜಾವಾಣಿ ಓದಿ."
+    },
+    "calendar.finale.label": {
+      "en": "Grand finale · 21 Oct",
+      "kn": "ಜಂಬೂಸವಾರಿ · ಅ. 21"
+    },
+    "calendar.finale.title": {
+      "en": "Mysuru Dasara: Vijayadashami grand finale",
+      "kn": "ಮೈಸೂರು ದಸರಾ: ವಿಜಯದಶಮಿ ಜಂಬೂಸವಾರಿ"
+    },
+    "calendar.finale.description": {
+      "en": "Jamboo Savari procession and live broadcast. Timings to be confirmed.",
+      "kn": "ಜಂಬೂಸವಾರಿ ಮೆರವಣಿಗೆ ಮತ್ತು ನೇರ ಪ್ರಸಾರ. ಸಮಯ ಇನ್ನಷ್ಟೇ ಖಚಿತವಾಗಬೇಕಿದೆ."
+    },
+    "calendar.location": {
+      "en": "Mysuru, Karnataka",
+      "kn": "ಮೈಸೂರು, ಕರ್ನಾಟಕ"
+    },
+    "calendar.ics": {
+      "en": "Apple / other (.ics)",
+      "kn": "Apple / ಇತರೆ (.ics)"
+    },
+    "share.text": {
+      "en": "Mysuru Dasara 2026 · 11–21 October. Follow the stories and the grand finale with {publisher}.",
+      "kn": "ಮೈಸೂರು ದಸರಾ 2026 · ಅಕ್ಟೋಬರ್ 11–21. ದಸರಾ ಸುದ್ದಿಗಳು ಮತ್ತು ಜಂಬೂಸವಾರಿಗೆ ಪ್ರಜಾವಾಣಿ ನೋಡಿ."
+    },
+    "share.copy": {
+      "en": "Copy link",
+      "kn": "ಲಿಂಕ್ ನಕಲಿಸಿ"
+    },
+    "share.copied": {
+      "en": "Link copied ✓",
+      "kn": "ಲಿಂಕ್ ನಕಲಾಗಿದೆ ✓"
+    },
+    "share.copyFailed": {
+      "en": "Copy failed",
+      "kn": "ನಕಲಿಸಲಾಗಲಿಲ್ಲ"
+    },
+    "share.copiedStatus": {
+      "en": "Link copied to clipboard",
+      "kn": "ಲಿಂಕ್ ನಕಲಾಗಿದೆ"
+    },
+    "share.copyFailedStatus": {
+      "en": "Could not copy the link",
+      "kn": "ಲಿಂಕ್ ನಕಲಿಸಲಾಗಲಿಲ್ಲ"
+    },
+    "weather.clear": {
+      "en": "Clear sky",
+      "kn": "ಶುಭ್ರ ಆಕಾಶ"
+    },
+    "weather.partly": {
+      "en": "Partly cloudy",
+      "kn": "ಭಾಗಶಃ ಮೋಡ"
+    },
+    "weather.overcast": {
+      "en": "Overcast",
+      "kn": "ಮೋಡ ಕವಿದ ವಾತಾವರಣ"
+    },
+    "weather.fog": {
+      "en": "Foggy",
+      "kn": "ಮಂಜು"
+    },
+    "weather.rain": {
+      "en": "Rain",
+      "kn": "ಮಳೆ"
+    },
+    "weather.storm": {
+      "en": "Thunderstorm",
+      "kn": "ಗುಡುಗು ಸಹಿತ ಮಳೆ"
+    },
+    "weather.showers": {
+      "en": "Showers",
+      "kn": "ತುಂತುರು ಮಳೆ"
+    },
+    "weather.detail": {
+      "en": "Feels like {feels}° · Humidity {humidity}%",
+      "kn": "ಅನುಭವ {feels}° · ಆರ್ದ್ರತೆ {humidity}%"
+    },
+    "weather.rainChance": {
+      "en": "{chance}% rain",
+      "kn": "ಮಳೆ {chance}%"
+    },
+    "greeting.status.badPhoto": {
+      "en": "We couldn’t open that photo. Please try a JPG or PNG.",
+      "kn": "ಈ ಫೋಟೊ ತೆರೆಯಲಾಗಲಿಲ್ಲ. JPG ಅಥವಾ PNG ಫೋಟೊ ಪ್ರಯತ್ನಿಸಿ."
+    },
+    "greeting.status.finding": {
+      "en": "Finding your face…",
+      "kn": "ನಿಮ್ಮ ಮುಖ ಹುಡುಕಲಾಗುತ್ತಿದೆ…"
+    },
+    "greeting.status.manyFaces": {
+      "en": "We found more than one face and used the largest. For a clean cutout, use a photo of just you.",
+      "kn": "ಒಂದಕ್ಕಿಂತ ಹೆಚ್ಚು ಮುಖಗಳಿವೆ; ದೊಡ್ಡ ಮುಖವನ್ನು ಬಳಸಲಾಗಿದೆ. ಸ್ಪಷ್ಟವಾಗಿ ಕತ್ತರಿಸಲು ನಿಮ್ಮೊಬ್ಬರದೇ ಫೋಟೊ ಬಳಸಿ."
+    },
+    "greeting.status.ready": {
+      "en": "Looking good! Pick an outfit and share.",
+      "kn": "ಚೆನ್ನಾಗಿದೆ! ಉಡುಗೆ ಆಯ್ಕೆಮಾಡಿ, ಹಂಚಿಕೊಳ್ಳಿ."
+    },
+    "greeting.status.noFace": {
+      "en": "We couldn’t find a face, so we centred your photo. A clear, front-facing selfie works best.",
+      "kn": "ಮುಖ ಪತ್ತೆಯಾಗಲಿಲ್ಲ, ಹಾಗಾಗಿ ಫೋಟೊವನ್ನು ಮಧ್ಯದಲ್ಲಿ ಇರಿಸಲಾಗಿದೆ. ನೇರವಾಗಿ ನೋಡುವ ಸ್ಪಷ್ಟ ಸೆಲ್ಫಿ ಉತ್ತಮ."
+    },
+    "greeting.status.noDetector": {
+      "en": "Face detection isn’t available right now, so we centred your photo.",
+      "kn": "ಮುಖ ಪತ್ತೆ ಸೌಲಭ್ಯ ಸದ್ಯ ಲಭ್ಯವಿಲ್ಲ, ಹಾಗಾಗಿ ಫೋಟೊವನ್ನು ಮಧ್ಯದಲ್ಲಿ ಇರಿಸಲಾಗಿದೆ."
+    },
+    "greeting.status.cutting": {
+      "en": "Cutting out your photo…",
+      "kn": "ನಿಮ್ಮ ಫೋಟೊ ಕತ್ತರಿಸಲಾಗುತ್ತಿದೆ…"
+    },
+    "greeting.status.camera": {
+      "en": "Opening your camera… allow camera access if your browser asks.",
+      "kn": "ಕ್ಯಾಮೆರಾ ತೆರೆಯಲಾಗುತ್ತಿದೆ… ಬ್ರೌಸರ್ ಕೇಳಿದರೆ ಅನುಮತಿ ನೀಡಿ."
+    },
+    "greeting.status.cameraFailed": {
+      "en": "We couldn’t open your camera. Check the camera permission, or choose a photo instead.",
+      "kn": "ಕ್ಯಾಮೆರಾ ತೆರೆಯಲಾಗಲಿಲ್ಲ. ಕ್ಯಾಮೆರಾ ಅನುಮತಿ ಪರಿಶೀಲಿಸಿ, ಅಥವಾ ಫೋಟೊ ಆಯ್ಕೆಮಾಡಿ."
+    },
+    "greeting.card.yourPhoto": {
+      "en": "Your photo",
+      "kn": "ನಿಮ್ಮ ಫೋಟೊ"
+    },
+    "greeting.card.kicker": {
+      "en": "MYSURU DASARA 2026",
+      "kn": "ಮೈಸೂರು ದಸರಾ 2026"
+    },
+    "greeting.card.title": {
+      "en": "Happy Dasara!",
+      "kn": "ದಸರಾ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು!"
+    },
+    "greeting.card.lineNamed": {
+      "en": "{name} wishes you a royal Dasara",
+      "kn": "{name} ಅವರಿಂದ ದಸರಾ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು"
+    },
+    "greeting.card.line": {
+      "en": "Wishing you a royal Dasara",
+      "kn": "ನಿಮಗೆ ದಸರಾ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು"
+    },
+    "greeting.card.bandNoLogo": {
+      "en": "{publisher} · MYSURU DASARA 2026",
+      "kn": "ಪ್ರಜಾವಾಣಿ · ಮೈಸೂರು ದಸರಾ 2026"
+    },
+    "greeting.card.presentedBy": {
+      "en": "PRESENTED BY",
+      "kn": "ಪ್ರಾಯೋಜಕರು"
+    },
+    "greeting.peta": {
+      "en": "peta",
+      "kn": "ಪೇಟ"
+    },
+    "greeting.mallige": {
+      "en": "mallige",
+      "kn": "ಮಲ್ಲಿಗೆ"
+    },
+    "greeting.hint.withPhoto": {
+      "en": "Tap your photo or the {name} to select it and drag to move. Pinch and twist, or drag the round handle, to resize and rotate.",
+      "kn": "ನಿಮ್ಮ ಫೋಟೊ ಅಥವಾ {name} ಆಯ್ಕೆಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ, ಎಳೆದು ಸರಿಸಿ. ಗಾತ್ರ ಬದಲಿಸಲು ಮತ್ತು ತಿರುಗಿಸಲು ಎರಡು ಬೆರಳುಗಳಿಂದ ಹಿಗ್ಗಿಸಿ, ತಿರುಗಿಸಿ ಅಥವಾ ದುಂಡನೆಯ ಹಿಡಿಕೆಯನ್ನು ಎಳೆಯಿರಿ."
+    },
+    "greeting.hint": {
+      "en": "Tap the {name} to select it and drag to move. Pinch and twist, or drag the round handle, to resize and rotate.",
+      "kn": "{name} ಆಯ್ಕೆಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ, ಎಳೆದು ಸರಿಸಿ. ಗಾತ್ರ ಬದಲಿಸಲು ಮತ್ತು ತಿರುಗಿಸಲು ಎರಡು ಬೆರಳುಗಳಿಂದ ಹಿಗ್ಗಿಸಿ, ತಿರುಗಿಸಿ ಅಥವಾ ದುಂಡನೆಯ ಹಿಡಿಕೆಯನ್ನು ಎಳೆಯಿರಿ."
+    },
+    "greeting.share.title": {
+      "en": "Mysuru Dasara greeting",
+      "kn": "ಮೈಸೂರು ದಸರಾ ಶುಭಾಶಯ"
+    },
+    "greeting.share.text": {
+      "en": "Happy Dasara! Make your own card: {url}",
+      "kn": "ದಸರಾ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು! ನಿಮ್ಮದೇ ಶುಭಾಶಯ ಪತ್ರ ಮಾಡಿ: {url}"
+    },
+    "greeting.step.count": {
+      "en": "{n} of 3",
+      "kn": "3ರಲ್ಲಿ {n}"
+    },
+    "greeting.step.photo": {
+      "en": "Add your photo",
+      "kn": "ನಿಮ್ಮ ಫೋಟೊ ಸೇರಿಸಿ"
+    },
+    "greeting.step.style": {
+      "en": "Style your card",
+      "kn": "ಪತ್ರ ವಿನ್ಯಾಸಗೊಳಿಸಿ"
+    },
+    "greeting.step.share": {
+      "en": "Your card is ready",
+      "kn": "ನಿಮ್ಮ ಪತ್ರ ಸಿದ್ಧ"
+    },
+    "greeting.next": {
+      "en": "Next",
+      "kn": "ಮುಂದೆ"
+    },
+    "greeting.preview": {
+      "en": "Preview",
+      "kn": "ಮುನ್ನೋಟ"
+    },
+    "greeting.shareCard": {
+      "en": "Share card",
+      "kn": "ಪತ್ರ ಹಂಚಿಕೊಳ್ಳಿ"
+    },
+    "greeting.download": {
+      "en": "Download",
+      "kn": "ಡೌನ್‌ಲೋಡ್"
+    },
+    "slides.cap.elephants": {
+      "en": "Dasara elephants",
+      "kn": "ದಸರಾ ಆನೆಗಳು"
+    },
+    "slides.cap.city": {
+      "en": "Mysuru decked up for Dasara",
+      "kn": "ದಸರಾಗೆ ಸಿಂಗಾರಗೊಂಡ ಮೈಸೂರು"
+    },
+    "slides.cap.procession": {
+      "en": "Dasara procession",
+      "kn": "ದಸರಾ ಮೆರವಣಿಗೆ"
+    },
+    "slides.cap.palace": {
+      "en": "Mysuru Palace",
+      "kn": "ಮೈಸೂರು ಅರಮನೆ"
+    },
+    "slides.alt.elephants": {
+      "en": "Decorated Dasara elephants in Mysuru",
+      "kn": "ಮೈಸೂರಿನಲ್ಲಿ ಅಲಂಕೃತ ದಸರಾ ಆನೆಗಳು"
+    },
+    "slides.alt.city": {
+      "en": "Mysuru city lit up and decorated for Dasara",
+      "kn": "ದಸರಾಗೆ ದೀಪಾಲಂಕಾರದಿಂದ ಸಿಂಗಾರಗೊಂಡ ಮೈಸೂರು ನಗರ"
+    },
+    "slides.alt.procession": {
+      "en": "The Dasara procession in Mysuru",
+      "kn": "ಮೈಸೂರಿನ ದಸರಾ ಮೆರವಣಿಗೆ"
+    },
+    "slides.alt.palace": {
+      "en": "Mysuru Palace during Dasara",
+      "kn": "ದಸರಾ ಸಮಯದಲ್ಲಿ ಮೈಸೂರು ಅರಮನೆ"
+    },
+    "slides.src.Deccan Herald": {
+      "en": "Deccan Herald",
+      "kn": "ಡೆಕ್ಕನ್ ಹೆರಾಲ್ಡ್"
+    },
+    "slides.src.Prajavani": {
+      "en": "Prajavani",
+      "kn": "ಪ್ರಜಾವಾಣಿ"
+    },
+    "ad.kicker": {
+      "en": "TITLE SPONSOR",
+      "kn": "ಶೀರ್ಷಿಕೆ ಪ್ರಾಯೋಜಕರು"
+    },
+    "ad.close": {
+      "en": "Close advertisement",
+      "kn": "ಜಾಹೀರಾತು ಮುಚ್ಚಿ"
+    }
+  }
+}

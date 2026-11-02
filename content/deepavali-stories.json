@@ -1,0 +1,11 @@
+{
+  "note": "DUMMY reference content for the layout review. Replace with the editors' Deepavali collection before launch.",
+  "stories": [
+    { "headline": "From Neeru Tumbuva Habba to Balipadyami: what each day of Deepavali means", "category": "Traditions", "publishedDate": "2026-11-02", "url": "#", "icon": "diya", "colour": "#2a2140" },
+    { "headline": "Simple rangoli designs you can draw in ten minutes", "category": "Rangoli", "publishedDate": "2026-11-03", "url": "#", "icon": "rangoli", "colour": "#5a1f33" },
+    { "headline": "Akasha butti: the sky lanterns of Karnataka", "category": "Culture", "publishedDate": "2026-11-04", "url": "#", "icon": "lantern", "colour": "#1f2d4a" },
+    { "headline": "Holige to chakli: festive sweets and snacks from home kitchens", "category": "Food", "publishedDate": "2026-11-05", "url": "#", "icon": "sweets", "colour": "#4a2a1a" },
+    { "headline": "A greener Deepavali: celebrating without crackers", "category": "Environment", "publishedDate": "2026-11-06", "url": "#", "icon": "sparkle", "colour": "#1d3a33" },
+    { "headline": "Balipadyami: the story of King Bali's annual return", "category": "Mythology", "publishedDate": "2026-11-07", "url": "#", "icon": "diya", "colour": "#3a1f4a" }
+  ]
+}
