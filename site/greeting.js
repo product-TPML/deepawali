@@ -29,7 +29,7 @@ const MAROON = '#741e27';
 const GOLD = '#e2b55a';
 
 const canvas = document.querySelector('#greeting-canvas');
-const ctx = canvas.getContext('2d');
+let ctx = canvas.getContext('2d'); // switched to a layer's context while that layer is drawn
 const photoInput = document.querySelector('#greeting-photo');
 const nameInput = document.querySelector('#greeting-name');
 const statusLine = document.querySelector('#greeting-status');
@@ -383,6 +383,7 @@ async function processSource(source, sourceWidth, sourceHeight) {
   render();
   shareButton.disabled = false;
   downloadButton.disabled = false;
+  document.querySelector('#greeting-video').disabled = false;
   setStatus(message);
 }
 
@@ -1253,43 +1254,198 @@ function drawHandle({ x, y }) {
   ctx.restore();
 }
 
-function render({ selection = true } = {}) {
-  ctx.clearRect(0, 0, SIZE, CARD_H);
-  drawBackground();
-  drawHeadlineVeil();
-  ctx.save();
-  ctx.translate(0, SCENE_Y);
-  drawNeck();
-  const outfit = outfitArt();
-  if (outfit) {
-    ctx.drawImage(outfit, 0, 0, SIZE, 1110); // arms, hands and the diya or sparkler are part of the artwork
-  } else {
-    // Drawn stand-in while the artwork loads (or if it cannot be loaded).
-    if (state.pose === 'wave') drawSparklerWire();
-    if (drawnAsSaree()) drawSaree(); else drawKurta();
-    if (state.pose === 'wave') drawWave(); else drawNamaste();
-    if (state.pose === 'wave') drawSparks(); else drawHeldDiya();
+// The card is drawn in two layers, cached until something changes: the background (back) and the
+// figure, text and frame (front). The animated card adds fireworks and twinkling stars between them,
+// and sparks or a flickering glow on top, at the sparkler or diya (LIGHTS). The still card (Photo) has
+// no effects; the maker's preview, the shared GIF and the video loop every LOOP_MS.
+const backLayer = Object.assign(document.createElement('canvas'), { width: SIZE, height: CARD_H });
+const frontLayer = Object.assign(document.createElement('canvas'), { width: SIZE, height: CARD_H });
+function drawInto(layer, draw) {
+  const previous = ctx;
+  ctx = layer.getContext('2d');
+  try {
+    ctx.clearRect(0, 0, SIZE, CARD_H);
+    draw();
+  } finally {
+    ctx = previous;
   }
-  drawHead();
-  if (hasAccessory()) {
+}
+function paintLayers() {
+  drawInto(backLayer, () => {
+    drawBackground();
+    drawHeadlineVeil();
+  });
+  drawInto(frontLayer, () => {
     ctx.save();
-    accessoryTransform();
-    drawMallige();
+    ctx.translate(0, SCENE_Y);
+    drawNeck();
+    const outfit = outfitArt();
+    if (outfit) {
+      ctx.drawImage(outfit, 0, 0, SIZE, 1110); // arms, hands and the diya or sparkler are part of the artwork
+    } else {
+      // Drawn stand-in while the artwork loads (or if it cannot be loaded).
+      if (state.pose === 'wave') drawSparklerWire();
+      if (drawnAsSaree()) drawSaree(); else drawKurta();
+      if (state.pose === 'wave') drawWave(); else drawNamaste();
+      if (state.pose === 'wave') drawSparks(); else drawHeldDiya();
+    }
+    drawHead();
+    if (hasAccessory()) {
+      ctx.save();
+      accessoryTransform();
+      drawMallige();
+      ctx.restore();
+    }
     ctx.restore();
+    drawText();
+    drawFrame();
+  });
+}
+// Draws the card at a moment of the loop (time in ms), or the still card (time null), onto g.
+function composeCard(g, time = null) {
+  g.clearRect(0, 0, SIZE, CARD_H);
+  g.drawImage(backLayer, 0, 0);
+  if (time !== null) drawSkyEffects(g, time);
+  g.drawImage(frontLayer, 0, 0);
+  if (time !== null) drawLightEffects(g, time);
+}
+
+// Loop effects. Every movement repeats a whole number of times per loop, so the GIF and the video loop
+// without a jump. Positions are fixed (seeded), so every card looks the same.
+const LOOP_MS = 2400;
+// Where each outfit's sparkler burst or diya flame is (scene px); measured by tools/build-art.py.
+const LIGHTS = { 'kurta-diya': [540, 964], 'kurta-sparkler': [966, 363], 'langa-diya': [540, 963], 'langa-sparkler': [966, 364], 'panche-diya': [540, 966], 'panche-sparkler': [963, 364], 'saree-diya': [539, 937], 'saree-sparkler': [965, 363] };
+const seeded = seed => () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+// Fireworks in the sky either side of the head: [x, y, radius, colour, start in the loop (0 to 1)].
+const BURSTS = [[190, 360, 120, '255, 196, 90', 0], [880, 300, 105, '255, 120, 150', 0.33], [210, 640, 95, '150, 220, 255', 0.66], [900, 620, 90, '190, 255, 170', 0.15]];
+const TWINKLES = (() => {
+  const random = seeded(23);
+  return Array.from({ length: 22 }, () => [random() * SIZE, 250 + random() * 520, 1.6 + random() * 2.2, Math.ceil(random() * 3), random()]);
+})();
+function drawSkyEffects(g, time) {
+  const loop = time / LOOP_MS;
+  g.save();
+  g.globalCompositeOperation = 'lighter';
+  for (const [x, y, size, beats, offset] of TWINKLES) {
+    g.globalAlpha = 0.25 + 0.75 * Math.abs(Math.sin(Math.PI * (loop * beats + offset)));
+    g.fillStyle = '#fff3cf';
+    g.beginPath();
+    g.arc(x, y, size, 0, Math.PI * 2);
+    g.fill();
   }
-  ctx.restore();
-  drawText();
-  drawFrame();
+  for (const [x, y, radius, colour, start] of BURSTS) {
+    const age = (loop - start + 1) % 1; // 0 to 1 through this burst's life
+    if (age > 0.62) continue; // a quiet pause before it bursts again
+    const progress = age / 0.62;
+    const spread = radius * (1 - (1 - progress) ** 3);
+    const drop = 30 * progress * progress; // the sparks fall a little as they fade
+    const random = seeded(Math.round(x + y));
+    g.globalAlpha = 1 - progress;
+    g.strokeStyle = `rgb(${colour})`;
+    g.fillStyle = '#fffbe8';
+    g.lineWidth = 3;
+    for (let i = 0; i < 28; i++) {
+      const angle = (i / 28) * Math.PI * 2 + random() * 0.2;
+      const reach = spread * (0.75 + random() * 0.25);
+      const px = x + Math.cos(angle) * reach;
+      const py = y + Math.sin(angle) * reach + drop;
+      g.beginPath();
+      g.moveTo(x + Math.cos(angle) * reach * 0.8, y + Math.sin(angle) * reach * 0.8 + drop);
+      g.lineTo(px, py);
+      g.stroke();
+      g.beginPath();
+      g.arc(px, py, 2.6, 0, Math.PI * 2);
+      g.fill();
+    }
+    if (progress < 0.2) { // the flash as it bursts
+      g.globalAlpha = 1 - progress / 0.2;
+      const flash = g.createRadialGradient(x, y, 0, x, y, radius * 0.45);
+      flash.addColorStop(0, `rgba(${colour}, .9)`);
+      flash.addColorStop(1, `rgba(${colour}, 0)`);
+      g.fillStyle = flash;
+      g.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+    }
+  }
+  g.restore();
+}
+function drawLightEffects(g, time) {
+  const loop = time / LOOP_MS;
+  const [x, sceneY] = outfitArt() ? LIGHTS[outfitFile()] : state.pose === 'wave' ? SPARKLER.tip : [540, 930];
+  const y = sceneY + SCENE_Y;
+  g.save();
+  g.globalCompositeOperation = 'lighter';
+  if (state.pose === 'wave') {
+    // The sparkler: a pulsing glow and sparks shooting out and fading.
+    const glow = g.createRadialGradient(x, y, 0, x, y, 95);
+    glow.addColorStop(0, `rgba(255, 230, 160, ${0.55 + 0.2 * Math.sin(Math.PI * 2 * loop * 6)})`);
+    glow.addColorStop(1, 'rgba(255, 180, 80, 0)');
+    g.fillStyle = glow;
+    g.fillRect(x - 95, y - 95, 190, 190);
+    const random = seeded(31);
+    g.lineWidth = 2.2;
+    for (let i = 0; i < 34; i++) {
+      const angle = random() * Math.PI * 2;
+      const length = 40 + random() * 55;
+      const life = (loop * (3 + Math.floor(random() * 3)) + random()) % 1;
+      const inner = 10 + life * length * 0.6;
+      const outer = 14 + life * length;
+      g.globalAlpha = 1 - life;
+      g.strokeStyle = random() < 0.5 ? '#ffffff' : '#ffd88a';
+      g.beginPath();
+      g.moveTo(x + Math.cos(angle) * inner, y + Math.sin(angle) * inner);
+      g.lineTo(x + Math.cos(angle) * outer, y + Math.sin(angle) * outer);
+      g.stroke();
+    }
+  } else {
+    // The diya: a warm glow that breathes and flickers.
+    const flicker = 0.5 + 0.18 * Math.sin(Math.PI * 2 * loop * 3) + 0.08 * Math.sin(Math.PI * 2 * loop * 11);
+    const glow = g.createRadialGradient(x, y, 0, x, y, 120);
+    glow.addColorStop(0, `rgba(255, 200, 110, ${flicker})`);
+    glow.addColorStop(0.4, `rgba(255, 150, 60, ${flicker * 0.35})`);
+    glow.addColorStop(1, 'rgba(255, 150, 60, 0)');
+    g.fillStyle = glow;
+    g.fillRect(x - 120, y - 120, 240, 240);
+  }
+  g.restore();
+}
+
+// The maker's preview plays the animation (except for visitors who prefer reduced motion).
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const animating = () => !reducedMotion && !document.hidden && document.querySelector('#greeting').classList.contains('is-studio');
+let animationFrame = 0;
+let lastFrameAt = 0;
+function drawOverlay(selection) {
   if (selection && state.selected) {
     ctx.save();
     ctx.translate(0, SCENE_Y);
     drawSelection();
     ctx.restore();
   }
+}
+function animationTick(now) {
+  animationFrame = 0;
+  if (!animating()) { render(); return; } // back to the still card
+  if (now - lastFrameAt > 45) { // about 20 frames a second is plenty for the preview
+    lastFrameAt = now;
+    composeCard(ctx, now % LOOP_MS);
+    drawOverlay(true);
+  }
+  animationFrame = requestAnimationFrame(animationTick);
+}
+function startAnimation() {
+  if (!animationFrame && animating()) animationFrame = requestAnimationFrame(animationTick);
+}
+document.addEventListener('visibilitychange', startAnimation);
+
+function render({ selection = true } = {}) {
+  paintLayers();
+  composeCard(ctx, animating() ? performance.now() % LOOP_MS : null);
+  drawOverlay(selection);
   const offset = state.offsets[state.outfit];
   const { x, y, zoom, angle } = state.photo;
   resetButton.hidden = !offset.x && !offset.y && !x && !y && zoom === 1 && !angle
     && state.scales[state.outfit] === 1 && !state.angles[state.outfit];
+  scheduleGif();
 }
 
 // ---------------------------------------------------------------------------
@@ -1563,10 +1719,28 @@ function track(event) {
 }
 
 // ---------------------------------------------------------------------------
-// Export: native share sheet with the image where supported, download everywhere
+// Export. Share sends the animated card as a GIF; Photo saves the still card (PNG); Video saves an MP4.
+//
+// Sharing must never turn into a download. Phones only open the share sheet straight after a tap, and
+// making a GIF takes a few seconds, so the GIF is made in the background once the card has stopped
+// changing (GIF_IDLE_MS) and Share uses that ready file at once. It is kept within GIF_BUDGET, which
+// is far below what share sheets and WhatsApp accept: each attempt is smaller (GIF_WIDTHS) until the
+// file fits and the browser confirms it can share it. If Share is tapped before the GIF is ready, the
+// visitor is asked to tap again in a moment; if the phone cannot share a GIF at all, the still card is
+// shared instead.
 // ---------------------------------------------------------------------------
-function cardFile() {
-  render({ selection: false }); // the saved card never shows the selection outline
+const GIFENC = 'https://cdn.jsdelivr.net/npm/gifenc@1.0.3/dist/gifenc.esm.js';
+const GIF_BUDGET = 2.5 * 1024 * 1024;
+const GIF_WIDTHS = [720, 600, 540, 432]; // tried in turn until the GIF fits GIF_BUDGET
+const GIF_FRAME_MS = 100; // 10 frames a second: 24 frames per loop
+const GIF_IDLE_MS = 1200;
+const videoButton = document.querySelector('#greeting-video');
+const shareTitle = () => t('greeting.share.title', 'Deepavali greeting');
+const shareText = () => t('greeting.share.text', 'Happy Deepavali! Make your own card: {url}', { url: location.href.split('#')[0] });
+
+function stillFile() {
+  paintLayers();
+  composeCard(ctx, null); // the still card: no effects, no selection outline
   return new Promise((resolve, reject) => canvas.toBlob(blob => {
     render();
     if (blob) resolve(new File([blob], 'deepavali-greeting.png', { type: 'image/png' }));
@@ -1584,23 +1758,172 @@ function download(file) {
   link.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+const canShareFiles = files => { try { return Boolean(navigator.canShare?.({ files })); } catch { return false; } };
 
-try {
-  shareButton.hidden = !navigator.canShare?.({ files: [new File([''], 'test.png', { type: 'image/png' })] });
-} catch {
-  shareButton.hidden = true;
+// Everything the card shows; a GIF made for one version is not shared for another.
+function cardKey() {
+  return JSON.stringify([photoToken, state.outfit, state.pose, state.scene, state.name.trim(), toHex(state.skin), state.photo,
+    state.offsets[state.outfit], state.scales[state.outfit], state.angles[state.outfit], Boolean(outfitArt()), Boolean(sceneImage(state.scene)), Boolean(state.head)]);
 }
 
+let gifJob = null; // { key, file, promise }
+let gifTimer = 0;
+let gifWanted = false; // Share was tapped before the GIF was ready
+function scheduleGif() {
+  clearTimeout(gifTimer);
+  if (!state.work || shareButton.hidden || gifJob?.key === cardKey()) return;
+  gifTimer = setTimeout(prepareGif, GIF_IDLE_MS);
+}
+function prepareGif() {
+  const key = cardKey();
+  if (gifJob?.key === key) return gifJob.promise;
+  const job = { key, file: null };
+  job.promise = makeGif(() => gifJob !== job || cardKey() !== key)
+    .then(file => {
+      if (gifJob !== job) return null;
+      job.file = file;
+      if (gifWanted) {
+        gifWanted = false;
+        setStatus(t('greeting.status.gifReady', 'Your animated card is ready. Tap Share.'));
+      }
+      return file;
+    })
+    .catch(() => {
+      if (gifJob === job) gifJob = null; // made again on the next change or tap
+      return null;
+    });
+  gifJob = job;
+  return job.promise;
+}
+const yieldToPage = () => new Promise(resolve => setTimeout(resolve, 0));
+// The GIF, made a few frames at a time so the page stays responsive; stale() stops it early if the card
+// changes meanwhile. One palette for the whole loop (from three moments of it), so colours don't flicker.
+async function makeGif(stale) {
+  const { GIFEncoder, quantize, applyPalette } = await import(GIFENC);
+  paintLayers();
+  const full = Object.assign(document.createElement('canvas'), { width: SIZE, height: CARD_H });
+  const fullContext = full.getContext('2d');
+  const frames = Math.round(LOOP_MS / GIF_FRAME_MS);
+  let file = null;
+  for (const width of GIF_WIDTHS) {
+    const height = Math.round(width * CARD_H / SIZE);
+    const small = Object.assign(document.createElement('canvas'), { width, height });
+    const smallContext = small.getContext('2d', { willReadFrequently: true });
+    const frameAt = index => {
+      composeCard(fullContext, index * GIF_FRAME_MS);
+      smallContext.drawImage(full, 0, 0, width, height);
+      return smallContext.getImageData(0, 0, width, height).data;
+    };
+    const samples = [0, Math.round(frames / 3), Math.round((2 * frames) / 3)].map(frameAt);
+    const sampled = new Uint8ClampedArray(samples.reduce((sum, data) => sum + data.length, 0));
+    samples.reduce((at, data) => (sampled.set(data, at), at + data.length), 0);
+    // 255 colours, plus one "unchanged" slot: after the first frame, only the pixels the effects
+    // change are stored and the rest stay as they were, which keeps the file small.
+    const palette = quantize(sampled, 255);
+    const unchanged = palette.length;
+    const gifPalette = [...palette, [0, 0, 0]];
+    const gif = GIFEncoder();
+    let previous = null;
+    for (let index = 0; index < frames; index++) {
+      if (index % 3 === 0) {
+        await yieldToPage();
+        if (stale()) throw new Error('stale');
+      }
+      const pixels = applyPalette(frameAt(index), palette);
+      if (!previous) {
+        gif.writeFrame(pixels, width, height, { palette: gifPalette, delay: GIF_FRAME_MS, repeat: 0 });
+      } else {
+        const changes = pixels.slice();
+        for (let i = 0; i < changes.length; i++) if (changes[i] === previous[i]) changes[i] = unchanged;
+        gif.writeFrame(changes, width, height, { delay: GIF_FRAME_MS, transparent: true, transparentIndex: unchanged, dispose: 1 });
+      }
+      previous = pixels;
+    }
+    gif.finish();
+    file = new File([gif.bytes()], 'deepavali-greeting.gif', { type: 'image/gif' });
+    if (file.size <= GIF_BUDGET && canShareFiles([file])) return file;
+    await yieldToPage();
+  }
+  return file; // the smallest; Share checks whether the phone accepts it
+}
+
+// Video: two loops recorded from a hidden canvas. MP4 only: WebM does not play in WhatsApp or on
+// iPhones, so where the browser cannot record MP4 the animated GIF is saved instead.
+async function recordVideo() {
+  if (!window.MediaRecorder || !HTMLCanvasElement.prototype.captureStream) return null;
+  const type = ['video/mp4;codecs=avc1.42E01E', 'video/mp4;codecs=avc1', 'video/mp4'].find(candidate => MediaRecorder.isTypeSupported(candidate));
+  if (!type) return null;
+  paintLayers();
+  const stage = Object.assign(document.createElement('canvas'), { width: SIZE, height: CARD_H });
+  stage.style.cssText = 'position:fixed;left:-9999px;top:0;width:10px;height:10px;opacity:0;pointer-events:none';
+  document.body.append(stage);
+  const context = stage.getContext('2d');
+  composeCard(context, 0);
+  const stream = stage.captureStream(30);
+  const recorder = new MediaRecorder(stream, { mimeType: type, videoBitsPerSecond: 5_000_000 });
+  const chunks = [];
+  recorder.ondataavailable = event => { if (event.data.size) chunks.push(event.data); };
+  const stopped = new Promise(resolve => { recorder.onstop = resolve; });
+  recorder.start(250);
+  const started = performance.now();
+  await new Promise(resolve => {
+    const frame = now => {
+      const elapsed = now - started;
+      composeCard(context, elapsed % LOOP_MS);
+      if (elapsed < LOOP_MS * 2) requestAnimationFrame(frame); else resolve();
+    };
+    requestAnimationFrame(frame);
+  });
+  recorder.stop();
+  await stopped;
+  stream.getTracks().forEach(track => track.stop());
+  stage.remove();
+  return new File(chunks, 'deepavali-greeting.mp4', { type: 'video/mp4' });
+}
+
+// Share appears where the phone can share pictures; the GIF is made once a photo is in.
+shareButton.hidden = !canShareFiles([new File([''], 'test.png', { type: 'image/png' })]);
+
 shareButton.addEventListener('click', async () => {
-  const file = await cardFile();
+  const ready = gifJob?.key === cardKey() ? gifJob.file : null;
+  // No GIF yet (or the phone cannot share one): the still card is quick enough to share right away
+  // if GIFs cannot be shared at all; otherwise ask for a second tap once the GIF is ready.
+  let file = ready && canShareFiles([ready]) ? ready : null;
+  if (!file && ready) file = await stillFile();
+  if (!file) {
+    gifWanted = true;
+    setStatus(t('greeting.status.gifWait', 'Getting your animated card ready. Tap Share again in a moment.'), true);
+    prepareGif();
+    return;
+  }
   try {
-    await navigator.share({ files: [file], title: t('greeting.share.title', 'Deepavali greeting'), text: t('greeting.share.text', 'Happy Deepavali! Make your own card: {url}', { url: location.href.split('#')[0] }) });
-    track('greeting_shared');
+    await navigator.share({ files: [file], title: shareTitle(), text: shareText() });
+    track(file.type === 'image/gif' ? 'greeting_shared_gif' : 'greeting_shared');
   } catch (error) {
-    if (error.name !== 'AbortError') { download(file); track('greeting_shared'); }
+    if (error.name !== 'AbortError') setStatus(t('greeting.status.shareFailed', 'Your phone couldn’t open the share menu. Save the card with Photo or Video and share it from your gallery.'));
   }
 });
-downloadButton.addEventListener('click', async () => { download(await cardFile()); track('greeting_shared'); });
+downloadButton.addEventListener('click', async () => { download(await stillFile()); track('greeting_photo_saved'); });
+videoButton.addEventListener('click', async () => {
+  videoButton.disabled = true;
+  setStatus(t('greeting.status.video', 'Making your video…'), true);
+  try {
+    const video = await recordVideo();
+    if (video) {
+      download(video);
+      setStatus(t('greeting.status.videoDone', 'Your video is saved.'));
+      track('greeting_video_saved');
+    } else {
+      download(await (gifJob?.key === cardKey() && gifJob.file ? gifJob.file : prepareGif()) || await stillFile());
+      setStatus(t('greeting.status.videoGif', 'This browser can’t make videos, so we saved an animated GIF instead.'));
+      track('greeting_gif_saved');
+    }
+  } catch {
+    setStatus(t('greeting.status.exportFailed', 'Something went wrong. Please try again.'));
+  } finally {
+    videoButton.disabled = false;
+  }
+});
 
 photoInput.addEventListener('change', () => {
   const [file] = photoInput.files;
@@ -1651,6 +1974,7 @@ function openStudio() {
   section.setAttribute('aria-modal', 'true');
   document.body.classList.add('studio-open');
   stopDemo(); // the maker shows the visitor's own choices, not the demo
+  startAnimation(); // the preview plays the animated card
   studioPanel.scrollTop = 0;
   studioPanel.parentElement.scrollTop = 0;
   if (!history.state?.studio) history.pushState({ studio: true }, '', '#greeting');

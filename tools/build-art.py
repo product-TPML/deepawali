@@ -10,7 +10,8 @@ writes site/assets/deepavali/:
     bg-{scene}.webp             the background at card size (1080 x 1350)
     bg-{scene}-thumb.webp       small picture for the scene picker
 
-and prints each outfit's neck opening, for NECKS in site/greeting.js.
+and prints each outfit's neck opening and where its sparkler burst or diya flame is, for NECKS and
+LIGHTS in site/greeting.js.
 
 The outfit masters paint skin in two flat colours, #c68a5e with creases #a66946. Skin is every
 pixel close to those colours that is connected to a sizeable patch of the exact colours, so gold or
@@ -74,16 +75,38 @@ def neck_opening(alpha):
     raise ValueError('collar never closes')
 
 
+def light_point(rgba, sparkler):
+    """Where the sparkler's burst or the diya's flame is, in scene coordinates (the animated card adds
+    moving sparks or a flickering glow there). The brightest near-white pixels in the right area."""
+    rgb = rgba[..., :3].astype(int)
+    solid = rgba[..., 3] > 200
+    area = np.zeros_like(solid)
+    if sparkler:
+        area[:1500, 1300:] = True  # the raised hand is on the viewer's right
+        bright = solid & (rgb.min(-1) > 235)
+    else:
+        area[1750:2100, 1000:1160] = True  # the diya is held at the centre (cream fabric nearby is excluded)
+        bright = solid & (rgb.min(-1) > 238)  # the white-hot core of the flame
+        if (bright & area).sum() < 100:
+            bright = solid & (rgb[..., 0] > 245) & (rgb[..., 1] > 190) & (rgb[..., 2] < 200)  # a yellower flame
+    ys, xs = np.nonzero(bright & area)
+    if not len(xs):
+        raise ValueError('no light found')
+    return {'x': int(np.median(xs)) // 2, 'y': int(np.median(ys)) // 2}
+
+
 necks = {}
+lights = {}
 for path in sorted((masters / 'outfits').glob('*.png')):
     master = Image.open(path).convert('RGBA')
     assert master.size == (2160, 2220), f'{path.name} is {master.size}, expected 2160 x 2220'
     rgba = np.array(master)
     mask = Image.fromarray((skin_mask(rgba) * 255).astype(np.uint8))
     necks[path.stem] = {k: int(v) for k, v in neck_opening(rgba[..., 3]).items()}
+    lights[path.stem] = light_point(rgba, path.stem.endswith('sparkler'))
     master.resize((1080, 1110), Image.LANCZOS).save(out / f'{path.stem}.webp', quality=90, method=6)
     mask.resize((1080, 1110), Image.BOX).save(out / f'{path.stem}-skin.png', optimize=True)
-    print(f'{path.stem}: {necks[path.stem]}')
+    print(f'{path.stem}: neck {necks[path.stem]}, light {lights[path.stem]}')
 
 for path in sorted((masters / 'backgrounds').glob('bg-*.jpg')):
     image = Image.open(path).convert('RGB')
@@ -93,3 +116,5 @@ for path in sorted((masters / 'backgrounds').glob('bg-*.jpg')):
 
 print('\nNECKS for site/greeting.js:')
 print('{ ' + ', '.join(f"'{k}': {{ x: {v['x']}, top: {v['top']}, width: {v['width']}, bottom: {v['bottom']} }}" for k, v in necks.items()) + ' }')
+print('\nLIGHTS for site/greeting.js:')
+print('{ ' + ', '.join(f"'{k}': [{v['x']}, {v['y']}]" for k, v in lights.items()) + ' }')
