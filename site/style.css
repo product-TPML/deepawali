@@ -23,11 +23,12 @@ em{font-style:italic;font-weight:500}
 .button{display:inline-flex;align-items:center;gap:12px;padding:13px 20px;border:0;border-radius:999px;text-decoration:none;font-size:14px;font-weight:600;cursor:pointer}
 .button-gold{background:var(--gold);color:#2a1a10}.button-gold:hover{background:#f6d38d}
 .button-dark{background:var(--ink);color:#fff}.button-dark:hover{background:#000}
-/* Header: the Prajavani logo, the Deepavali wordmark, the sections and the sponsor. Phones get a
-   sponsor strip under it and a bottom bar; tablets a menu button. A string of lamps hangs below. */
+/* Header: the Prajavani logo, the Deepavali wordmark, the sections, the sponsor and a menu button.
+   Below 1024px the sponsor moves to a strip under it; phones swap the menu button for a bottom bar.
+   A string of lamps hangs below. */
 .top{position:sticky;top:0;z-index:100;background:linear-gradient(100deg,#160f2c,#2a1740 55%,#1b1233);color:#fff;border-bottom:1px solid #f2c46d40}
 .top:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:6px;pointer-events:none;background:radial-gradient(circle at 50% 0,#ffd27a 2px,#ffd27a55 3px,transparent 4.5px) 0 0/22px 6px repeat-x}
-.top-inner{max-width:var(--wrap);margin:0 auto;height:68px;padding:0 var(--pad);display:flex;align-items:center;gap:22px}
+.top-inner{max-width:1360px;margin:0 auto;height:68px;padding:0 var(--pad);display:flex;align-items:center;gap:22px}
 .publisher img{display:block;height:28px;width:auto}
 .event-mark{display:flex;align-items:center;gap:8px;padding-left:20px;border-left:1px solid #f2c46d44;color:#fff;text-decoration:none;line-height:1}
 .event-diya{flex:none;width:38px;height:38px;overflow:visible}
@@ -35,40 +36,59 @@ em{font-style:italic;font-weight:500}
 .event-glow{animation:mark-glow 2.4s ease-in-out infinite alternate}
 @keyframes mark-glow{from{opacity:.55}to{opacity:1}}
 .event-text{display:flex;flex-direction:column}
-.event-text strong{font:italic 600 26px/1 var(--serif);letter-spacing:.01em;background:linear-gradient(180deg,#fff6dc 15%,#f2c46d 60%,#e0a43c);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:2px}
+.event-text strong{font:italic 600 26px/1 var(--serif);letter-spacing:.01em;background:linear-gradient(180deg,#fff6dc 15%,#f2c46d 60%,#e0a43c);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:2px;white-space:nowrap}
 .event-text small{margin-top:3px;font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#d9cfe9;white-space:nowrap}
 .event-text small b{color:var(--gold)}
 html[lang="kn"] .event-text strong{font:700 24px/1.15 var(--sans);letter-spacing:0}
 html[lang="kn"] .event-text small{font-size:11px;letter-spacing:.02em;text-transform:none}
 .top-nav{display:flex;align-self:stretch;margin-left:auto}
-.top-nav a{display:flex;align-items:center;padding:3px 14px 0;border-bottom:3px solid transparent;color:#e9e3f3;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.06em}
+.top-nav a{display:flex;align-items:center;padding:3px 14px 0;white-space:nowrap;border-bottom:3px solid transparent;color:#e9e3f3;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.06em}
+.publisher,.event-mark,.top-inner>.sponsor{flex:none}
 .top-nav a:hover{color:#fff;background:#ffffff0d}
 .top-nav a.is-active{color:var(--gold);border-bottom-color:var(--gold)}
 html[lang="kn"] .top-nav a{font-size:15px;letter-spacing:0}
-.sponsor{display:flex;align-items:center;gap:10px;text-decoration:none;padding-left:22px;border-left:1px solid #ffffff22}
-.sponsor-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
-html[lang="kn"] .sponsor-label{font-size:12px;letter-spacing:0}
-.sponsor-logo{display:grid;place-items:center;height:30px;padding:0 12px;border:1px dashed #ffffff55;border-radius:6px;font-size:11px;opacity:.75;white-space:nowrap}
+/* Sponsor, laid out as on the Prajavani Dasara page: from 1024px it sits in the header (label, a
+   divider, the logo on a white chip) beside an always-there menu button; below 1024px it moves to a
+   strip under the header. Phones put the wordmark on the right. */
+.sponsor{display:flex;align-items:center;gap:14px;text-decoration:none}
+.sponsor-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.top-inner>.sponsor .sponsor-label{padding-right:14px;border-right:1px solid #ffffff36;line-height:30px}
+html[lang="kn"] .sponsor-label{font-size:13px;letter-spacing:0}
+.sponsor-logo{display:grid;place-items:center;height:30px;padding:0 12px;border:1px dashed #ffffff55;border-radius:6px;color:#fff;font-size:11px;opacity:.75;white-space:nowrap}
+.sponsor-logo:has(img){opacity:1}
 .sponsor-logo img{display:block;height:30px;width:auto}
+.sponsor-on-light .sponsor-logo img{box-sizing:content-box;padding:6px 10px;border-radius:6px;background:#fff}
+.sponsor:hover .sponsor-logo img{filter:brightness(1.05)}
 .sponsor-bar{display:none}
-.menu-button{display:none;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 11px;border:1px solid #f2c46d55;border-radius:999px;background:none;cursor:pointer}
+.menu-button{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 11px;border:1px solid #f2c46d55;border-radius:999px;background:none;cursor:pointer}
 .menu-button span{display:block;height:2px;border-radius:2px;background:var(--gold)}
-@media(max-width:1099px){.top-nav{display:none}.top .sponsor{margin-left:auto}.menu-button{display:flex}}
+@media(max-width:1439px){.top-inner>.sponsor .sponsor-label{display:none}}
+@media(max-width:1279px){.top-nav{display:none}.top-inner>.sponsor{margin-left:auto}}
+@media(max-width:1023px){
+  html{scroll-padding-top:124px}
+  .top-inner>.sponsor{display:none}
+  .menu-button{margin-left:auto}
+  .sponsor-bar{position:relative;display:flex;align-items:center;gap:12px;min-height:48px;padding:6px max(var(--pad),calc((100% - var(--wrap)) / 2 + var(--pad)));background:linear-gradient(100deg,#1b1233,#2a1740 55%,#1b1233);border-top:1px solid #ffffff14}
+}
 @media(max-width:767px){
+  html{scroll-padding-top:0}
   .top{position:relative}
   .top:after{display:none}
   .top-inner{height:60px;gap:12px}
   .publisher img{height:24px}
-  .event-mark{padding-left:12px;gap:6px}
+  .event-mark{margin-left:auto;padding-left:0;border-left:0;gap:6px}
+  .event-text{align-items:flex-end;text-align:right}
   .event-diya{width:30px;height:30px}
-  .event-text strong{font-size:21px}
+  .event-text strong{font-size:19px}
   html[lang="kn"] .event-text strong{font-size:19px}
   .event-text small{font-size:8px;letter-spacing:.14em}
   html[lang="kn"] .event-text small{font-size:10px}
-  .top-inner>.sponsor,.menu-button{display:none}
-  .sponsor-bar{position:relative;display:flex;justify-content:center;padding:7px var(--pad);background:#1b1233;border-top:1px solid #ffffff14;border-bottom:1px solid #f2c46d40}
-  .sponsor-bar .sponsor{padding:0;border:0}
-  .sponsor-bar .sponsor-label{display:inline}
+  .menu-button{display:none}
+  /* The label and logo sit together in the middle, split by a divider as in the desktop header */
+  .sponsor-bar{justify-content:center;gap:12px;min-height:50px;padding-block:7px;border-bottom:1px solid #f2c46d40}
+  .sponsor-bar .sponsor-label{padding-right:12px;border-right:1px solid #ffffff36;font-size:9px;letter-spacing:.14em;line-height:28px}
+  .sponsor-bar .sponsor-logo{height:auto}
+  .sponsor-on-light .sponsor-bar .sponsor-logo img{height:24px;padding:5px 9px}
 }
 
 /* Menu panel */
@@ -176,18 +196,51 @@ body.menu-open{overflow:hidden}
 .story-art:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 120%,#ffd27a55,transparent 60%)}
 .story-art svg{position:absolute;inset:0;margin:auto;width:42%;height:auto;opacity:.9;transition:transform .5s}
 .story-card:hover .story-art svg{transform:scale(1.08) rotate(8deg)}
+.story-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.story-card:hover .story-art img{transform:scale(1.04)}
 .story-category{margin:16px 0 6px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2)}
 .story-card h3{margin:0;font:500 21px/1.3 var(--serif)}
 .story-card:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .story-date{margin-top:8px;font-size:13px;color:var(--muted)}
 .story-status{grid-column:1/-1;color:var(--muted);text-align:center}
+/* No stories (off the publisher's site, or none tagged yet): a calm note with a link to the tag page */
+.story-empty{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:40px 24px 44px;border:1px dashed var(--line);border-radius:20px;background:var(--white);text-align:center}
+.story-empty svg{width:72px;height:auto;margin-bottom:6px;padding:14px;border-radius:50%;background:var(--night)}
+.story-empty h3{margin:0;font:500 24px/1.25 var(--serif)}
+.story-empty p{max-width:440px;margin:0 0 14px;color:var(--muted)}
+.stories-more{display:flex;justify-content:center;margin-top:36px}.stories-more[hidden]{display:none}
+/* All stories: a page mode; the home sections hide while it is open */
+body.all-stories-open main > :not(.all-stories),body.all-stories-open #share{display:none}
+.all-stories[hidden]{display:none}
+.all-stories{max-width:var(--wrap);margin:0 auto;padding:28px var(--pad) clamp(56px,8vw,96px)}
+.all-stories-home{display:inline-flex;align-items:center;gap:8px;padding:6px 0;border:0;background:none;color:var(--gold-2);font:700 14px/1.4 var(--sans);cursor:pointer}
+.all-stories-home:hover{text-decoration:underline}
+.all-stories-head{margin-bottom:28px}
+.all-stories-head h2{margin:6px 0 4px;font:500 clamp(32px,4.2vw,52px)/1.1 var(--serif)}
+.all-stories-head h2:focus{outline:none}
+.all-stories-count{margin:0;color:var(--muted);font-size:14px}
+.pager{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin-top:44px}.pager[hidden]{display:none}
+.pager-btn{min-width:44px;min-height:44px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--white);color:var(--ink);font:600 15px/1 var(--sans);cursor:pointer}
+.pager-btn:hover:not(:disabled){border-color:var(--ink)}
+.pager-btn.is-current{background:var(--ink);border-color:var(--ink);color:#fff}
+.pager-btn:disabled{opacity:.4;cursor:default}
+.pager-gap{padding:0 4px;color:var(--muted)}
+@media(max-width:560px){.pager{gap:6px}.pager-btn{min-width:40px;padding:8px 11px;font-size:14px}
+  /* Phones: the listing is a compact list, thumbnail beside the headline */
+  #all-stories-grid{gap:0}
+  #all-stories-grid .story-card{display:grid;grid-template-columns:112px 1fr;grid-template-rows:auto auto 1fr;column-gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  #all-stories-grid .story-art{grid-row:1/4;border-radius:10px}
+  #all-stories-grid .story-art svg{width:48%}
+  #all-stories-grid .story-category{margin:0 0 2px}
+  #all-stories-grid .story-card h3{font-size:17px;line-height:1.35}
+  #all-stories-grid .story-date{margin-top:4px;font-size:12px}}
 @media(max-width:900px){.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.story-grid{grid-template-columns:1fr;gap:28px}}
 
 /* Ad slots: sized placeholders until the sponsor's creatives arrive */
 .ad-slot{padding:18px 16px;display:flex;flex-direction:column;align-items:center;gap:6px;border-block:1px solid var(--line);background:#f4f0e9}
 .ad-slot[hidden]{display:none}
-.ad-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9a948c}
+.ad-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#6b655e}
 .ad-box{display:grid;place-items:center;max-width:100%;border:1px dashed #cfc7bb;border-radius:4px;background:repeating-linear-gradient(135deg,#ffffff80 0 10px,transparent 10px 20px);color:#9a948c;font:600 12px ui-monospace,Consolas,monospace}
 .ad-creative{display:block;max-width:100%;line-height:0}.ad-creative img{display:block;max-width:100%;height:auto}
 
@@ -197,22 +250,31 @@ body.menu-open{overflow:hidden}
 .crackers .section-head h2 em{color:var(--gold)}
 .crackers .section-intro{color:#bfb6d3}
 .cracker-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
-.cracker{display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 10px 16px;border:1px solid #ffffff1f;border-radius:16px;background:#ffffff08;color:#fff;font:500 16px/1.25 var(--serif);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s,border-color .2s,background .2s}
-.cracker svg{display:block;width:100%;max-width:110px;height:auto;transition:transform .3s}
+.cracker{display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 10px 16px;border:1px solid #ffffff1f;border-radius:16px;background:radial-gradient(90% 60% at 50% 72%,#ff9f2e14,transparent 70%),#ffffff08;color:#fff;font:500 16px/1.25 var(--serif);overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s,border-color .2s,background .2s}
 .cracker:hover{transform:translateY(-4px);border-color:#f2c46d88}
-.cracker:hover svg{transform:scale(1.06) rotate(-4deg)}
+.cracker:hover .ck-stage{transform:scale(1.06)}
 .cracker[aria-pressed="true"]{border-color:var(--gold);background:#f2c46d1a}
-.cracker-result{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:center;margin-top:32px;padding:28px;border:1px solid #f2c46d55;border-radius:20px;background:#ffffff0a}
+.cracker-result{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:center;margin-top:32px;padding:28px;border:1px solid #f2c46d55;border-radius:20px;background:#ffffff0a;overflow:hidden}
 .cracker-result[hidden]{display:none}
 .cracker-result.is-new{animation:rise .5s ease-out}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}}
-.cracker-result-art svg{display:block;width:100%;height:auto}
+.cracker-result-art .ck-stage{max-width:none}
 .cracker-result .eyebrow{margin-bottom:6px}
 .cracker-result h3{margin:0;font:500 clamp(28px,3.4vw,40px)/1.1 var(--serif);color:var(--gold)}
+.cracker-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.cracker-friend{margin:14px 0 0;color:var(--gold-2);font-weight:600}.cracker-friend[hidden]{display:none}
 .cracker-meaning{margin:12px 0 0;color:#bfb6d3;font-size:15px}
 .cracker-personality{margin:14px 0 22px;font-size:18px;line-height:1.55}
+/* The six crackers. The SVG draws each one; main.js lays a canvas over it for the sparks and moves the
+   parts (.ck-live). Without JS, or with reduced motion, the .ck-static sparks drawn in the SVG show instead. */
+.ck-defs{position:absolute}
+.ck-stage{position:relative;display:block;width:100%;max-width:150px;aspect-ratio:1;transition:transform .3s}
+.ck-stage svg,.ck-stage canvas{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ck-stage canvas{inset:-25%;width:150%;height:150%;pointer-events:none} /* bleeds past the art so big sparks aren't cut off */
+.ck-live .ck-static{display:none}
+.ck-lc{transition:opacity .35s}.ck-lc.is-popped{opacity:0;transition:none}
 @media(max-width:900px){.cracker-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:600px){.cracker-grid{gap:10px}.cracker{font-size:14px;padding:14px 6px 12px}.cracker-result{grid-template-columns:1fr;gap:12px;padding:22px;text-align:center}.cracker-result-art{width:120px;margin:0 auto}}
+@media(max-width:600px){.cracker-grid{gap:10px}.cracker{font-size:14px;padding:14px 6px 12px}.cracker-result{grid-template-columns:1fr;gap:12px;padding:22px;text-align:center}.cracker-result-art{width:120px;margin:0 auto}.cracker-actions{justify-content:center}}
 
 /* Share + footer */
 .share{background:var(--night);color:#fff}

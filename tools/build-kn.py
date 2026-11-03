@@ -1,6 +1,7 @@
 """Build the Kannada (Prajavani) page, the site default, from the English index.en.html and content/i18n/kn.json.
 
     index.html                          the Kannada page (default; index.en.html is the English source)
+    index.pv.cms.html                   the same page for the Prajavani CMS, loading its files from Cloudflare Pages
     content/i18n/kn-translation.csv     the same text as a spreadsheet, for editors to review
 
 kn.json has three parts:
@@ -24,6 +25,7 @@ import sys
 from pathlib import Path
 
 root = Path(__file__).resolve().parent.parent
+ASSET_HOST = 'https://deepawali.pages.dev/'  # Cloudflare Pages copy of this repo
 html = (root / 'index.en.html').read_text(encoding='utf-8')
 edition = json.loads((root / 'content/i18n/kn.json').read_text(encoding='utf-8'))
 site = edition['site']
@@ -78,12 +80,21 @@ leftovers = sorted({text.strip() for text in re.findall(r'>([^<>]*[A-Za-z]{3,}[^
                     if not re.search('[ಀ-೿]', text) and text.strip() not in allowed})
 leftovers += sorted({value for value in re.findall(r'(?:aria-label|alt|placeholder|content)="([^"]*[A-Za-z]{4,}[^"]*)"', visible)
                      if not re.search('[ಀ-೿]', value) and not value.startswith(('width=', '#', 'http'))
-                     and value not in ('website',)})
+                     and value not in ('website', 'summary_large_image', 'index, follow, max-image-preview:large')})
 if leftovers:
     print('  English text still on the Kannada page (add it to kn.json):\n    ' + '\n    '.join(leftovers))
 
 (root / 'index.html').write_text(page, encoding='utf-8')
 print('index.html (Kannada, the default page) written')
+
+# The page pasted into the Prajavani CMS (www.prajavani.net/pages/deepawali): the same page, with the
+# scripts, styles and artwork loaded from the Cloudflare Pages copy of this repo (served with CORS; see _headers).
+cms = page.replace('="site/', f'="{ASSET_HOST}site/').replace('href="index.en.html"', f'href="{ASSET_HOST}index.en.html"')
+left = re.findall(r'(?:src|href)="(?!https?:|#|mailto:)([^"]+)"', cms)
+if left:
+    sys.exit('index.pv.cms.html: relative links left: ' + ', '.join(sorted(set(left))))
+(root / 'index.pv.cms.html').write_text(cms, encoding='utf-8')
+print(f'index.pv.cms.html (for the Prajavani CMS, assets from {ASSET_HOST}) written')
 
 # Review sheet for editors (the build reads kn.json, not this file).
 with (root / 'content/i18n/kn-translation.csv').open('w', encoding='utf-8-sig', newline='') as sheet:

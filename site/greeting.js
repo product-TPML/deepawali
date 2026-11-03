@@ -1113,7 +1113,7 @@ function drawText() {
   ctx.textAlign = 'left';
   ctx.letterSpacing = KANNADA ? '1px' : '6px';
   ctx.font = `700 26px ${sans}`;
-  ctx.fillText(t('greeting.card.kicker', 'DEEPAVALI 2026'), 60, 120);
+  ctx.fillText(t('greeting.card.kicker', 'DEEPAVALI DEEPAMALE 2026'), 60, 120);
   ctx.letterSpacing = '0px';
   ctx.fillStyle = '#fff4dc';
   const title = t('greeting.card.title', 'Happy Deepavali!');
@@ -1153,7 +1153,7 @@ function drawText() {
   ctx.fillStyle = '#ebc87f';
   ctx.letterSpacing = KANNADA ? '0px' : '3px';
   ctx.font = `700 17px ${sans}`;
-  ctx.fillText(publisher ? t('greeting.card.kicker', 'DEEPAVALI 2026') : t('greeting.card.bandNoLogo', '{publisher} · DEEPAVALI 2026', brand).toUpperCase(), textLeft, BAND_TOP + 90);
+  ctx.fillText(publisher ? t('greeting.card.kicker', 'DEEPAVALI DEEPAMALE 2026') : t('greeting.card.bandNoLogo', '{publisher} · DEEPAVALI DEEPAMALE 2026', brand).toUpperCase(), textLeft, BAND_TOP + 90);
   ctx.textAlign = 'right';
   ctx.font = `700 15px ${sans}`;
   ctx.fillText(t('greeting.card.presentedBy', 'PRESENTED BY'), 1044, BAND_TOP + 32);
@@ -1409,9 +1409,11 @@ function drawLightEffects(g, time) {
   g.restore();
 }
 
-// The maker's preview plays the animation (except for visitors who prefer reduced motion).
+// The card plays its animation (fireworks, twinkles, diya flames, sparklers) in the maker and in the
+// home page teaser while it is on screen, except for visitors who prefer reduced motion.
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const animating = () => !reducedMotion && !document.hidden && document.querySelector('#greeting').classList.contains('is-studio');
+let cardOnScreen = false;
+const animating = () => !reducedMotion && !document.hidden && (cardOnScreen || document.querySelector('#greeting').classList.contains('is-studio'));
 let animationFrame = 0;
 let lastFrameAt = 0;
 function drawOverlay(selection) {
@@ -2054,9 +2056,10 @@ function preloadAll() {
   SCENES.forEach(sceneImage);
 }
 new IntersectionObserver(entries => {
-  demoVisible = entries[0].isIntersecting;
+  demoVisible = cardOnScreen = entries[0].isIntersecting;
   if (demoVisible) preloadAll();
   runDemo();
+  startAnimation();
 }).observe(canvas);
 document.addEventListener('visibilitychange', runDemo);
 [...outfitInputs, ...poseInputs, ...sceneInputs].forEach(input => input.addEventListener('change', stopDemo));
