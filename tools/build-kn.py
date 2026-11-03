@@ -87,7 +87,7 @@ if leftovers:
 (root / 'index.html').write_text(page, encoding='utf-8')
 print('index.html (Kannada, the default page) written')
 
-# The page pasted into the Prajavani CMS (www.prajavani.net/pages/deepawali): the same page, with the
+# The page pasted into the Prajavani CMS (www.prajavani.net/pages/deepawali-special): the same page, with the
 # scripts, styles and artwork loaded from the Cloudflare Pages copy of this repo (served with CORS; see _headers).
 cms = page.replace('="site/', f'="{ASSET_HOST}site/').replace('href="index.en.html"', f'href="{ASSET_HOST}index.en.html"')
 left = re.findall(r'(?:src|href)="(?!https?:|#|mailto:)([^"]+)"', cms)
