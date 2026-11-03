@@ -15,7 +15,8 @@ const ITALIC = KANNADA ? '' : 'italic '; // Kannada has no italic; a slanted fal
 const MEDIAPIPE = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.0.1';
 const FACE_MODEL = 'https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/1/blaze_face_short_range.tflite';
 // Labels each pixel: 0 background, 1 hair, 2 body skin, 3 face skin, 4 clothes, 5 other. About 16 MB, loaded on demand.
-const SEGMENT_MODEL = 'https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite';
+// Pinned to version 1 (not 'latest') so a new model can't change the cut-out without a code change.
+const SEGMENT_MODEL = 'https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/1/selfie_multiclass_256x256.tflite';
 const STICKER_SCALE = 1.5; // sticker heads get extra room around the face for hair
 const STICKER_FACE_BOOST = 1.25; // a cut-out head reads smaller than an oval photo, so enlarge the face
 const STICKER_BORDER = 18; // white border, in head-canvas pixels (2x card pixels)
