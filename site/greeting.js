@@ -575,6 +575,7 @@ function drawBackground() {
 // hands and the diya or sparkler painted in. {file}-skin.png marks where its skin is; the skin is
 // recoloured to the visitor's (keeping the painted shading) and each version is cached.
 const ART_BASE = `${ASSET_BASE}site/assets/deepavali/`;
+const artUrl = name => SITE.artwork?.[name] || ART_BASE + name; // assettype first (SITE.artwork in main.js)
 const ART_SKIN = [198, 138, 94]; // #c68a5e, the skin colour the artwork is painted in
 const POSE_FILE = { namaste: 'diya', wave: 'sparkler' };
 const outfitFile = (outfit = state.outfit, pose = state.pose) => `${outfit}-${POSE_FILE[pose]}`;
@@ -599,7 +600,7 @@ function pixelsOf(img) {
 const artSources = new Map();
 function artSource(file) {
   if (!artSources.has(file)) {
-    const source = Promise.all([loadArt(`${ART_BASE}${file}.webp`), loadArt(`${ART_BASE}${file}-skin.png`)])
+    const source = Promise.all([loadArt(artUrl(`${file}.webp`)), loadArt(artUrl(`${file}-skin.png`))])
       .then(([art, mask]) => ({ art, pixels: pixelsOf(art), mask: pixelsOf(mask).data }));
     source.catch(() => artSources.delete(file)); // try again next time
     artSources.set(file, source);
@@ -667,7 +668,7 @@ const sceneSources = new Map();
 const sceneImages = new Map();
 function sceneImage(scene) {
   if (!sceneSources.has(scene)) {
-    const source = loadArt(`${ART_BASE}bg-${scene}.webp`);
+    const source = loadArt(artUrl(`bg-${scene}.webp`));
     source.then(img => { sceneImages.set(scene, img); scheduleRender(); }, () => sceneSources.delete(scene));
     sceneSources.set(scene, source);
   }

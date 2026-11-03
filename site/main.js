@@ -12,7 +12,7 @@ const SITE = {
   locale: 'en-IN',
   publisher: 'Prajavani',
   publisherUrl: 'https://www.prajavani.net/',
-  publisherLogo: 'site/assets/prajavani-white.svg',
+  publisherLogo: 'https://images.assettype.com/deccanherald/2026-10-08/uf85tvay/PV-White.svg',
   sponsor: 'Union Bank of India', // title sponsor, the same as on the Prajavani Dasara page
   sponsorUrl: 'https://homeloan.unionbankofindia.bank.in/',
   sponsorLogo: 'https://images.assettype.com/prajavani/2026-10-15/kzt51rx7/Unionbank.svg',
@@ -38,6 +38,32 @@ const SITE = {
   storyCount: 6, // on the home page
   storyFetch: 60, // per tag; the All stories view pages through them
   storyPage: 12, // stories per page in the All stories view
+  // Greeting card artwork on Prajavani's image CDN (assettype), by file name. A file not listed here loads
+  // from site/assets/deepavali/ next to this script (Cloudflare Pages). assettype re-encodes to AVIF/WebP for
+  // browsers, keeping transparency; the skin masks come back untouched.
+  artwork: {
+    'bg-balipadyami.webp': 'https://images.assettype.com/prajavani/2026-11-03/1psyyh25/bg-balipadyami.webp',
+    'bg-doorstep.webp': 'https://images.assettype.com/prajavani/2026-11-03/0tdk66nn/bg-doorstep.webp',
+    'bg-fireworks.webp': 'https://images.assettype.com/prajavani/2026-11-03/yn91h92r/bg-fireworks.webp',
+    'bg-lakshmi-puja.webp': 'https://images.assettype.com/prajavani/2026-11-03/k8d2rwga/bg-lakshmi-puja.webp',
+    'bg-night-sky.webp': 'https://images.assettype.com/prajavani/2026-11-03/eokdunyd/bg-night-sky.webp',
+    'kurta-diya-skin.png': 'https://images.assettype.com/prajavani/2026-11-03/5xduinmg/kurta-diya-skin.png',
+    'kurta-diya.webp': 'https://images.assettype.com/prajavani/2026-11-03/8m56wiuc/kurta-diya.webp',
+    'kurta-sparkler-skin.png': 'https://images.assettype.com/prajavani/2026-11-03/pm7dnbpc/kurta-sparkler-skin.png',
+    'kurta-sparkler.webp': 'https://images.assettype.com/prajavani/2026-11-03/l4rwgdz6/kurta-sparkler.webp',
+    'langa-diya-skin.png': 'https://images.assettype.com/prajavani/2026-11-03/ssyj1pmh/langa-diya-skin.png',
+    'langa-diya.webp': 'https://images.assettype.com/prajavani/2026-11-03/rtk139l6/langa-diya.webp',
+    'langa-sparkler-skin.png': 'https://images.assettype.com/prajavani/2026-11-03/6zkfej3u/langa-sparkler-skin.png',
+    'langa-sparkler.webp': 'https://images.assettype.com/prajavani/2026-11-03/4yv6ecv1/langa-sparkler.webp',
+    'panche-diya-skin.png': 'https://images.assettype.com/prajavani/2026-11-03/cl9s7xc1/panche-diya-skin.png',
+    'panche-diya.webp': 'https://images.assettype.com/prajavani/2026-11-03/ngu4h6xr/panche-diya.webp',
+    'panche-sparkler-skin.png': 'https://images.assettype.com/prajavani/2026-11-03/evk6jvdz/panche-sparkler-skin.png',
+    'panche-sparkler.webp': 'https://images.assettype.com/prajavani/2026-11-03/58cao3ji/panche-sparkler.webp',
+    'saree-diya-skin.png': 'https://images.assettype.com/prajavani/2026-11-03/rz2phmns/saree-diya-skin.png',
+    'saree-diya.webp': 'https://images.assettype.com/prajavani/2026-11-03/o7c4xus1/saree-diya.webp',
+    'saree-sparkler-skin.png': 'https://images.assettype.com/prajavani/2026-11-03/jh2gdtn4/saree-sparkler-skin.png',
+    'saree-sparkler.webp': 'https://images.assettype.com/prajavani/2026-11-03/dbxbi1yx/saree-sparkler.webp',
+  },
   ...window.DASARA_SITE
 };
 const STRINGS = window.DASARA_STRINGS || {};

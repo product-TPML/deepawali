@@ -6,7 +6,7 @@
     "locale": "kn-IN",
     "publisher": "ಪ್ರಜಾವಾಣಿ",
     "publisherUrl": "https://www.prajavani.net/",
-    "publisherLogo": "site/assets/prajavani-white.svg",
+    "publisherLogo": "https://images.assettype.com/deccanherald/2026-10-08/uf85tvay/PV-White.svg",
     "sponsor": "ಯೂನಿಯನ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾ",
     "sponsorUrl": "https://homeloan.unionbankofindia.bank.in/",
     "sponsorLogo": "https://images.assettype.com/prajavani/2026-10-15/kzt51rx7/Unionbank.svg",
@@ -45,8 +45,8 @@
     },
     {
       "id": 7,
-      "en": "aria-label=\"Prajavani home\"><img src=\"site/assets/prajavani-white.svg\" alt=\"Prajavani\">",
-      "kn": "aria-label=\"ಪ್ರಜಾವಾಣಿ ಮುಖಪುಟ\"><img src=\"site/assets/prajavani-white.svg\" alt=\"ಪ್ರಜಾವಾಣಿ\">"
+      "en": "aria-label=\"Prajavani home\"><img src=\"https://images.assettype.com/deccanherald/2026-10-08/uf85tvay/PV-White.svg\" alt=\"Prajavani\">",
+      "kn": "aria-label=\"ಪ್ರಜಾವಾಣಿ ಮುಖಪುಟ\"><img src=\"https://images.assettype.com/deccanherald/2026-10-08/uf85tvay/PV-White.svg\" alt=\"ಪ್ರಜಾವಾಣಿ\">"
     },
     {
       "id": 8,
