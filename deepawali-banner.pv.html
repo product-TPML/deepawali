@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="kn">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>ದೀಪಾವಳಿ ದೀಪಮಾಲೆ ಬ್ಯಾನರ್ | ಪ್ರಜಾವಾಣಿ</title>
+      <!-- Prajavani home page touchpoint for the Deepavali Deepamale page, after the PV Dasara banner
+           (Dasara/dasara-banner.pv.html): the same strip, sizes and sponsor block. Animated in CSS only
+           (diya flames, fireworks, a string of lights); still for visitors who prefer reduced motion. -->
+      <link rel="preconnect" href="https://fea.assettype.com" crossorigin>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+      <style>
+         @font-face { font-family: 'Prajavani Text'; font-style: normal; font-weight: 100 500; font-display: swap; src: url(https://fea.assettype.com/tpml/assets/PrajavaniTextRegular.woff2) format("woff2"); }
+         @font-face { font-family: 'Prajavani Text'; font-style: normal; font-weight: 600 900; font-display: swap; src: url(https://fea.assettype.com/tpml/assets/PrajavaniTextSemibold.woff2) format("woff2"); }
+         body { margin: 0; }
+         .dpm-banner {
+         --gold: #f2c46d;
+         --gold-soft: #ffd27a;
+         --cream: #fff8ea;
+         --serif: 'Playfair Display', 'Prajavani Text', Georgia, serif;
+         --sans: 'DM Sans', 'Prajavani Text', Arial, sans-serif;
+         position: relative;
+         isolation: isolate;
+         overflow: hidden;
+         max-width: 1850px;
+         min-height: 103px;
+         margin: 0 auto;
+         border-radius: 4px;
+         background: radial-gradient(ellipse 40% 140% at 46% 100%, rgba(255, 159, 46, .28), transparent 70%), linear-gradient(100deg, #120f24, #2a1740 52%, #1b1233);
+         color: var(--cream);
+         font-family: var(--sans);
+         -webkit-font-smoothing: antialiased;
+         box-sizing: border-box;
+         }
+         .dpm-banner *, .dpm-banner *::before, .dpm-banner *::after { box-sizing: border-box; letter-spacing: normal; font-style: normal; }
+         /* String of lights along the top: two offset rows of bulbs that twinkle in turn; inset gold frame */
+         .dpm-banner::before, .dpm-banner::after {
+         content: "";
+         position: absolute;
+         inset: 0;
+         z-index: 3;
+         border-radius: inherit;
+         pointer-events: none;
+         }
+         .dpm-banner::before {
+         background: radial-gradient(circle, #ffe08a 1.5px, rgba(255, 210, 122, .35) 2.4px, transparent 3.2px) 4px -2px / 28px 14px repeat-x;
+         box-shadow: inset 0 0 0 1px rgba(242, 196, 109, .5);
+         animation: dpm-twinkle 1.6s steps(1) infinite;
+         }
+         .dpm-banner::after {
+         background: radial-gradient(circle, #ff9fb8 1.5px, rgba(255, 159, 184, .35) 2.4px, transparent 3.2px) 18px -2px / 28px 14px repeat-x;
+         animation: dpm-twinkle 1.6s steps(1) -.8s infinite;
+         }
+         @keyframes dpm-twinkle { 0% { opacity: 1; } 50% { opacity: .35; } }
+
+         .dpm-link { position: relative; display: flex; align-items: center; gap: 22px; min-height: 103px; padding: 0 24px 0 0; color: inherit; text-decoration: none; }
+         .dpm-link:focus-visible { outline: 2px solid var(--gold); outline-offset: -4px; }
+
+         /* The diyas: artwork faded into the strip at its edges, with a warm glow breathing on each flame */
+         .dpm-diyas { flex: 0 0 150px; align-self: stretch; position: relative; overflow: hidden; }
+         .dpm-diyas img { position: absolute; left: 0; bottom: 0; display: block; width: 150px; height: 103px;
+         -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent), linear-gradient(0deg, #000 75%, transparent);
+         -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, #000 70%, transparent), linear-gradient(0deg, #000 75%, transparent); mask-composite: intersect; }
+         .dpm-glow { position: absolute; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 230, 160, .75), rgba(255, 159, 46, .25) 45%, transparent 70%); mix-blend-mode: screen; animation: dpm-glow 1.3s ease-in-out infinite alternate; }
+         @keyframes dpm-glow { 0% { opacity: .45; transform: scale(.85); } 40% { opacity: .9; transform: scale(1.05); } 100% { opacity: .6; transform: scale(.95); } }
+
+         .dpm-content { flex: 0 1 auto; min-width: 0; position: relative; z-index: 2; }
+         .dpm-eyebrow { display: flex; align-items: center; gap: 8px; margin: 0 0 3px; color: var(--gold); font-size: 13px; font-weight: 700; line-height: 1.3; white-space: nowrap; }
+         .dpm-eyebrow::before, .dpm-eyebrow::after { content: ""; width: 18px; height: 1px; background: currentColor; opacity: .7; }
+         .dpm-title { margin: 0 0 2px; font: 600 32px/1.25 var(--serif); color: var(--cream); white-space: nowrap; text-shadow: 0 2px 14px rgba(10, 6, 20, .6); }
+         .dpm-year { margin-left: 4px; color: var(--gold-soft); }
+         .dpm-subtitle { margin: 0; font-size: 17px; line-height: 1.35; color: #e6ddf5; white-space: nowrap; }
+
+         /* Fireworks bursting in the open sky: they fill the gap between the headline and the button */
+         .dpm-sky { flex: 1 1 140px; align-self: stretch; max-width: 420px; position: relative; z-index: 1; pointer-events: none; }
+         /* The canvas covers the whole strip, behind the text; rockets go up only over .dpm-sky (the open sky) */
+         .dpm-fireworks { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; }
+
+         .dpm-btn {
+         display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; position: relative; z-index: 2;
+         padding: 9px 18px; border-radius: 999px;
+         background: linear-gradient(180deg, #ffe08a, #e0a43c); color: #2a1740;
+         font-size: 15px; font-weight: 700; line-height: 1.3; white-space: nowrap;
+         box-shadow: 0 4px 14px rgba(255, 159, 46, .35);
+         transition: transform .2s ease, box-shadow .2s ease;
+         }
+         .dpm-btn i { font-style: normal; transition: transform .2s ease; }
+         .dpm-link:hover .dpm-btn, .dpm-link:focus-visible .dpm-btn { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(255, 159, 46, .5); }
+         .dpm-link:hover .dpm-btn i, .dpm-link:focus-visible .dpm-btn i { transform: translateX(3px); }
+
+         .dpm-presenter { display: flex; align-items: center; justify-content: flex-end; gap: 12px; flex: 0 0 auto; min-width: 0; margin-left: 12px; position: relative; z-index: 2; }
+         .dpm-presenter-label { padding-right: 14px; border-right: 1px solid rgba(255, 255, 255, .21); color: var(--gold); font-size: 14px; font-weight: 700; line-height: 40px; white-space: nowrap; }
+         .dpm-presenter-logo { display: block; height: 36px; width: auto; max-width: 100%; padding: 6px 12px; box-sizing: content-box !important; border-radius: 4px; background: #fff; box-shadow: 0 0 0 1px rgba(242, 196, 109, .5), 0 6px 18px rgba(10, 6, 20, .45); }
+
+         .dpm-mobile-only, .dpm-mobile-sponsor { display: none; }
+
+         @media (max-width: 1200px) {
+         .dpm-link { gap: 16px; }
+         .dpm-presenter-label { font-size: 13px; }
+         .dpm-title { font-size: 27px; }
+         .dpm-presenter-logo { height: 30px; padding: 5px 10px; }
+         }
+         @media (max-width: 1024px) {
+         .dpm-eyebrow { display: none; }
+         .dpm-title { font-size: 25px; }
+         .dpm-subtitle { font-size: 15px; white-space: normal; }
+         .dpm-sky { flex-basis: 90px; }
+         }
+         @media (max-width: 820px) {
+         .dpm-presenter-label { display: none; }
+         .dpm-presenter { flex: 0 0 auto; }
+         }
+         /* Phones: a 58px strip. Diyas on the left, the headline with a gold call to action, fireworks in the
+            gap, and the sponsor on a small white plate at the right. */
+         @media (max-width: 767px) {
+         .dpm-banner, .dpm-link { min-height: 58px; height: 58px; }
+         .dpm-link { gap: 0; padding: 0; }
+         .dpm-subtitle, .dpm-presenter, .dpm-btn-desktop, .dpm-eyebrow { display: none; }
+         .dpm-diyas { order: 1; flex: 0 0 76px; }
+         .dpm-diyas img { width: 84px; height: 58px; left: -8px; }
+         .dpm-glow { width: 20px; height: 20px; margin: -10px 0 0 -10px; }
+         .dpm-content { order: 2; flex: 0 1 auto; padding: 0 0 0 6px; }
+         .dpm-title { margin: 0; font-size: 17px; line-height: 1.2; white-space: nowrap; }
+         .dpm-year { margin-left: 2px; }
+         .dpm-mobile-only { display: flex; align-items: center; gap: 5px; margin-top: 3px; color: var(--gold-soft); }
+         .dpm-mobile-cta { font-size: 12px; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+         .dpm-mobile-arrow { font-style: normal; font-size: 13px; line-height: 1; transition: transform .2s ease; }
+         .dpm-link:hover .dpm-mobile-arrow, .dpm-link:focus-visible .dpm-mobile-arrow { transform: translateX(3px); }
+         .dpm-sky { order: 3; flex: 1 1 0; min-width: 12px; max-width: none; }
+         .dpm-mobile-sponsor { order: 4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; flex-shrink: 0; height: 58px; padding: 6px 10px 5px; position: relative; z-index: 2; border-left: 1px solid rgba(255, 255, 255, .14); }
+         .dpm-mobile-sponsor > span:first-child { color: var(--gold); font-size: 9px; font-weight: 700; line-height: 1.1; white-space: nowrap; }
+         .dpm-mobile-logo { width: 78px; padding: 2px 5px; border-radius: 3px; background: #fff; }
+         .dpm-mobile-logo img { display: block; width: 100%; height: auto; }
+         }
+         /* Narrow phones: drop the diyas so the headline keeps its line */
+         @media (max-width: 374px) { .dpm-diyas { display: none; } .dpm-content { padding-left: 12px; } .dpm-title { font-size: 16px; } }
+
+         @media (prefers-reduced-motion: reduce) {
+         .dpm-banner::before, .dpm-banner::after, .dpm-glow { animation: none; }
+         .dpm-fireworks { display: none; }
+         .dpm-btn, .dpm-btn i { transition: none; }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="dpm-banner">
+         <canvas class="dpm-fireworks" aria-hidden="true"></canvas>
+         <a class="dpm-link" href="https://www.prajavani.net/pages/deepawali?utm_source=prajavani&amp;utm_medium=banner&amp;utm_campaign=deepawali_2026" target="_blank" rel="noopener noreferrer">
+            <!-- Phones: sponsor first -->
+            <div class="dpm-mobile-sponsor"><span>ಪ್ರಾಯೋಜಕರು</span><span class="dpm-mobile-logo"><img src="https://images.assettype.com/prajavani/2026-10-15/kzt51rx7/Unionbank.svg" alt="ಯೂನಿಯನ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾ"></span></div>
+
+            <!-- Lit clay diyas from the greeting card artwork (tools/build-banner-art.py), with a glow pulsing on each flame -->
+            <span class="dpm-diyas" aria-hidden="true">
+               <img src="https://deepawali.pages.dev/site/assets/deepavali/banner-diyas.webp" alt="" width="150" height="103">
+               <i class="dpm-glow" style="left:54%;top:18.5%"></i>
+               <i class="dpm-glow" style="left:21.3%;top:52.4%;animation-delay:-.7s"></i>
+               <i class="dpm-glow" style="left:80%;top:67%;animation-delay:-1.3s"></i>
+            </span>
+
+            <div class="dpm-content">
+               <p class="dpm-eyebrow" id="dpm-eyebrow">ಬೆಳಕಿನ ಹಬ್ಬ</p>
+               <h2 class="dpm-title">ದೀಪಾವಳಿ ದೀಪಮಾಲೆ <span class="dpm-year">2026</span></h2>
+               <span class="dpm-mobile-only"><span class="dpm-mobile-cta">ಪಟಾಕಿ ರಸಪ್ರಶ್ನೆ · ಶುಭಾಶಯ ಪತ್ರ</span><i class="dpm-mobile-arrow" aria-hidden="true">&rarr;</i></span>
+               <p class="dpm-subtitle">ನೀವು ಯಾವ ಪಟಾಕಿ? ನಿಮ್ಮದೇ ಶುಭಾಶಯ ಪತ್ರ, ಹಬ್ಬದ ಬರಹಗಳು.</p>
+            </div>
+
+            <!-- The open sky where the fireworks go up (drawn on the canvas below) -->
+            <span class="dpm-sky" aria-hidden="true"></span>
+
+            <span class="dpm-btn dpm-btn-desktop">ಆಚರಿಸೋಣ ಬನ್ನಿ <i aria-hidden="true">&rarr;</i></span>
+
+            <div class="dpm-presenter">
+               <span class="dpm-presenter-label">ಪ್ರಾಯೋಜಕರು</span>
+               <img class="dpm-presenter-logo" src="https://images.assettype.com/prajavani/2026-10-15/kzt51rx7/Unionbank.svg" alt="ಯೂನಿಯನ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾ">
+            </div>
+         </a>
+      </div>
+      <script>
+      // Eyebrow counts down to Deepavali (Sunday 8 November 2026, IST); after the day it reads "festival of lights".
+      (function () {
+         var el = document.getElementById('dpm-eyebrow');
+         var days = Math.ceil((Date.parse('2026-11-08T00:00:00+05:30') - Date.now()) / 86400000);
+         if (days > 1) el.textContent = 'ಇನ್ನು ' + days + ' ದಿನಗಳಲ್ಲಿ ದೀಪಾವಳಿ';
+         else if (days === 1) el.textContent = 'ನಾಳೆ ದೀಪಾವಳಿ';
+         else if (days > -3) el.textContent = 'ದೀಪಾವಳಿಯ ಶುಭಾಶಯಗಳು';
+      })();
+
+      // Fireworks: a rocket climbs from the bottom of the open sky, bursts into sparks that spread, fall
+      // and fade with short trails. Runs only while the banner is on screen and the tab is visible;
+      // off for visitors who prefer reduced motion.
+      (function () {
+         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+         var banner = document.querySelector('.dpm-banner');
+         var sky = banner.querySelector('.dpm-sky');
+         var canvas = banner.querySelector('.dpm-fireworks');
+         var g = canvas.getContext('2d');
+         var COLOURS = ['255,210,122', '255,122,184', '182,255,191', '159,216,255', '255,159,46', '255,246,214'];
+         var rockets = [], sparks = [], width = 0, height = 0, ratio = 1, frame = 0, onScreen = false, last = 0, nextLaunch = 0;
+         function size() {
+            ratio = Math.min(window.devicePixelRatio || 1, 2);
+            width = banner.clientWidth; height = banner.clientHeight;
+            canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio);
+            g.setTransform(ratio, 0, 0, ratio, 0, 0);
+         }
+         function skyBand() {
+            var b = banner.getBoundingClientRect(), r = sky.getBoundingClientRect();
+            var pad = Math.min(10, r.width / 4);
+            return r.width > 8 ? [r.left - b.left + pad, r.right - b.left - pad] : null;
+         }
+         function launch() {
+            var band = skyBand();
+            if (!band) return;
+            var x = band[0] + Math.random() * (band[1] - band[0]);
+            var top = height * (0.22 + Math.random() * 0.25);
+            rockets.push({ x: x, y: height + 2, vy: -(Math.sqrt(2 * 260 * (height - top))), top: top, colour: COLOURS[Math.floor(Math.random() * COLOURS.length)] });
+         }
+         function burst(r) {
+            var n = height < 70 ? 24 : 42, speed = height < 70 ? 40 : 92;
+            var second = Math.random() < 0.5 ? COLOURS[Math.floor(Math.random() * COLOURS.length)] : r.colour;
+            for (var i = 0; i < n; i++) {
+               var a = (i / n) * Math.PI * 2 + Math.random() * 0.2, v = speed * (0.6 + Math.random() * 0.5);
+               sparks.push({ x: r.x, y: r.y, px: r.x, py: r.y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, life: 1, fade: 0.6 + Math.random() * 0.4, colour: i % 3 ? r.colour : second });
+            }
+            sparks.push({ flash: true, x: r.x, y: r.y, life: 1, fade: 5, colour: r.colour });
+         }
+         function step(now) {
+            frame = 0;
+            var dt = Math.min(0.05, (now - (last || now)) / 1000);
+            last = now;
+            if (now > nextLaunch) { launch(); nextLaunch = now + 450 + Math.random() * 700; }
+            g.clearRect(0, 0, width, height);
+            g.globalCompositeOperation = 'lighter';
+            rockets = rockets.filter(function (r) {
+               r.vy += 260 * dt; r.y += r.vy * dt;
+               g.fillStyle = 'rgba(255,240,200,.9)';
+               g.beginPath(); g.arc(r.x, r.y, 1.4, 0, Math.PI * 2); g.fill();
+               g.fillStyle = 'rgba(255,190,100,.35)';
+               g.fillRect(r.x - 0.6, r.y, 1.2, 10);
+               if (r.vy >= -10 || r.y <= r.top) { burst(r); return false; }
+               return true;
+            });
+            sparks = sparks.filter(function (p) {
+               p.life -= p.fade * dt;
+               if (p.life <= 0) return false;
+               if (p.flash) {
+                  var glow = g.createRadialGradient(p.x, p.y, 0, p.x, p.y, 30);
+                  glow.addColorStop(0, 'rgba(' + p.colour + ',' + (p.life * 0.55) + ')');
+                  glow.addColorStop(1, 'rgba(' + p.colour + ',0)');
+                  g.fillStyle = glow; g.fillRect(p.x - 30, p.y - 30, 60, 60);
+                  return true;
+               }
+               p.px = p.x; p.py = p.y;
+               p.vx *= 1 - 1.3 * dt; p.vy = p.vy * (1 - 1.3 * dt) + 34 * dt;
+               p.x += p.vx * dt; p.y += p.vy * dt;
+               g.strokeStyle = 'rgba(' + p.colour + ',' + p.life + ')';
+               g.lineWidth = 2;
+               g.beginPath(); g.moveTo(p.px - p.vx * 0.06, p.py - p.vy * 0.06); g.lineTo(p.x, p.y); g.stroke();
+               return true;
+            });
+            g.globalCompositeOperation = 'source-over';
+            run();
+         }
+         function run() {
+            if (!frame && onScreen && !document.hidden) frame = requestAnimationFrame(step);
+            else if (!onScreen || document.hidden) last = 0;
+         }
+         size();
+         window.addEventListener('resize', size);
+         document.addEventListener('visibilitychange', run);
+         new IntersectionObserver(function (entries) { onScreen = entries[0].isIntersecting; run(); }).observe(banner);
+      })();
+      </script>
+   </body>
+</html>

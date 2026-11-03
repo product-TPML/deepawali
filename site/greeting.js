@@ -1322,8 +1322,34 @@ const TWINKLES = (() => {
   const random = seeded(23);
   return Array.from({ length: 22 }, () => [random() * SIZE, 250 + random() * 520, 1.6 + random() * 2.2, Math.ceil(random() * 3), random()]);
 })();
+// Indoor backgrounds (a puja room, a doorway) have no sky: no fireworks or stars there, just warm
+// embers drifting up from the lamps. Each ember rises a whole number of times per loop, so it loops.
+const INDOOR = new Set(['doorstep', 'lakshmi-puja']);
+const EMBERS = (() => {
+  const random = seeded(41);
+  return Array.from({ length: 26 }, () => [random() < 0.5 ? 60 + random() * 260 : 760 + random() * 260, 2.2 + random() * 2.6, Math.ceil(random() * 2), random(), 380 + random() * 380]);
+})();
+function drawEmbers(g, loop) {
+  g.save();
+  g.globalCompositeOperation = 'lighter';
+  for (const [x, size, beats, offset, travel] of EMBERS) {
+    const life = (loop * beats + offset) % 1;
+    const y = 1180 - life * travel;
+    g.globalAlpha = Math.sin(Math.PI * life) * 0.85;
+    const glow = g.createRadialGradient(x, y, 0, x, y, size * 3);
+    glow.addColorStop(0, '#fff3cf');
+    glow.addColorStop(0.35, 'rgba(255, 190, 90, .8)');
+    glow.addColorStop(1, 'rgba(255, 150, 60, 0)');
+    g.fillStyle = glow;
+    g.beginPath();
+    g.arc(x + Math.sin((life + offset) * Math.PI * 4) * 10, y, size * 3, 0, Math.PI * 2);
+    g.fill();
+  }
+  g.restore();
+}
 function drawSkyEffects(g, time) {
   const loop = time / LOOP_MS;
+  if (INDOOR.has(state.scene)) { drawEmbers(g, loop); return; }
   g.save();
   g.globalCompositeOperation = 'lighter';
   for (const [x, y, size, beats, offset] of TWINKLES) {
