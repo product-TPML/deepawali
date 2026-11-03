@@ -220,6 +220,8 @@ const ladi = [...document.querySelectorAll('.ladi-cracker')];
 const fireworks = document.querySelector('#fireworks');
 const fx = fireworks.getContext('2d');
 const COLOURS = ['#f2c46d', '#ff9f2e', '#ffd9a0', '#ff6f61', '#c9a0ff', '#8fe3ff'];
+// Traditional firework hues: red, orange, yellow, green, blue, violet, silver-white and gold.
+const TAP_COLOURS = ['#f5223a', '#ff7a18', '#ffe31a', '#18d96e', '#168cff', '#b34dff', '#f3f6ff', '#ffc247'];
 const GOLD = ['#ffe6a3', '#fff6d6', '#ffb347'];
 // Sparks given off each frame at each [data-spark] point; speeds are scaled with the scene.
 const EMITTERS = {
@@ -232,10 +234,12 @@ const chakriAim = () => (Math.random() < 0.5 ? -0.25 : Math.PI + 0.25);
 const GRAVITY = 0.06;
 let particles = [];
 let rockets = [];
+let tapRings = [];
 let running = false;
 let heroVisible = false;
 let ratio = 1;
 let sceneScale = 1;
+let tapCount = 0;
 function sizeCanvas() {
   ratio = Math.min(devicePixelRatio || 1, 2);
   fireworks.width = hero.clientWidth * ratio;
@@ -252,27 +256,32 @@ function startLoop() {
   if (!running) { running = true; requestAnimationFrame(step); }
 }
 // Without an aim the particles spread in a full circle (a burst); with one, in a narrow cone (a fountain).
-function addParticles(x, y, count, { speed, life, size, aim, colours = COLOURS }) {
+function addParticles(x, y, count, { speed, life, size, aim, colours = COLOURS, streak = false }) {
   const colour = colours[Math.floor(Math.random() * colours.length)];
   for (let i = 0; i < count; i++) {
     const angle = aim === undefined ? (Math.PI * 2 * i) / count + Math.random() * 0.2 : aim + (Math.random() - 0.5) * 0.7;
     const velocity = speed * (0.55 + Math.random() * 0.45);
-    particles.push({ x, y, vx: Math.cos(angle) * velocity, vy: Math.sin(angle) * velocity, life, max: life, size, colour: Math.random() < 0.8 ? colour : '#fff' });
+    particles.push({ x, y, vx: Math.cos(angle) * velocity, vy: Math.sin(angle) * velocity, life, max: life, size, colour: Math.random() < 0.8 ? colour : '#fff', streak });
   }
   startLoop();
 }
-function burst(x, y) {
+function burst(x, y, look = {}) {
   const scale = Math.min(1, fireworks.logicalSize.width / 900) * 0.6 + 0.4;
-  addParticles(x, y, 70, { speed: 4.6 * scale, life: 70, size: 2.2 });
+  const multiplier = look.multiplier ?? 0.7;
+  const count = Math.round((look.count || 70) * multiplier);
+  if (look.colours) look.colours.forEach(colour => addParticles(x, y, Math.ceil(count / look.colours.length), {
+    speed: 4.6 * scale * multiplier, life: 70, size: 2.2, colours: [colour], streak: look.streak
+  }));
+  else addParticles(x, y, count, { speed: 4.6 * scale * multiplier, life: 70, size: 2.2 });
 }
 // A rocket rises from the lane, slowing as it climbs, and bursts at the top.
-function launch(x, targetY) {
+function launch(x, targetY, look) {
   if (reducedMotion || document.hidden) return;
   const { width, height } = fireworks.logicalSize;
   const startY = height - 20;
   const top = targetY ?? height * (0.12 + Math.random() * 0.26);
   const distance = Math.max(60, startY - top);
-  rockets.push({ x: x ?? width * (0.08 + Math.random() * 0.84), y: startY, vx: (Math.random() - 0.5) * 0.6, vy: -Math.sqrt(2 * 0.09 * distance) });
+  rockets.push({ x: x ?? width * (0.08 + Math.random() * 0.84), y: startY, vx: (Math.random() - 0.5) * 0.6, vy: -Math.sqrt(2 * 0.09 * distance), look });
   startLoop();
 }
 function pointOf(element, box) {
@@ -319,7 +328,7 @@ function step() {
     rocket.y += rocket.vy;
     rocket.vy += 0.09;
     particles.push({ x: rocket.x, y: rocket.y, vx: (Math.random() - 0.5) * 0.4, vy: 0.4 + Math.random() * 0.4, life: 20, max: 20, size: 1.4, colour: '#ffd9a0' });
-    if (rocket.vy >= -0.4) { rocket.done = true; burst(rocket.x, rocket.y); }
+    if (rocket.vy >= -0.4) { rocket.done = true; burst(rocket.x, rocket.y, rocket.look); }
   }
   rockets = rockets.filter(rocket => !rocket.done);
 
@@ -334,18 +343,39 @@ function step() {
     p.life -= 1;
     fx.globalAlpha = Math.max(0, p.life / p.max);
     fx.fillStyle = p.colour;
+    if (p.streak) {
+      fx.strokeStyle = p.colour;
+      fx.lineWidth = p.size;
+      fx.beginPath();
+      fx.moveTo(p.x - p.vx * 3, p.y - p.vy * 3);
+      fx.lineTo(p.x, p.y);
+      fx.stroke();
+    } else {
+      fx.beginPath();
+      fx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      fx.fill();
+    }
+  }
+  tapRings = tapRings.filter(ring => ring.life > 0);
+  for (const ring of tapRings) {
+    fx.globalAlpha = ring.life / 24;
+    fx.strokeStyle = ring.colour;
+    fx.lineWidth = 2;
     fx.beginPath();
-    fx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    fx.fill();
+    fx.arc(ring.x, ring.y, (24 - ring.life) * 1.5 + 5, 0, Math.PI * 2);
+    fx.stroke();
+    ring.life -= 1;
   }
   fx.globalAlpha = 1;
   fx.globalCompositeOperation = 'source-over';
-  if (heroVisible || particles.length || rockets.length) requestAnimationFrame(step);
+  if (heroVisible || particles.length || rockets.length || tapRings.length) requestAnimationFrame(step);
   else { running = false; fx.clearRect(0, 0, width, height); }
 }
 
 // Sky shots every 1.5 to 3 seconds (sometimes two together) while the hero is on screen.
 let rocketTimer = 0;
+let lastFireworkTap = -Infinity;
+const FIREWORK_TAP_COOLDOWN = 800;
 function scheduleRockets() {
   clearTimeout(rocketTimer);
   rocketTimer = setTimeout(() => {
@@ -362,8 +392,17 @@ new IntersectionObserver(([entry]) => {
 // A tap on the sky sends a rocket up to that spot (the text above lets taps through).
 hero.addEventListener('pointerdown', event => {
   if (reducedMotion || event.target.closest('a, button')) return;
+  const now = performance.now();
+  if (now - lastFireworkTap < FIREWORK_TAP_COOLDOWN) return;
+  lastFireworkTap = now;
   const box = fireworks.getBoundingClientRect();
-  launch(event.clientX - box.left, event.clientY - box.top);
+  const x = event.clientX - box.left;
+  const y = event.clientY - box.top;
+  const colours = Array.from({ length: 3 }, (_, i) => TAP_COLOURS[(tapCount + i) % TAP_COLOURS.length]);
+  launch(x, y, { colours, count: 70 + (tapCount % 3) * 12, multiplier: 1.3, streak: true });
+  tapRings.push({ x, y, life: 24, colour: colours[0] });
+  tapCount += 1;
+  startLoop();
   track('firework_tap');
 });
 
