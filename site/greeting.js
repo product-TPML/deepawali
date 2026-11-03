@@ -1996,16 +1996,6 @@ studioOpenButton.addEventListener('click', openStudio);
 canvas.addEventListener('click', () => { if (!studioIsOpen()) openStudio(); });
 studioCloseButton.addEventListener('click', () => closeStudio());
 addEventListener('popstate', () => closeStudio(true));
-// Floating "Make a greeting" button: scrolls to the greeting section; hidden while that section
-// is on screen (and, via CSS, while the editor or the All stories view is open).
-const greetingFab = document.querySelector('#greeting-fab'); // optional: the Deepavali page has none
-if (greetingFab) {
-  new IntersectionObserver(entries => greetingFab.classList.toggle('is-hidden', entries[0].isIntersecting), { threshold: 0.15 }).observe(section);
-  // Full label near the top of the page; collapses to an icon once the visitor scrolls down.
-  const updateFabSize = () => greetingFab.classList.toggle('is-compact', scrollY > 240);
-  addEventListener('scroll', updateFabSize, { passive: true });
-  updateFabSize();
-}
 document.addEventListener('keydown', event => {
   if (!studioIsOpen() || document.querySelector('dialog[open]')) return; // the camera dialog handles its own keys
   if (event.key === 'Escape') { closeStudio(); return; }
