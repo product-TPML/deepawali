@@ -236,6 +236,7 @@ let particles = [];
 let rockets = [];
 let tapRings = [];
 let running = false;
+let frameId = 0;
 let heroVisible = false;
 let ratio = 1;
 let sceneScale = 1;
@@ -252,8 +253,106 @@ sizeCanvas();
 new ResizeObserver(sizeCanvas).observe(hero);
 Object.defineProperty(fireworks, 'logicalSize', { get: () => ({ width: fireworks.width / ratio, height: fireworks.height / ratio }) });
 
+let fireworkAudio;
+let fireworkNoise;
+function getFireworkAudio() {
+  const Audio = window.AudioContext || window.webkitAudioContext;
+  if (!Audio) return null;
+  try {
+    fireworkAudio ||= new Audio();
+    if (fireworkAudio.state === 'suspended') fireworkAudio.resume().catch(() => {});
+    if (!fireworkNoise) {
+      fireworkNoise = fireworkAudio.createBuffer(1, Math.ceil(fireworkAudio.sampleRate * 1.1), fireworkAudio.sampleRate);
+      const samples = fireworkNoise.getChannelData(0);
+      for (let i = 0; i < samples.length; i++) samples[i] = Math.random() * 2 - 1;
+    }
+    return fireworkAudio;
+  } catch { return null; }
+}
+function playFireworkLaunchSound() {
+  const audio = getFireworkAudio();
+  if (!audio) return;
+  try {
+    const now = audio.currentTime;
+    const noise = fireworkAudio.createBufferSource();
+    const filter = audio.createBiquadFilter();
+    const gain = audio.createGain();
+    noise.buffer = fireworkNoise;
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(300, now);
+    filter.frequency.exponentialRampToValueAtTime(3500, now + 0.9);
+    filter.Q.setValueAtTime(5, now);
+    filter.Q.linearRampToValueAtTime(22, now + 0.9);
+    gain.gain.setValueAtTime(0.008, now);
+    gain.gain.linearRampToValueAtTime(0.14, now + 0.3);
+    gain.gain.linearRampToValueAtTime(0.07, now + 0.78);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.95);
+    noise.connect(filter).connect(gain).connect(audio.destination);
+    noise.start(now);
+    noise.stop(now + 0.96);
+  } catch { /* Audio must never prevent a firework from launching. */ }
+}
+function playFireworkExplosionSound() {
+  const audio = getFireworkAudio();
+  if (!audio) return;
+  try {
+    const now = audio.currentTime;
+    const body = audio.createBufferSource();
+    const bodyFilter = audio.createBiquadFilter();
+    const bodyGain = audio.createGain();
+    body.buffer = fireworkNoise;
+    bodyFilter.type = 'lowpass';
+    bodyFilter.frequency.setValueAtTime(900, now);
+    bodyFilter.frequency.exponentialRampToValueAtTime(65, now + 0.55);
+    bodyGain.gain.setValueAtTime(0.24, now);
+    bodyGain.gain.exponentialRampToValueAtTime(0.001, now + 0.65);
+    body.connect(bodyFilter).connect(bodyGain).connect(audio.destination);
+    body.start(now);
+    body.stop(now + 0.66);
+
+    const crack = audio.createBufferSource();
+    const crackFilter = audio.createBiquadFilter();
+    const crackGain = audio.createGain();
+    crack.buffer = fireworkNoise;
+    crackFilter.type = 'highpass';
+    crackFilter.frequency.setValueAtTime(2200, now);
+    crackGain.gain.setValueAtTime(0.2, now);
+    crackGain.gain.exponentialRampToValueAtTime(0.001, now + 0.055);
+    crack.connect(crackFilter).connect(crackGain).connect(audio.destination);
+    crack.start(now);
+    crack.stop(now + 0.06);
+
+    const crackles = audio.createBufferSource();
+    const crackleFilter = audio.createBiquadFilter();
+    const crackleGain = audio.createGain();
+    crackles.buffer = fireworkNoise;
+    crackleFilter.type = 'highpass';
+    crackleFilter.frequency.setValueAtTime(2000, now);
+    crackleGain.gain.setValueAtTime(0.001, now);
+    Array.from({ length: 14 }, () => Math.random() * 0.7).sort((a, b) => a - b).forEach(offset => {
+      const at = now + 0.1 + offset;
+      crackleGain.gain.setValueAtTime(0.13 * (1 - offset / 0.7), at);
+      crackleGain.gain.setTargetAtTime(0.001, at, 0.006);
+    });
+    crackles.connect(crackleFilter).connect(crackleGain).connect(audio.destination);
+    crackles.start(now + 0.1);
+    crackles.stop(now + 0.82);
+
+    const tone = audio.createOscillator();
+    const toneGain = audio.createGain();
+    tone.type = 'sine';
+    tone.frequency.setValueAtTime(110, now);
+    tone.frequency.exponentialRampToValueAtTime(38, now + 0.45);
+    toneGain.gain.setValueAtTime(0.16, now);
+    toneGain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+    tone.connect(toneGain).connect(audio.destination);
+    tone.start(now);
+    tone.stop(now + 0.51);
+  } catch { /* Audio must never prevent a firework from launching. */ }
+}
+
 function startLoop() {
-  if (!running) { running = true; requestAnimationFrame(step); }
+  if (!running) { running = true; frameId = requestAnimationFrame(step); }
 }
 // Without an aim the particles spread in a full circle (a burst); with one, in a narrow cone (a fountain).
 function addParticles(x, y, count, { speed, life, size, aim, colours = COLOURS, streak = false }) {
@@ -299,14 +398,19 @@ function popLadi(box) {
   const time = performance.now() % LADI_CYCLE;
   const popped = Math.max(0, Math.min(ladi.length, Math.floor((time - LADI_FUSE) / LADI_GAP) + 1));
   if (popped < ladiPopped) { ladi.forEach(cracker => cracker.classList.remove('is-popped')); ladiPopped = 0; }
+  const catchingUp = popped - ladiPopped > 1;
   for (; ladiPopped < popped; ladiPopped++) {
     const cracker = ladi[ladiPopped];
-    const { x, y } = pointOf(cracker, box);
     cracker.classList.add('is-popped');
-    addParticles(x, y, 14, { speed: 2.2 * sceneScale, life: 16, size: 1.3, colours: ['#fff', '#ffe6a3', '#ff9f2e'] });
+    if (!catchingUp) {
+      const { x, y } = pointOf(cracker, box);
+      addParticles(x, y, 14, { speed: 2.2 * sceneScale, life: 16, size: 1.3, colours: ['#fff', '#ffe6a3', '#ff9f2e'] });
+    }
   }
 }
 function step() {
+  frameId = 0;
+  if (document.hidden) { running = false; return; }
   const { width, height } = fireworks.logicalSize;
   if (heroVisible) {
     const box = hero.getBoundingClientRect();
@@ -328,7 +432,11 @@ function step() {
     rocket.y += rocket.vy;
     rocket.vy += 0.09;
     particles.push({ x: rocket.x, y: rocket.y, vx: (Math.random() - 0.5) * 0.4, vy: 0.4 + Math.random() * 0.4, life: 20, max: 20, size: 1.4, colour: '#ffd9a0' });
-    if (rocket.vy >= -0.4) { rocket.done = true; burst(rocket.x, rocket.y, rocket.look); }
+    if (rocket.vy >= -0.4) {
+      rocket.done = true;
+      burst(rocket.x, rocket.y, rocket.look);
+      if (rocket.look?.userTriggered) playFireworkExplosionSound();
+    }
   }
   rockets = rockets.filter(rocket => !rocket.done);
 
@@ -368,27 +476,50 @@ function step() {
   }
   fx.globalAlpha = 1;
   fx.globalCompositeOperation = 'source-over';
-  if (heroVisible || particles.length || rockets.length || tapRings.length) requestAnimationFrame(step);
+  if (heroVisible || particles.length || rockets.length || tapRings.length) frameId = requestAnimationFrame(step);
   else { running = false; fx.clearRect(0, 0, width, height); }
 }
 
 // Sky shots every 1.5 to 3 seconds (sometimes two together) while the hero is on screen.
 let rocketTimer = 0;
+let rocketPairTimer = 0;
 let lastFireworkTap = -Infinity;
 const FIREWORK_TAP_COOLDOWN = 800;
 function scheduleRockets() {
   clearTimeout(rocketTimer);
   rocketTimer = setTimeout(() => {
+    if (document.hidden || !heroVisible) return;
     launch();
-    if (Math.random() < 0.3) setTimeout(() => launch(), 250);
+    if (Math.random() < 0.3) rocketPairTimer = setTimeout(() => {
+      if (!document.hidden && heroVisible) launch();
+    }, 250);
     scheduleRockets();
   }, 1500 + Math.random() * 1500);
 }
 new IntersectionObserver(([entry]) => {
   heroVisible = entry.isIntersecting && !reducedMotion;
   hero.classList.toggle('is-playing', entry.isIntersecting);
-  if (heroVisible) { startLoop(); launch(); scheduleRockets(); } else clearTimeout(rocketTimer);
+  if (heroVisible && !document.hidden) { startLoop(); launch(); scheduleRockets(); }
+  else { clearTimeout(rocketTimer); clearTimeout(rocketPairTimer); }
 }).observe(hero);
+document.addEventListener('visibilitychange', () => {
+  clearTimeout(rocketTimer);
+  clearTimeout(rocketPairTimer);
+  hero.classList.toggle('is-playing', heroVisible && !document.hidden);
+  if (document.hidden) {
+    if (frameId) cancelAnimationFrame(frameId);
+    frameId = 0;
+    running = false;
+    particles = [];
+    rockets = [];
+    tapRings = [];
+    const { width, height } = fireworks.logicalSize;
+    fx.clearRect(0, 0, width, height);
+  } else if (heroVisible) {
+    startLoop();
+    scheduleRockets();
+  }
+});
 // A tap on the sky sends a rocket up to that spot (the text above lets taps through).
 hero.addEventListener('pointerdown', event => {
   if (reducedMotion || event.target.closest('a, button')) return;
@@ -399,7 +530,8 @@ hero.addEventListener('pointerdown', event => {
   const x = event.clientX - box.left;
   const y = event.clientY - box.top;
   const colours = Array.from({ length: 3 }, (_, i) => TAP_COLOURS[(tapCount + i) % TAP_COLOURS.length]);
-  launch(x, y, { colours, count: 70 + (tapCount % 3) * 12, multiplier: 1.3, streak: true });
+  launch(x, y, { colours, count: 70 + (tapCount % 3) * 12, multiplier: 1.3, streak: true, userTriggered: true });
+  playFireworkLaunchSound();
   tapRings.push({ x, y, life: 24, colour: colours[0] });
   tapCount += 1;
   startLoop();
