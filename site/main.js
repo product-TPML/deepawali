@@ -19,17 +19,17 @@ const SITE = {
   sponsorOnLight: true, // the logo sits on a white chip
   creativeSets: [ // Union Bank's two campaigns, as on the Prajavani Dasara page; the banners rotate between them
     { id: 'home-loan', url: 'https://homeloan.unionbankofindia.bank.in/', images: {
-      '970x250': 'https://images.assettype.com/prajavani/2026-10-21/0u3mvat7/Home-970x250.png',
-      '728x90': 'https://images.assettype.com/prajavani/2026-10-21/3702p00q/Home-728x90.png',
+      '970x250': 'https://images.assettype.com/prajavani/2026-11-05/rz4skjzj/Home-970x250-3.png',
+      '728x90': 'https://images.assettype.com/prajavani/2026-11-05/nb02484q/Home-728x90-3.png',
       '300x600': 'https://images.assettype.com/prajavani/2026-10-21/n7hxor1c/Home-300x600.png',
-      '300x250': 'https://images.assettype.com/prajavani/2026-10-21/zwx8fz60/Home-300x250.png',
+      '300x250': 'https://images.assettype.com/prajavani/2026-11-05/pc58krfi/Home-300x250-3.png',
       '320x480': 'https://images.assettype.com/prajavani/2026-10-21/9gicjgpa/Home-320x480.png',
       '320x50': 'https://images.assettype.com/prajavani/2026-10-21/qsff8g3k/Home-320x50.png' } },
     { id: 'vehicle-loan', url: 'https://dbp.unionbankofindia.bank.in/assets/vehicle-loan/landing', images: {
-      '970x250': 'https://images.assettype.com/prajavani/2026-10-21/h88ow0w5/Vehicle-970x250.png',
-      '728x90': 'https://images.assettype.com/prajavani/2026-10-21/clekjxpo/Vehicle-728x90.png',
+      '970x250': 'https://images.assettype.com/prajavani/2026-11-05/e5x9wvbu/Vehicle-970x250-2.png',
+      '728x90': 'https://images.assettype.com/prajavani/2026-11-05/ajk1s117/Vehicle-728x90-2.png',
       '300x600': 'https://images.assettype.com/prajavani/2026-10-21/t9zqrsg7/Vehicle-300x600.png',
-      '300x250': 'https://images.assettype.com/prajavani/2026-10-21/clcq0hyf/Vehicle-300x250.png',
+      '300x250': 'https://images.assettype.com/prajavani/2026-11-05/vvkjler1/Vehicle-300x250-2.png',
       '320x480': 'https://images.assettype.com/prajavani/2026-10-21/8eq1o4ok/Vehicle-320x480.png',
       '320x50': 'https://images.assettype.com/prajavani/2026-10-21/6i0njzxo/Vehicle-320x50.png' } }
   ],
