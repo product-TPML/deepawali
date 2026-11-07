@@ -1928,12 +1928,13 @@ shareButton.addEventListener('click', async () => {
   }
   try {
     await navigator.share({ files: [file], title: shareTitle(), text: shareText() });
-    track(file.type === 'image/gif' ? 'greeting_shared_gif' : 'greeting_shared');
+    track('greeting_shared'); // same event name as the Dasara microsite, whatever format was shared
+    if (file.type === 'image/gif') track('greeting_shared_gif'); // extra detail for GIF shares
   } catch (error) {
     if (error.name !== 'AbortError') setStatus(t('greeting.status.shareFailed', 'Your phone couldn’t open the share menu. Save the card with Photo or Video and share it from your gallery.'));
   }
 });
-downloadButton.addEventListener('click', async () => { download(await stillFile()); track('greeting_photo_saved'); });
+downloadButton.addEventListener('click', async () => { download(await stillFile()); track('greeting_shared'); track('greeting_photo_saved'); });
 videoButton.addEventListener('click', async () => {
   videoButton.disabled = true;
   setStatus(t('greeting.status.video', 'Making your video…'), true);
@@ -1942,10 +1943,12 @@ videoButton.addEventListener('click', async () => {
     if (video) {
       download(video);
       setStatus(t('greeting.status.videoDone', 'Your video is saved.'));
+      track('greeting_shared');
       track('greeting_video_saved');
     } else {
       download(await (gifJob?.key === cardKey() && gifJob.file ? gifJob.file : prepareGif()) || await stillFile());
       setStatus(t('greeting.status.videoGif', 'This browser can’t make videos, so we saved an animated GIF instead.'));
+      track('greeting_shared');
       track('greeting_gif_saved');
     }
   } catch {
